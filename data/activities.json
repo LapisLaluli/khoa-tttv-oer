@@ -1,0 +1,42 @@
+[
+  {
+    "id": "act-1",
+    "category": "nghiencuu",
+    "categoryName": "Nghiên cứu",
+    "title": "Hội thảo khoa học",
+    "description": "Tổ chức các hội thảo chuyên ngành, chia sẻ kết quả nghiên cứu và phương pháp ứng dụng công nghệ thông tin trong thư viện hiện đại.",
+    "image": "assets/images/placeholder.svg",
+    "date": "Hằng năm",
+    "tag": "Khoa học"
+  },
+  {
+    "id": "act-2",
+    "category": "sinhvien",
+    "categoryName": "Hoạt động sinh viên",
+    "title": "Hoạt động tình nguyện",
+    "description": "Đoàn kết, xung kích trong các chiến dịch mùa hè xanh, mang sách và tri thức đến với các điểm trường, thư viện vùng sâu vùng xa.",
+    "image": "assets/images/placeholder.svg",
+    "date": "Thường niên",
+    "tag": "Cộng đồng"
+  },
+  {
+    "id": "act-3",
+    "category": "daotao",
+    "categoryName": "Đào tạo",
+    "title": "Triển lãm sách",
+    "description": "Giới thiệu các ấn phẩm quý, tài liệu chuyên khảo và kết quả nghiên cứu học thuật của giảng viên và sinh viên Khoa.",
+    "image": "assets/images/placeholder.svg",
+    "date": "Ngày Sách VN",
+    "tag": "Văn hóa đọc"
+  },
+  {
+    "id": "act-4",
+    "category": "hoptac",
+    "categoryName": "Hợp tác",
+    "title": "Tham quan thực tế",
+    "description": "Chương trình thực tập, kiến tập tại Thư viện Quốc gia Việt Nam, các trung tâm thông tin lớn và thư viện đại học hàng đầu.",
+    "image": "assets/images/placeholder.svg",
+    "date": "Từng học kỳ",
+    "tag": "Thực tế nghề nghiệp"
+  }
+]
