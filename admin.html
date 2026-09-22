@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hệ Thống Quản Trị Website OER | Khoa Thông tin Thư viện</title>
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+  <!-- 1. MÀN HÌNH ĐĂNG NHẬP -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-card">
+      <img class="login-logo dyn-logo" src="assets/images/logo-placeholder.svg" alt="Logo Khoa">
+      <h1 class="login-title">Đăng Nhập Quản Trị</h1>
+      <p class="login-sub">Cổng quản lý Tài nguyên Giáo dục Mở (OER) Khoa Thông tin Thư viện</p>
+
+      <div id="loginError" style="display:none; background:#fee2e2; color:#b91c1c; padding:10px; border-radius:6px; font-size:13px; margin-bottom:16px;"></div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label class="form-label">Tên tài khoản</label>
+          <input type="text" id="loginUser" class="form-control" placeholder="admin" value="admin" required autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Mật khẩu</label>
+          <input type="password" id="loginPass" class="form-control" placeholder="Nhập mật khẩu..." required autocomplete="current-password">
+        </div>
+        <button type="submit" class="login-btn">Đăng nhập vào hệ thống</button>
+      </form>
+      <div style="margin-top:20px; font-size:12px; color:var(--admin-muted);">
+        <a href="index.html" style="color:var(--admin-primary); font-weight:600;">Quay lại trang chủ website</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. GIAO DIỆN QUẢN TRỊ VIÊN -->
+  <div class="admin-layout" id="adminLayout" style="display:none;">
+    
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-header">
+        <img class="dyn-logo" src="assets/images/logo-placeholder.svg" alt="Logo">
+        <div>
+          <div class="sidebar-title">QUẢN TRỊ OER</div>
+          <div class="sidebar-sub">Khoa Thông tin Thư viện</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-item active" data-tab="tabDashboard">
+          <span>Tổng quan</span>
+        </div>
+        <div class="nav-item" data-tab="tabImages">
+          <span>Hình ảnh & Giao diện</span>
+        </div>
+        <div class="nav-item" data-tab="tabMilestones">
+          <span>Mốc lịch sử</span>
+        </div>
+        <div class="nav-item" data-tab="tabActivities">
+          <span>Hoạt động nổi bật</span>
+        </div>
+        <div class="nav-item" data-tab="tabResources">
+          <span>Tài nguyên OER</span>
+        </div>
+        <div class="nav-item" data-tab="tabQuiz">
+          <span>Góc học tập & Quiz</span>
+        </div>
+        <div class="nav-item" data-tab="tabSettings">
+          <span>Cài đặt chung & Nội dung</span>
+        </div>
+        <div class="nav-item" data-tab="tabBackup">
+          <span>Sao lưu & Xuất dữ liệu</span>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button id="logoutBtn" class="btn-secondary" style="width:100%; justify-content:center;">
+          <span>Đăng xuất</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="admin-main">
+      
+      <!-- TOPBAR -->
+      <header class="admin-topbar">
+        <div class="topbar-left">
+          <h2 class="topbar-heading" id="currentTabTitle">Tổng quan hệ thống</h2>
+        </div>
+        <div class="topbar-right">
+          <a href="index.html" target="_blank" class="btn-secondary btn-sm" title="Mở trang chủ">
+            Xem trang website
+          </a>
+          <button id="openChangePassBtn" class="btn-secondary btn-sm">
+            Đổi mật khẩu
+          </button>
+          <span class="badge-role">Quản trị viên</span>
+        </div>
+      </header>
+
+      <!-- BODY CONTENT PANES -->
+      <div class="admin-body">
+        
+        <!-- TAB 1: DASHBOARD OVERVIEW -->
+        <div class="tab-pane" id="tabDashboard">
+          <div class="stats-grid">
+            <div class="stat-widget">
+              <div class="stat-widget-icon" style="background:#fee2e2; color:#991b1b; font-weight:700;">H</div>
+              <div>
+                <div class="stat-widget-val" id="countMilestones">0</div>
+                <div class="stat-widget-lbl">Mốc lịch sử (1961 - nay)</div>
+              </div>
+            </div>
+            <div class="stat-widget">
+              <div class="stat-widget-icon" style="background:#e0e7ff; color:#3730a3; font-weight:700;">A</div>
+              <div>
+                <div class="stat-widget-val" id="countActivities">0</div>
+                <div class="stat-widget-lbl">Hoạt động nổi bật</div>
+              </div>
+            </div>
+            <div class="stat-widget">
+              <div class="stat-widget-icon" style="background:#ecfdf5; color:#065f46; font-weight:700;">R</div>
+              <div>
+                <div class="stat-widget-val" id="countResources">0</div>
+                <div class="stat-widget-lbl">Tài nguyên OER số hóa</div>
+              </div>
+            </div>
+            <div class="stat-widget">
+              <div class="stat-widget-icon" style="background:#fef3c7; color:#92400e; font-weight:700;">Q</div>
+              <div>
+                <div class="stat-widget-val" id="countQuiz">0</div>
+                <div class="stat-widget-lbl">Câu hỏi trắc nghiệm</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-card">
+            <h3 class="card-title" style="margin-bottom:12px;">Hệ Thống Quản Trị Website Tài Nguyên Giáo Dục Mở</h3>
+            <p style="color:var(--admin-muted); line-height:1.7;">
+              Hệ thống cho phép bạn toàn quyền thêm mới, chỉnh sửa, xóa và kiểm soát mọi nội dung và hình ảnh trên website:
+            </p>
+            <ul style="margin:12px 0 0 20px; color:#475569; line-height:1.8;">
+              <li><strong>Hình ảnh & Giao diện:</strong> Tải lên ảnh Logo, ảnh nền Banner chính, bộ ảnh khối Về Chúng Tôi trực tiếp từ máy tính.</li>
+              <li><strong>Quản lý Mốc lịch sử:</strong> Cập nhật mốc son phát triển, ảnh tư liệu scan, nguồn kiểm chứng OER.</li>
+              <li><strong>Hoạt động nổi bật:</strong> Quản lý bài viết về hội thảo khoa học, triển lãm sách, kiến tập và phong trào sinh viên.</li>
+              <li><strong>Tài nguyên giáo dục mở:</strong> Quản lý bài đọc ngắn, kỷ yếu số hóa và bản quyền Creative Commons.</li>
+              <li><strong>Sao lưu dữ liệu:</strong> Xuất toàn bộ dữ liệu ra file JSON chỉ với một thao tác.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- TAB 2: QUẢN LÝ HÌNH ẢNH & GIAO DIỆN -->
+        <div class="tab-pane" id="tabImages" style="display:none;">
+          <div class="admin-card">
+            <div class="card-header-flex">
+              <div>
+                <h3 class="card-title">Tùy Biến Hình Ảnh Giao Diện & Thương Hiệu</h3>
+                <p style="font-size:12.5px; color:var(--admin-muted);">Tải ảnh trực tiếp từ máy tính của bạn hoặc nhập đường dẫn file. Ảnh sẽ hiển thị ngay lập tức trên website.</p>
+              </div>
+              <button class="btn-primary" id="saveUiImagesBtn">Lưu thay đổi hình ảnh</button>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+              
+              <!-- Logo -->
+              <div style="background:#f8fafc; border:1px solid var(--admin-border); border-radius:8px; padding:20px;">
+                <h4 style="font-size:15px; margin-bottom:6px;">1. Logo Khoa & Trường</h4>
+                <p style="font-size:12px; color:var(--admin-muted); margin-bottom:12px;">Hiển thị trên thanh menu chính và chân trang footer.</p>
+                <div style="display:flex; gap:16px; align-items:center; margin-bottom:12px;">
+                  <img id="previewLogo" src="assets/images/logo-placeholder.svg" alt="Preview Logo" style="width:70px; height:70px; object-fit:contain; border:1px solid var(--admin-border); border-radius:4px; padding:4px; background:#fff;">
+                  <div style="flex-grow:1;">
+                    <label class="form-label">Chọn ảnh từ máy tính:</label>
+                    <input type="file" id="uploadLogoFile" accept="image/*" class="form-control" style="font-size:12.5px;">
+                  </div>
+                </div>
+                <input type="text" id="inputLogoUrl" class="form-control" placeholder="Đường dẫn: assets/images/logo.png">
+              </div>
+
+              <!-- Hero Background -->
+              <div style="background:#f8fafc; border:1px solid var(--admin-border); border-radius:8px; padding:20px;">
+                <h4 style="font-size:15px; margin-bottom:6px;">2. Ảnh Nền Banner Hero Chính</h4>
+                <p style="font-size:12px; color:var(--admin-muted); margin-bottom:12px;">Ảnh nền khu vực tiêu đề đầu trang chủ.</p>
+                <div style="display:flex; gap:16px; align-items:center; margin-bottom:12px;">
+                  <img id="previewHeroBg" src="assets/images/hero-bg.svg" alt="Preview Hero" style="width:110px; height:70px; object-fit:cover; border:1px solid var(--admin-border); border-radius:4px; background:#fff;">
+                  <div style="flex-grow:1;">
+                    <label class="form-label">Chọn ảnh từ máy tính:</label>
+                    <input type="file" id="uploadHeroBgFile" accept="image/*" class="form-control" style="font-size:12.5px;">
+                  </div>
+                </div>
+                <input type="text" id="inputHeroBgUrl" class="form-control" placeholder="Đường dẫn ảnh nền hero">
+              </div>
+
+              <!-- About Image 1 (Large) -->
+              <div style="background:#f8fafc; border:1px solid var(--admin-border); border-radius:8px; padding:20px;">
+                <h4 style="font-size:15px; margin-bottom:6px;">3. Ảnh Khối Về Chúng Tôi (Khung lớn bên trái)</h4>
+                <p style="font-size:12px; color:var(--admin-muted); margin-bottom:12px;">Vị trí ảnh sinh viên học tập & nghiên cứu.</p>
+                <div style="display:flex; gap:16px; align-items:center; margin-bottom:12px;">
+                  <img id="previewAboutLarge" src="assets/images/placeholder.svg" alt="Preview" style="width:110px; height:70px; object-fit:cover; border:1px solid var(--admin-border); border-radius:4px; background:#fff;">
+                  <div style="flex-grow:1;">
+                    <label class="form-label">Chọn ảnh từ máy tính:</label>
+                    <input type="file" id="uploadAboutLargeFile" accept="image/*" class="form-control" style="font-size:12.5px;">
+                  </div>
+                </div>
+                <input type="text" id="inputAboutLargeUrl" class="form-control" placeholder="Đường dẫn ảnh lớn">
+              </div>
+
+              <!-- About Stack 1 (Top right) -->
+              <div style="background:#f8fafc; border:1px solid var(--admin-border); border-radius:8px; padding:20px;">
+                <h4 style="font-size:15px; margin-bottom:6px;">4. Ảnh Khối Về Chúng Tôi (Phía trên bên phải)</h4>
+                <p style="font-size:12px; color:var(--admin-muted); margin-bottom:12px;">Không gian kết nối tri thức / Thư viện.</p>
+                <div style="display:flex; gap:16px; align-items:center; margin-bottom:12px;">
+                  <img id="previewAboutStack1" src="assets/images/placeholder.svg" alt="Preview" style="width:110px; height:70px; object-fit:cover; border:1px solid var(--admin-border); border-radius:4px; background:#fff;">
+                  <div style="flex-grow:1;">
+                    <label class="form-label">Chọn ảnh từ máy tính:</label>
+                    <input type="file" id="uploadAboutStack1File" accept="image/*" class="form-control" style="font-size:12.5px;">
+                  </div>
+                </div>
+                <input type="text" id="inputAboutStack1Url" class="form-control" placeholder="Đường dẫn ảnh thư viện">
+              </div>
+
+              <!-- About Stack 2 (Bottom right) -->
+              <div style="background:#f8fafc; border:1px solid var(--admin-border); border-radius:8px; padding:20px;">
+                <h4 style="font-size:15px; margin-bottom:6px;">5. Ảnh Khối Về Chúng Tôi (Phía dưới bên phải)</h4>
+                <p style="font-size:12px; color:var(--admin-muted); margin-bottom:12px;">Tư liệu sách và văn hóa (People Books).</p>
+                <div style="display:flex; gap:16px; align-items:center; margin-bottom:12px;">
+                  <img id="previewAboutStack2" src="assets/images/placeholder.svg" alt="Preview" style="width:110px; height:70px; object-fit:cover; border:1px solid var(--admin-border); border-radius:4px; background:#fff;">
+                  <div style="flex-grow:1;">
+                    <label class="form-label">Chọn ảnh từ máy tính:</label>
+                    <input type="file" id="uploadAboutStack2File" accept="image/*" class="form-control" style="font-size:12.5px;">
+                  </div>
+                </div>
+                <input type="text" id="inputAboutStack2Url" class="form-control" placeholder="Đường dẫn ảnh sách">
+              </div>
+
+              <!-- Quote Banner Bg -->
+              <div style="background:#f8fafc; border:1px solid var(--admin-border); border-radius:8px; padding:20px;">
+                <h4 style="font-size:15px; margin-bottom:6px;">6. Ảnh Nền Khối Trích Dẫn</h4>
+                <p style="font-size:12px; color:var(--admin-muted); margin-bottom:12px;">Ảnh nền dải băng trích dẫn danh ngôn giữa trang.</p>
+                <div style="display:flex; gap:16px; align-items:center; margin-bottom:12px;">
+                  <img id="previewQuoteBg" src="assets/images/hero-bg.svg" alt="Preview" style="width:110px; height:70px; object-fit:cover; border:1px solid var(--admin-border); border-radius:4px; background:#fff;">
+                  <div style="flex-grow:1;">
+                    <label class="form-label">Chọn ảnh từ máy tính:</label>
+                    <input type="file" id="uploadQuoteBgFile" accept="image/*" class="form-control" style="font-size:12.5px;">
+                  </div>
+                </div>
+                <input type="text" id="inputQuoteBgUrl" class="form-control" placeholder="Đường dẫn ảnh quote">
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: QUẢN LÝ MỐC LỊCH SỬ -->
+        <div class="tab-pane" id="tabMilestones" style="display:none;">
+          <div class="admin-card">
+            <div class="card-header-flex">
+              <div>
+                <h3 class="card-title">Danh Sách Mốc Lịch Sử Hình Thành & Phát Triển</h3>
+                <p style="font-size:12.5px; color:var(--admin-muted);">Hiển thị trên dòng thời gian Timeline trang chủ và trang lịch sử.</p>
+              </div>
+              <button class="btn-primary" id="addMilestoneBtn">Thêm mốc lịch sử mới</button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Năm / Giai đoạn</th>
+                    <th>Tiêu đề</th>
+                    <th>Mô tả tóm tắt</th>
+                    <th>Phân loại</th>
+                    <th>Nguồn kiểm chứng</th>
+                    <th>Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody id="milestoneTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 4: QUẢN LÝ HOẠT ĐỘNG NỔI BẬT -->
+        <div class="tab-pane" id="tabActivities" style="display:none;">
+          <div class="admin-card">
+            <div class="card-header-flex">
+              <div>
+                <h3 class="card-title">Danh Sách Hoạt Động & Sự Kiện Nổi Bật</h3>
+                <p style="font-size:12.5px; color:var(--admin-muted);">Hiển thị trong khối bộ lọc Tabs (Đào tạo, Nghiên cứu, Sinh viên, Hợp tác).</p>
+              </div>
+              <button class="btn-primary" id="addActivityBtn">Thêm hoạt động mới</button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Tên hoạt động</th>
+                    <th>Chuyên mục</th>
+                    <th>Mô tả</th>
+                    <th>Thời gian</th>
+                    <th>Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody id="activityTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 5: QUẢN LÝ TÀI NGUYÊN OER -->
+        <div class="tab-pane" id="tabResources" style="display:none;">
+          <div class="admin-card">
+            <div class="card-header-flex">
+              <div>
+                <h3 class="card-title">Danh Sách Tài Nguyên Giáo Dục Mở (OER)</h3>
+                <p style="font-size:12.5px; color:var(--admin-muted);">Quản lý các tài liệu đọc trực tuyến, Infographic và Kỷ yếu số.</p>
+              </div>
+              <button class="btn-primary" id="addResourceBtn">Thêm tài nguyên OER mới</button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Tiêu đề tài nguyên</th>
+                    <th>Định dạng</th>
+                    <th>Tóm tắt nội dung</th>
+                    <th>Giấy phép mở</th>
+                    <th>Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody id="resourceTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 6: QUẢN LÝ QUIZ TRẮC NGHIỆM -->
+        <div class="tab-pane" id="tabQuiz" style="display:none;">
+          <div class="admin-card">
+            <div class="card-header-flex">
+              <div>
+                <h3 class="card-title">Bộ Câu Hỏi Trắc Nghiệm Ôn Tập Lịch Sử</h3>
+                <p style="font-size:12.5px; color:var(--admin-muted);">Hệ thống câu hỏi tương tác trong Góc học tập OER.</p>
+              </div>
+              <button class="btn-primary" id="addQuizBtn">Thêm câu hỏi mới</button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Mã câu</th>
+                    <th>Nội dung câu hỏi</th>
+                    <th>Đáp án đúng</th>
+                    <th>Giải thích chi tiết</th>
+                    <th>Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody id="quizTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 7: CÀI ĐẶT CHUNG -->
+        <div class="tab-pane" id="tabSettings" style="display:none;">
+          <div class="admin-card">
+            <h3 class="card-title" style="margin-bottom:20px;">Tùy Chỉnh Thông Tin Nhận Diện & Cấu Hình Website</h3>
+            
+            <form id="settingsForm">
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+                <div class="form-group">
+                  <label class="form-label">Tên Khoa</label>
+                  <input type="text" id="setFacultyName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Tên Trường</label>
+                  <input type="text" id="setUniversityName" class="form-control" required>
+                </div>
+              </div>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+                <div class="form-group">
+                  <label class="form-label">Khẩu hiệu phụ (Slogan)</label>
+                  <input type="text" id="setSlogan" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Khẩu hiệu chính Banner Hero</label>
+                  <input type="text" id="setHeroMotto" class="form-control" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Câu trích dẫn Banner Quote</label>
+                <input type="text" id="setQuoteBanner" class="form-control" required>
+              </div>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+                <div class="form-group">
+                  <label class="form-label">Tác giả câu trích dẫn</label>
+                  <input type="text" id="setQuoteAuthor" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Thông điệp chân trang (Footer Slogan)</label>
+                  <input type="text" id="setFooterSlogan" class="form-control" required>
+                </div>
+              </div>
+
+              <h4 style="margin:24px 0 14px; font-size:15px; color:var(--admin-primary); border-bottom:1px solid var(--admin-border); padding-bottom:6px;">Thông tin liên hệ chân trang</h4>
+              <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
+                <div class="form-group">
+                  <label class="form-label">Địa chỉ</label>
+                  <input type="text" id="setAddress" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Email</label>
+                  <input type="email" id="setEmail" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Trang web</label>
+                  <input type="text" id="setWebsite" class="form-control" required>
+                </div>
+              </div>
+
+              <h4 style="margin:24px 0 14px; font-size:15px; color:var(--admin-primary); border-bottom:1px solid var(--admin-border); padding-bottom:6px;">Số liệu thống kê (Stats Counter)</h4>
+              <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:14px;">
+                <div class="form-group">
+                  <label class="form-label">Số liệu 1</label>
+                  <input type="text" id="setStat1Num" class="form-control">
+                  <input type="text" id="setStat1Label" class="form-control" style="margin-top:6px;">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Số liệu 2</label>
+                  <input type="text" id="setStat2Num" class="form-control">
+                  <input type="text" id="setStat2Label" class="form-control" style="margin-top:6px;">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Số liệu 3</label>
+                  <input type="text" id="setStat3Num" class="form-control">
+                  <input type="text" id="setStat3Label" class="form-control" style="margin-top:6px;">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Số liệu 4</label>
+                  <input type="text" id="setStat4Num" class="form-control">
+                  <input type="text" id="setStat4Label" class="form-control" style="margin-top:6px;">
+                </div>
+              </div>
+
+              <div style="margin-top:24px;">
+                <button type="submit" class="btn-primary" style="padding:12px 28px;">Lưu tất cả cài đặt</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- TAB 8: SAO LƯU & XUẤT DỮ LIỆU -->
+        <div class="tab-pane" id="tabBackup" style="display:none;">
+          <div class="admin-card">
+            <h3 class="card-title" style="margin-bottom:12px;">Trung Tâm Sao Lưu & Xuất Dữ Liệu</h3>
+            <p style="color:var(--admin-muted); line-height:1.7; margin-bottom:24px;">
+              Mọi thay đổi của bạn trên trang Admin được lưu tự động trong máy. Bạn có thể xuất file sao lưu hoặc khôi phục dữ liệu:
+            </p>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+              <div style="background:#f8fafc; border:1px solid var(--admin-border); border-radius:8px; padding:24px;">
+                <h4 style="font-size:16px; margin-bottom:8px;">1. Xuất file dữ liệu JSON</h4>
+                <p style="font-size:13px; color:var(--admin-muted); margin-bottom:16px;">Tải về file JSON chứa toàn bộ hình ảnh, mốc lịch sử, hoạt động và cấu hình.</p>
+                <button class="btn-primary" id="exportBackupBtn">Tải file sao lưu (.json)</button>
+              </div>
+
+              <div style="background:#f8fafc; border:1px solid var(--admin-border); border-radius:8px; padding:24px;">
+                <h4 style="font-size:16px; margin-bottom:8px;">2. Nhập file dữ liệu JSON</h4>
+                <p style="font-size:13px; color:var(--admin-muted); margin-bottom:16px;">Nạp lại dữ liệu từ file backup đã xuất trước đó.</p>
+                <input type="file" id="importBackupFile" accept=".json" style="font-size:13px;">
+              </div>
+            </div>
+
+            <div style="margin-top:30px; padding-top:20px; border-top:1px solid var(--admin-border);">
+              <h4 style="color:var(--admin-danger); margin-bottom:6px;">Vùng nguy hiểm</h4>
+              <p style="font-size:13px; color:var(--admin-muted); margin-bottom:12px;">Khôi phục tất cả dữ liệu về trạng thái ban đầu của hệ thống.</p>
+              <button class="btn-danger" id="resetDefaultBtn">Khôi phục dữ liệu gốc ban đầu</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL: MILESTONE FORM -->
+  <div class="admin-modal" id="milestoneModal">
+    <div class="admin-modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title" id="msModalTitle">Thêm Mốc Lịch Sử Mới</h3>
+        <button class="close-modal-btn">×</button>
+      </div>
+      <form id="milestoneForm">
+        <input type="hidden" id="msEditId">
+        <div style="display:grid; grid-template-columns:1fr 2fr; gap:16px;">
+          <div class="form-group">
+            <label class="form-label">Năm / Giai đoạn</label>
+            <input type="text" id="msYear" class="form-control" placeholder="Ví dụ: 1961 hoặc 1991" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tiêu đề mốc lịch sử</label>
+            <input type="text" id="msTitle" class="form-control" placeholder="Ví dụ: Thành lập Khoa" required>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div class="form-group">
+            <label class="form-label">Thẻ phân loại (Tag)</label>
+            <input type="text" id="msTag" class="form-control" placeholder="Ví dụ: Dấu mốc lịch sử">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tải ảnh từ máy tính hoặc nhập đường dẫn</label>
+            <input type="file" id="msUploadFile" accept="image/*" class="form-control" style="font-size:12px; margin-bottom:6px;">
+            <input type="text" id="msImage" class="form-control" placeholder="assets/images/placeholder.svg">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Mô tả tóm tắt (Hiển thị ngoài timeline)</label>
+          <textarea id="msDesc" class="form-control" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nội dung chi tiết & Bối cảnh lịch sử (Hiển thị khi bấm Chi tiết)</label>
+          <textarea id="msDetails" class="form-control" rows="4"></textarea>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div class="form-group">
+            <label class="form-label">Nguồn kiểm chứng OER</label>
+            <input type="text" id="msSource" class="form-control" placeholder="Ví dụ: Quyết định số 41/TCCB">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Liên kết nguồn</label>
+            <input type="text" id="msSourceUrl" class="form-control" placeholder="https://flis.huc.edu.vn">
+          </div>
+        </div>
+        <div style="text-align:right; margin-top:20px;">
+          <button type="submit" class="btn-primary">Lưu mốc lịch sử</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: ACTIVITY FORM -->
+  <div class="admin-modal" id="activityModal">
+    <div class="admin-modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title" id="actModalTitle">Thêm Hoạt Động Mới</h3>
+        <button class="close-modal-btn">×</button>
+      </div>
+      <form id="activityForm">
+        <input type="hidden" id="actEditId">
+        <div class="form-group">
+          <label class="form-label">Tên hoạt động / sự kiện</label>
+          <input type="text" id="actTitle" class="form-control" placeholder="Ví dụ: Hội thảo khoa học quốc tế" required>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div class="form-group">
+            <label class="form-label">Chuyên mục</label>
+            <select id="actCategory" class="form-control">
+              <option value="daotao">Đào tạo</option>
+              <option value="nghiencuu">Nghiên cứu</option>
+              <option value="sinhvien">Hoạt động sinh viên</option>
+              <option value="hoptac">Hợp tác</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Thẻ nhãn (Tag)</label>
+            <input type="text" id="actTag" class="form-control" placeholder="Ví dụ: Nghiên cứu khoa học">
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div class="form-group">
+            <label class="form-label">Thời gian tổ chức</label>
+            <input type="text" id="actDate" class="form-control" placeholder="Ví dụ: Hằng năm hoặc Tháng 11">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tải ảnh từ máy tính hoặc nhập đường dẫn</label>
+            <input type="file" id="actUploadFile" accept="image/*" class="form-control" style="font-size:12px; margin-bottom:6px;">
+            <input type="text" id="actImage" class="form-control" placeholder="assets/images/placeholder.svg">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Mô tả nội dung</label>
+          <textarea id="actDesc" class="form-control" rows="3" required></textarea>
+        </div>
+        <div style="text-align:right; margin-top:20px;">
+          <button type="submit" class="btn-primary">Lưu hoạt động</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: RESOURCE FORM -->
+  <div class="admin-modal" id="resourceModal">
+    <div class="admin-modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title" id="resModalTitle">Thêm Tài Nguyên OER Mới</h3>
+        <button class="close-modal-btn">×</button>
+      </div>
+      <form id="resourceForm">
+        <input type="hidden" id="resEditId">
+        <div class="form-group">
+          <label class="form-label">Tiêu đề tài nguyên</label>
+          <input type="text" id="resTitle" class="form-control" required>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
+          <div class="form-group">
+            <label class="form-label">Loại tài nguyên</label>
+            <select id="resType" class="form-control">
+              <option value="reading">Bài đọc ngắn</option>
+              <option value="infographic">Infographic</option>
+              <option value="pdf">Tài liệu PDF / Kỷ yếu</option>
+              <option value="gallery">Bộ ảnh tư liệu</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Thẻ phân loại (Tag)</label>
+            <input type="text" id="resTag" class="form-control">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Giấy phép Creative Commons</label>
+            <input type="text" id="resLicense" class="form-control" value="CC BY 4.0">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Mô tả tóm tắt</label>
+          <textarea id="resDesc" class="form-control" rows="2" required></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nội dung chi tiết (Hỗ trợ HTML)</label>
+          <textarea id="resContent" class="form-control" rows="4"></textarea>
+        </div>
+        <div style="text-align:right; margin-top:20px;">
+          <button type="submit" class="btn-primary">Lưu tài nguyên</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: QUIZ FORM -->
+  <div class="admin-modal" id="quizModal">
+    <div class="admin-modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title" id="qzModalTitle">Thêm Câu Hỏi Trắc Nghiệm</h3>
+        <button class="close-modal-btn">×</button>
+      </div>
+      <form id="quizForm">
+        <input type="hidden" id="qzEditId">
+        <div class="form-group">
+          <label class="form-label">Nội dung câu hỏi</label>
+          <textarea id="qzQuestion" class="form-control" rows="2" required></textarea>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div class="form-group">
+            <label class="form-label">Lựa chọn A</label>
+            <input type="text" id="qzOptA" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Lựa chọn B</label>
+            <input type="text" id="qzOptB" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Lựa chọn C</label>
+            <input type="text" id="qzOptC" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Lựa chọn D</label>
+            <input type="text" id="qzOptD" class="form-control" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Đáp án đúng</label>
+          <select id="qzAnswer" class="form-control" required>
+            <option value="0">Lựa chọn A</option>
+            <option value="1">Lựa chọn B</option>
+            <option value="2">Lựa chọn C</option>
+            <option value="3">Lựa chọn D</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Giải thích chi tiết đáp án</label>
+          <textarea id="qzExplain" class="form-control" rows="3"></textarea>
+        </div>
+        <div style="text-align:right; margin-top:20px;">
+          <button type="submit" class="btn-primary">Lưu câu hỏi</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: CHANGE PASSWORD -->
+  <div class="admin-modal" id="changePassModal">
+    <div class="admin-modal-box" style="max-width:440px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Đổi Mật Khẩu Quản Trị</h3>
+        <button class="close-modal-btn">×</button>
+      </div>
+      <form id="changePassForm">
+        <div class="form-group">
+          <label class="form-label">Mật khẩu hiện tại</label>
+          <input type="password" id="oldPassword" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Mật khẩu mới (tối thiểu 6 ký tự)</label>
+          <input type="password" id="newPassword" class="form-control" minlength="6" required>
+        </div>
+        <div style="text-align:right; margin-top:20px;">
+          <button type="submit" class="btn-primary">Cập nhật mật khẩu</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-msg" id="toastMsg"></div>
+
+  <script src="assets/js/data-manager.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
