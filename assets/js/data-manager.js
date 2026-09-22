@@ -219,7 +219,7 @@ const SEED_SETTINGS = {
   email: "flis@huc.edu.vn",
   websiteUrl: "https://flis.huc.edu.vn",
   // UI Custom Images
-  logoUrl: "assets/images/logo-placeholder.svg",
+  logoUrl: "assets/images/huc-logo.svg",
   heroBgUrl: "assets/images/hero-bg.svg",
   aboutLargeImg: "assets/images/placeholder.svg",
   aboutStack1Img: "assets/images/placeholder.svg",

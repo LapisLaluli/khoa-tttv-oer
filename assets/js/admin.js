@@ -143,8 +143,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const s = dm.getSettings();
     const logoInput = document.getElementById("inputLogoUrl");
     const logoPreview = document.getElementById("previewLogo");
-    if (logoInput) logoInput.value = s.logoUrl || "assets/images/logo-placeholder.svg";
-    if (logoPreview) logoPreview.src = s.logoUrl || "assets/images/logo-placeholder.svg";
+    if (logoInput) logoInput.value = s.logoUrl || "assets/images/huc-logo.svg";
+    if (logoPreview) logoPreview.src = s.logoUrl || "assets/images/huc-logo.svg";
 
     const heroBgInput = document.getElementById("inputHeroBgUrl");
     const heroBgPreview = document.getElementById("previewHeroBg");
@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const current = dm.getSettings();
     const updated = {
       ...current,
-      logoUrl: document.getElementById("inputLogoUrl").value.trim() || "assets/images/logo-placeholder.svg",
+      logoUrl: document.getElementById("inputLogoUrl").value.trim() || "assets/images/huc-logo.svg",
       heroBgUrl: document.getElementById("inputHeroBgUrl").value.trim() || "assets/images/hero-bg.svg",
       aboutLargeImg: document.getElementById("inputAboutLargeUrl").value.trim() || "assets/images/placeholder.svg",
       aboutStack1Img: document.getElementById("inputAboutStack1Url").value.trim() || "assets/images/placeholder.svg",
