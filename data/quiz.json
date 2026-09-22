@@ -1,0 +1,35 @@
+[
+  {
+    "question": "Mục tiêu quan trọng của tài nguyên giáo dục mở là gì?",
+    "options": [
+      "Chỉ giới thiệu thông tin trên Internet",
+      "Cung cấp tài liệu với quyền sử dụng mở theo giấy phép phù hợp",
+      "Chỉ cho phép người tạo sử dụng tài liệu",
+      "Bắt buộc mọi tài liệu đều phải miễn bản quyền"
+    ],
+    "answer": 1,
+    "explanation": "OER gắn với việc truy cập và các quyền tái sử dụng, điều chỉnh, phân phối lại theo giấy phép mở phù hợp."
+  },
+  {
+    "question": "Thông tin nào nên được kiểm chứng trước khi đưa vào timeline lịch sử?",
+    "options": [
+      "Năm và tên sự kiện",
+      "Nguồn của tư liệu",
+      "Nội dung mô tả",
+      "Tất cả các ý trên"
+    ],
+    "answer": 3,
+    "explanation": "Timeline lịch sử cần kiểm chứng cả dữ kiện, nguồn và nội dung diễn giải."
+  },
+  {
+    "question": "Trường metadata nào phù hợp để ghi nguồn của tài nguyên?",
+    "options": [
+      "Source",
+      "Creator",
+      "Language",
+      "Type"
+    ],
+    "answer": 0,
+    "explanation": "Source được dùng để ghi nguồn của tài nguyên."
+  }
+]
