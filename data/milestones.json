@@ -1,0 +1,56 @@
+[
+  {
+    "year": "1961",
+    "title": "Khởi đầu",
+    "description": "Bắt đầu đào tạo chuyên ngành Thư viện trình độ đại học tại Trường Đại học Văn hóa Hà Nội.",
+    "image": "assets/images/placeholder.svg",
+    "tag": "Giai đoạn thành lập",
+    "source": "Lịch sử Trường ĐH Văn hóa Hà Nội (1959 - 2019)",
+    "sourceUrl": "https://huc.edu.vn"
+  },
+  {
+    "year": "1961 – 1991",
+    "title": "Giai đoạn đầu xây dựng",
+    "description": "Đào tạo cán bộ thư viện, phục vụ công cuộc xây dựng và phát triển đất nước.",
+    "image": "assets/images/placeholder.svg",
+    "tag": "Xây dựng nền móng",
+    "source": "Kỷ yếu truyền thống Khoa Thông tin Thư viện",
+    "sourceUrl": "https://flis.huc.edu.vn"
+  },
+  {
+    "year": "Từ năm 1990",
+    "title": "Mở rộng lĩnh vực đào tạo",
+    "description": "Đào tạo thêm chuyên ngành Thông tin, đáp ứng nhu cầu về nguồn nhân lực trong thời kỳ đổi mới.",
+    "image": "assets/images/placeholder.svg",
+    "tag": "Chuyển mình đổi mới",
+    "source": "Đề án mở rộng ngành Thông tin học",
+    "sourceUrl": "https://flis.huc.edu.vn"
+  },
+  {
+    "year": "1991",
+    "title": "Thành lập Khoa",
+    "description": "Chính thức thành lập Khoa Thông tin Thư viện theo Quyết định số 41/TCCB ngày 13/3/1991 của Hiệu trưởng Trường Đại học Văn hóa Hà Nội.",
+    "image": "assets/images/placeholder.svg",
+    "tag": "Dấu mốc lịch sử",
+    "source": "Quyết định số 41/TCCB ngày 13/3/1991",
+    "sourceUrl": "https://flis.huc.edu.vn"
+  },
+  {
+    "year": "1992 – nay",
+    "title": "Không ngừng phát triển",
+    "description": "Mở rộng quy mô, đổi mới chương trình đào tạo, tăng cường nghiên cứu khoa học, hợp tác trong nước và quốc tế.",
+    "image": "assets/images/placeholder.svg",
+    "tag": "Hội nhập & phát triển",
+    "source": "Báo cáo thường niên Khoa TT-TV",
+    "sourceUrl": "https://flis.huc.edu.vn"
+  },
+  {
+    "year": "Hiện nay",
+    "title": "Hướng tới tương lai",
+    "description": "Tiếp tục khẳng định vai trò là trung tâm đào tạo, nghiên cứu uy tín trong lĩnh vực thông tin – thư viện, đóng góp tích cực vào sự phát triển của Trường và xã hội.",
+    "image": "assets/images/placeholder.svg",
+    "tag": "Kỷ nguyên số & OER",
+    "source": "Chiến lược phát triển Khoa giai đoạn 2025 - 2030",
+    "sourceUrl": "https://flis.huc.edu.vn"
+  }
+]
