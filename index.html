@@ -43,41 +43,113 @@
     </div>
   </header>
 
-  <!-- 2. HERO BANNER -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-content">
-        <div class="hero-sub">Khoa Thông tin Thư viện</div>
-        <h1 class="hero-title">
-          THÔNG TIN<br>THƯ VIỆN
-          <span>TRƯỜNG ĐẠI HỌC VĂN HÓA HÀ NỘI</span>
-        </h1>
-        <div class="hero-motto dyn-hero-motto">
-          “Tri thức hôm nay – Kiến tạo giá trị ngày mai”
-        </div>
-        <p class="hero-desc">
-          Tài nguyên giáo dục mở (OER) giới thiệu hành trình hơn 60 năm hình thành, phát triển và những đóng góp bền bỉ của Khoa trong sự nghiệp bảo tồn tri thức và phát triển văn hóa đọc.
-        </p>
-        <div style="display:flex; gap:14px; flex-wrap:wrap;">
-          <a class="btn" href="#timeline">KHÁM PHÁ NGAY +</a>
-          <a class="btn btn-outline" href="resources.html">Kho Tài Nguyên Mở →</a>
+  <!-- 2. HERO BANNER & CAROUSEL -->
+  <section class="hero" id="heroCarousel">
+    <!-- Nút điều hướng Trái & Phải tối giản -->
+    <button class="hero-nav-btn hero-prev-btn" id="heroPrevBtn" aria-label="Slide trước" title="Slide trước">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <button class="hero-nav-btn hero-next-btn" id="heroNextBtn" aria-label="Slide tiếp theo" title="Slide tiếp theo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+
+    <!-- Slides Wrapper -->
+    <div class="hero-slides-wrapper">
+      <!-- SLIDE 1 -->
+      <div class="hero-slide active" data-slide="0">
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <div class="hero-sub">Khoa Thông tin Thư viện</div>
+            <h1 class="hero-title">
+              THÔNG TIN<br>THƯ VIỆN
+              <span>TRƯỜNG ĐẠI HỌC VĂN HÓA HÀ NỘI</span>
+            </h1>
+            <div class="hero-motto dyn-hero-motto">
+              “Tri thức hôm nay – Kiến tạo giá trị ngày mai”
+            </div>
+            <p class="hero-desc">
+              Tài nguyên giáo dục mở (OER) giới thiệu hành trình hơn 60 năm hình thành, phát triển và những đóng góp bền bỉ của Khoa trong sự nghiệp bảo tồn tri thức và phát triển văn hóa đọc.
+            </p>
+            <div style="display:flex; gap:14px; flex-wrap:wrap;">
+              <a class="btn" href="#timeline">KHÁM PHÁ NGAY +</a>
+              <a class="btn btn-outline" href="resources.html">Kho Tài Nguyên Mở →</a>
+            </div>
+          </div>
+
+          <div class="hero-badge-box">
+            <h3>VĂN HÓA LÀ NỀN TẢNG CỦA SỰ PHÁT TRIỂN BỀN VỮNG</h3>
+            <p>Hơn 60 năm đồng hành cùng sự nghiệp giáo dục, nghiên cứu khoa học và phát triển ngành Thông tin – Thư viện Việt Nam.</p>
+          </div>
         </div>
       </div>
 
-      <div class="hero-badge-box">
-        <h3>VĂN HÓA LÀ NỀN TẢNG CỦA SỰ PHÁT TRIỂN BỀN VỮNG</h3>
-        <p>Hơn 60 năm đồng hành cùng sự nghiệp giáo dục, nghiên cứu khoa học và phát triển ngành Thông tin – Thư viện Việt Nam.</p>
-        <div style="margin-top:16px;">
-          <span class="oer-badge">Giấy phép mở: CC BY-NC-SA 4.0</span>
+      <!-- SLIDE 2 -->
+      <div class="hero-slide" data-slide="1">
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <div class="hero-sub">Tài Nguyên Giáo Dục Mở (OER)</div>
+            <h1 class="hero-title">
+              KHO HỌC LIỆU SỐ<br>& TƯ LIỆU MỞ
+              <span>CHIA SẺ TRI THỨC VÌ CỘNG ĐỒNG</span>
+            </h1>
+            <div class="hero-motto">
+              “Kết nối tri thức – Mở rộng tương lai”
+            </div>
+            <p class="hero-desc">
+              Hệ thống số hóa kỷ yếu, giáo trình chuyên ngành, tài liệu nghiên cứu và công trình khoa học chất lượng cao, phục vụ bạn đọc, giảng viên và sinh viên cả nước.
+            </p>
+            <div style="display:flex; gap:14px; flex-wrap:wrap;">
+              <a class="btn btn-gold" href="resources.html">TRA CỨU TÀI LIỆU →</a>
+              <a class="btn btn-outline" href="learning.html">Góc Học Tập Quiz →</a>
+            </div>
+          </div>
+
+          <div class="hero-badge-box">
+            <h3>TIÊN PHONG CHUYỂN ĐỔI SỐ NGÀNH THƯ VIỆN</h3>
+            <p>Số hóa nguồn học liệu, thúc đẩy văn hóa đọc và phát triển năng lực số cho thế hệ sinh viên trong kỷ nguyên trí tuệ nhân tạo.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 3 -->
+      <div class="hero-slide" data-slide="2">
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <div class="hero-sub">Truyền Thống & Hội Nhập</div>
+            <h1 class="hero-title">
+              HƠN 60 NĂM<br>HÌNH THÀNH & PHÁT TRIỂN
+              <span>TỪ NĂM 1961 ĐẾN NAY</span>
+            </h1>
+            <div class="hero-motto">
+              “Vững bước truyền thống – Tự tin hội nhập”
+            </div>
+            <p class="hero-desc">
+              Nơi đào tạo hàng nghìn cán bộ quản lý thông tin, chuyên gia thư viện và chuyên viên chuyển đổi số hàng đầu cho các viện nghiên cứu, trường đại học và cơ quan văn hóa.
+            </p>
+            <div style="display:flex; gap:14px; flex-wrap:wrap;">
+              <a class="btn" href="history.html">XEM LỊCH SỬ KHOA →</a>
+              <a class="btn btn-outline" href="about.html">Về Chúng Tôi →</a>
+            </div>
+          </div>
+
+          <div class="hero-badge-box">
+            <h3>MẠNG LƯỚI CỰU SINH VIÊN TOÀN QUỐC</h3>
+            <p>Gắn kết các thế hệ thầy và trò, lan tỏa những giá trị nhân văn và tinh thần phụng sự tri thức cho xã hội.</p>
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- Dots Indicators -->
     <div class="hero-controls container">
       <div class="dots">
-        <span class="dot-indicator active"></span>
-        <span class="dot-indicator"></span>
-        <span class="dot-indicator"></span>
+        <span class="dot-indicator active" data-slide="0" aria-label="Slide 1" title="Slide 1"></span>
+        <span class="dot-indicator" data-slide="1" aria-label="Slide 2" title="Slide 2"></span>
+        <span class="dot-indicator" data-slide="2" aria-label="Slide 3" title="Slide 3"></span>
       </div>
     </div>
   </section>

@@ -223,4 +223,76 @@ document.addEventListener("DOMContentLoaded", () => {
 
   applySiteSettings();
   window.addEventListener("storage", applySiteSettings);
+
+  // 4. Hero Carousel Slider Navigation
+  const heroCarousel = document.getElementById("heroCarousel");
+  if (heroCarousel) {
+    const slides = heroCarousel.querySelectorAll(".hero-slide");
+    const dots = heroCarousel.querySelectorAll(".dot-indicator");
+    const prevBtn = document.getElementById("heroPrevBtn");
+    const nextBtn = document.getElementById("heroNextBtn");
+    let currentSlide = 0;
+    let autoSlideTimer = null;
+
+    function goToSlide(index) {
+      if (slides.length === 0) return;
+      if (index < 0) {
+        currentSlide = slides.length - 1;
+      } else if (index >= slides.length) {
+        currentSlide = 0;
+      } else {
+        currentSlide = index;
+      }
+
+      slides.forEach((slide, i) => {
+        if (i === currentSlide) {
+          slide.classList.add("active");
+        } else {
+          slide.classList.remove("active");
+        }
+      });
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === currentSlide);
+      });
+    }
+
+    prevBtn?.addEventListener("click", () => {
+      goToSlide(currentSlide - 1);
+      resetAutoSlide();
+    });
+
+    nextBtn?.addEventListener("click", () => {
+      goToSlide(currentSlide + 1);
+      resetAutoSlide();
+    });
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        goToSlide(i);
+        resetAutoSlide();
+      });
+    });
+
+    function startAutoSlide() {
+      if (autoSlideTimer) clearInterval(autoSlideTimer);
+      autoSlideTimer = setInterval(() => {
+        goToSlide(currentSlide + 1);
+      }, 7000);
+    }
+
+    function resetAutoSlide() {
+      startAutoSlide();
+    }
+
+    heroCarousel.addEventListener("mouseenter", () => {
+      if (autoSlideTimer) clearInterval(autoSlideTimer);
+    });
+
+    heroCarousel.addEventListener("mouseleave", () => {
+      startAutoSlide();
+    });
+
+    startAutoSlide();
+  }
 });
