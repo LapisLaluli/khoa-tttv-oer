@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <circle cx="100" cy="100" r="92" fill="#fff" stroke="#7f2330" stroke-width="4"/>
+  <circle cx="100" cy="100" r="82" fill="#fff" stroke="#b89462" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <path d="M100 35 L100 135 M60 85 C80 75 100 80 100 135 C100 80 120 75 140 85 C140 145 100 140 100 140 C100 140 60 145 60 85 Z" fill="none" stroke="#7f2330" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M70 95 C85 88 100 92 100 135 C100 92 115 88 130 95" fill="none" stroke="#b89462" stroke-width="2"/>
+  <circle cx="100" cy="62" r="10" fill="#7f2330"/>
+  <path d="M100 42 L100 50 M92 46 L97 52 M108 46 L103 52" stroke="#b89462" stroke-width="2" stroke-linecap="round"/>
+  <text x="100" y="165" font-family="'Cormorant Garamond', serif" font-size="13" font-weight="bold" fill="#7f2330" text-anchor="middle" letter-spacing="1">ĐH VĂN HÓA HÀ NỘI</text>
+  <text x="100" y="178" font-family="'Inter', sans-serif" font-size="8" font-weight="600" fill="#b89462" text-anchor="middle" letter-spacing="0.5">KHOA THÔNG TIN THƯ VIỆN</text>
+</svg>

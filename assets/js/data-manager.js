@@ -6,69 +6,45 @@
 const SEED_MILESTONES = [
   {
     id: "ms-1",
-    year: "1961",
-    title: "Khởi đầu",
-    description: "Bắt đầu đào tạo chuyên ngành Thư viện trình độ đại học tại Trường Đại học Văn hóa Hà Nội.",
-    image: "assets/images/placeholder.svg",
-    tag: "Giai đoạn thành lập",
-    source: "Lịch sử Trường ĐH Văn hóa Hà Nội (1959 - 2019)",
-    sourceUrl: "https://huc.edu.vn",
-    details: "Năm 1961 đánh dấu bước ngoặt quan trọng khi Trường Đại học Văn hóa Hà Nội chính thức mở ngành đào tạo cán bộ Thư viện bậc đại học đầu tiên tại Việt Nam, đặt nền móng vững chắc cho sự phát triển của ngành Thông tin Thư viện nước nhà."
+    year: "1961 – 1976",
+    title: "Giai đoạn 1",
+    description: "Khoa được thành lập năm 1961 theo Quyết định của Ủy ban Kế hoạch Nhà nước và Phủ thủ tướng. Là đơn vị đầu tiên của Trường ĐH Văn hóa Hà Nội và là cơ sở đầu tiên của cả nước đào tạo cán bộ thư viện bậc đại học và trung học.",
+    tag: "1961 – 1976"
   },
   {
     id: "ms-2",
-    year: "1961 – 1991",
-    title: "Giai đoạn đầu xây dựng",
-    description: "Đào tạo cán bộ thư viện, phục vụ công cuộc xây dựng và phát triển đất nước.",
-    image: "assets/images/placeholder.svg",
-    tag: "Xây dựng nền móng",
-    source: "Kỷ yếu truyền thống Khoa Thông tin Thư viện",
-    sourceUrl: "https://flis.huc.edu.vn",
-    details: "Trong suốt 30 năm, các thế hệ giảng viên và sinh viên đã không ngừng nỗ lực vượt qua khó khăn thời chiến và thời kỳ bao cấp, đào tạo hàng ngàn cán bộ thư viện cho toàn quốc."
+    year: "1976 – 1992",
+    title: "Giai đoạn 2",
+    description: "Đào tạo cán bộ thư viện bậc đại học, cung cấp nguồn nhân lực thư viện chính quy phục vụ sự nghiệp xây dựng và phát triển đất nước.",
+    tag: "1976 – 1992"
   },
   {
     id: "ms-3",
-    year: "Từ năm 1990",
-    title: "Mở rộng lĩnh vực đào tạo",
-    description: "Đào tạo thêm chuyên ngành Thông tin, đáp ứng nhu cầu về nguồn nhân lực trong thời kỳ đổi mới.",
-    image: "assets/images/placeholder.svg",
-    tag: "Chuyển mình đổi mới",
-    source: "Đề án mở rộng ngành Thông tin học",
-    sourceUrl: "https://flis.huc.edu.vn",
-    details: "Bước vào thời kỳ Đổi mới và bùng nổ thông tin số, Khoa đã chủ động đổi mới chương trình khung, tích hợp kiến thức khoa học thông tin, tin học hóa thư viện và quản trị cơ sở dữ liệu."
+    year: "1992 – 2004",
+    title: "Giai đoạn 3",
+    description: "Khoa Thư viện đổi tên thành Khoa Thông tin – Thư viện. Mục tiêu: Đào tạo cán bộ Thông tin – Thư viện ở bậc đại học có trình độ lý luận và nghiệp vụ về tổ chức các hoạt động trong các thư viện hoặc cơ quan thông tin tư liệu.",
+    tag: "1992 – 2004"
   },
   {
     id: "ms-4",
-    year: "1991",
-    title: "Thành lập Khoa",
-    description: "Chính thức thành lập Khoa Thông tin Thư viện theo Quyết định số 41/TCCB ngày 13/3/1991 của Hiệu trưởng Trường Đại học Văn hóa Hà Nội.",
-    image: "assets/images/placeholder.svg",
-    tag: "Dấu mốc lịch sử",
-    source: "Quyết định số 41/TCCB ngày 13/3/1991",
-    sourceUrl: "https://flis.huc.edu.vn",
-    details: "Quyết định số 41/TCCB ngày 13/3/1991 đã chính thức công nhận đơn vị cấp Khoa, khẳng định vị thế và trao quyền tự chủ chuyên môn mạnh mẽ để phát triển toàn diện đội ngũ và chương trình đào tạo."
+    year: "2004 – 2010",
+    title: "Giai đoạn 4",
+    description: "Khoa đổi tên thành Khoa Thư viện – Thông tin. Mở hệ đào tạo cử nhân cao đẳng và chương trình liên thông cao đẳng – đại học.",
+    tag: "2004 – 2010"
   },
   {
     id: "ms-5",
-    year: "1992 – nay",
-    title: "Không ngừng phát triển",
-    description: "Mở rộng quy mô, đổi mới chương trình đào tạo, tăng cường nghiên cứu khoa học, hợp tác trong nước và quốc tế.",
-    image: "assets/images/placeholder.svg",
-    tag: "Hội nhập & phát triển",
-    source: "Báo cáo thường niên Khoa TT-TV",
-    sourceUrl: "https://flis.huc.edu.vn",
-    details: "Mở rộng đào tạo sau đại học (Thạc sĩ, Tiến sĩ), hợp tác với nhiều trường đại học quốc tế, triển khai chuyển đổi số và ứng dụng tài nguyên giáo dục mở (OER)."
+    year: "2010 – 2018",
+    title: "Giai đoạn 5",
+    description: "Khoa Thư viện – Thông tin tập trung đổi mới chương trình đào tạo và mở thêm chuyên ngành Thông tin học.",
+    tag: "2010 – 2018"
   },
   {
     id: "ms-6",
-    year: "Hiện nay",
-    title: "Hướng tới tương lai",
-    description: "Tiếp tục khẳng định vai trò là trung tâm đào tạo, nghiên cứu uy tín trong lĩnh vực thông tin – thư viện, đóng góp tích cực vào sự phát triển của Trường và xã hội.",
-    image: "assets/images/placeholder.svg",
-    tag: "Kỷ nguyên số & OER",
-    source: "Chiến lược phát triển Khoa giai đoạn 2025 - 2030",
-    sourceUrl: "https://flis.huc.edu.vn",
-    details: "Tiên phong trong đào tạo quản trị thông tin số, khoa học dữ liệu văn hóa, xây dựng không gian học tập thông minh và thư viện mở phục vụ cộng đồng học thuật."
+    year: "2018 – Nay",
+    title: "Giai đoạn 6",
+    description: "Khoa đổi tên thành Khoa Thông tin, Thư viện; đổi tên Ngành Thư viện thành Ngành Khoa học Thông tin thư viện và Ngành Thông tin học thành Ngành Quản lý thông tin. Đổi mới chương trình đào tạo sát thị trường lao động.",
+    tag: "2018 – Nay"
   }
 ];
 
