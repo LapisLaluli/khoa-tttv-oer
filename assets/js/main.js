@@ -316,17 +316,15 @@ document.addEventListener("DOMContentLoaded", () => {
         "Tóm Tắt Dòng Chảy 60 Năm Lịch Sử",
         `
           <div style="font-size:15px; line-height:1.85; color:#334155; padding-top:4px;">
-            <p><strong>1. Giai đoạn 1 (1961 - 1976):</strong> Khoa Thông tin, Thư viện được thành lập năm 1961 theo Quyết định của Ủy ban Kế hoạch Nhà nước và Phủ thủ tướng. Năm 1961, Khoa là đơn vị đầu tiên của Trường Đại học Văn hóa Hà Nội và cũng là cơ sở đầu tiên của cả nước đào tạo cán bộ thư viện hệ đại học và trung học.</p>
+            <p><strong>1. Giai đoạn 1 (1961 – 1976):</strong> Khoa Thông tin, Thư viện được thành lập năm 1961 theo Quyết định của Ủy ban Kế hoạch Nhà nước và Phủ thủ tướng. Là đơn vị đầu tiên của Trường Đại học Văn hóa Hà Nội và cũng là cơ sở đầu tiên của cả nước đào tạo cán bộ thư viện hệ đại học và trung học.</p>
             
-            <p><strong>2. Giai đoạn 2 (1976 - 1992):</strong> Đào tạo cán bộ thư viện bậc đại học, cung cấp nguồn nhân lực chính quy cho mạng lưới thư viện toàn quốc.</p>
+            <p><strong>2. Giai đoạn 2 (1976 – 1992):</strong> Tập trung đào tạo cán bộ thư viện bậc đại học chính quy, cung cấp nguồn nhân lực thư viện phục vụ sự nghiệp xây dựng và phát triển đất nước.</p>
             
-            <p><strong>3. Giai đoạn 3 (1992 - 2004):</strong> Khoa Thư viện đổi tên thành Khoa Thông tin – Thư viện. Mục tiêu đào tạo: Đào tạo cán bộ Thông tin – Thư viện ở bậc đại học có trình độ lý luận và nghiệp vụ về tổ chức các hoạt động trong các thư viện hoặc cơ quan thông tin tư liệu.</p>
+            <p><strong>3. Giai đoạn 3 (1992 – 2004):</strong> Khoa Thư viện đổi tên thành Khoa Thông tin – Thư viện. Mục tiêu: Đào tạo cán bộ Thông tin – Thư viện ở bậc đại học có trình độ lý luận và nghiệp vụ về tổ chức các hoạt động trong các thư viện hoặc cơ quan thông tin tư liệu.</p>
             
-            <p><strong>4. Giai đoạn 4 (2004 - 2010):</strong> Khoa đổi tên thành Khoa Thư viện – Thông tin. Mở hệ đào tạo cử nhân cao đẳng và chương trình liên thông cao đẳng – đại học.</p>
+            <p><strong>4. Giai đoạn 4 (2004 – 2018):</strong> Khoa đổi tên thành Khoa Thư viện – Thông tin, mở hệ đào tạo cử nhân cao đẳng, liên thông cao đẳng – đại học và mở thêm chuyên ngành Thông tin học, đáp ứng nhu cầu nhân lực trong thời kỳ đổi mới.</p>
             
-            <p><strong>5. Giai đoạn 5 (2010 - 2018):</strong> Khoa Thư viện – Thông tin tập trung đổi mới chương trình đào tạo và mở thêm chuyên ngành Thông tin học.</p>
-            
-            <p><strong>6. Giai đoạn 6 (2018 đến nay):</strong> Khoa đổi tên thành Khoa Thông tin, Thư viện; đổi tên Ngành Thư viện thành Ngành Khoa học Thông tin thư viện và Ngành Thông tin học thành Ngành Quản lý thông tin. Tập trung đổi mới chương trình đào tạo, xây dựng các môn học mới sát thị trường sử dụng lao động hiện nay.</p>
+            <p><strong>5. Giai đoạn 5 (2018 đến nay):</strong> Khoa đổi tên thành Khoa Thông tin, Thư viện; đổi tên Ngành Thư viện thành Ngành Khoa học Thông tin thư viện và Ngành Thông tin học thành Ngành Quản lý thông tin. Tập trung đổi mới chương trình đào tạo sát thực tiễn xã hội.</p>
           </div>
         `
       );

@@ -8,14 +8,14 @@ const SEED_MILESTONES = [
     id: "ms-1",
     year: "1961 – 1976",
     title: "Khởi Nguồn & Thành Lập",
-    description: "Khoa thành lập năm 1961 theo Quyết định của Ủy ban Kế hoạch Nhà nước và Phủ thủ tướng. Là đơn vị đầu tiên của Trường ĐH Văn hóa Hà Nội và là cơ sở đầu tiên của cả nước đào tạo cán bộ thư viện bậc đại học và trung học.",
+    description: "Khoa được thành lập năm 1961 theo Quyết định của Ủy ban Kế hoạch Nhà nước và Phủ thủ tướng. Là đơn vị đầu tiên của Trường ĐH Văn hóa Hà Nội và là cơ sở đầu tiên của cả nước đào tạo cán bộ thư viện bậc đại học và trung học.",
     tag: "1961 – 1976"
   },
   {
     id: "ms-2",
     year: "1976 – 1992",
     title: "Đào Tạo Đại Học Chính Quy",
-    description: "Đào tạo cán bộ thư viện bậc đại học, cung cấp nguồn nhân lực thư viện chính quy phục vụ sự nghiệp xây dựng và phát triển đất nước.",
+    description: "Tập trung đào tạo cán bộ thư viện bậc đại học, cung cấp nguồn nhân lực thư viện chính quy phục vụ sự nghiệp xây dựng và phát triển đất nước trong giai đoạn thống nhất và đổi mới.",
     tag: "1976 – 1992"
   },
   {
@@ -27,22 +27,15 @@ const SEED_MILESTONES = [
   },
   {
     id: "ms-4",
-    year: "2004 – 2010",
-    title: "Khoa Thư Viện – Thông Tin & Cao Đẳng",
-    description: "Khoa đổi tên thành Khoa Thư viện – Thông tin. Mở hệ đào tạo cử nhân cao đẳng và chương trình liên thông cao đẳng – đại học.",
-    tag: "2004 – 2010"
+    year: "2004 – 2018",
+    title: "Mở Rộng Quy Mô & Đổi Mới Đào Tạo",
+    description: "Khoa đổi tên thành Khoa Thư viện – Thông tin, mở hệ đào tạo cử nhân cao đẳng, liên thông cao đẳng – đại học và mở thêm chuyên ngành Thông tin học, đáp ứng nhu cầu nhân lực trong kỷ nguyên số.",
+    tag: "2004 – 2018"
   },
   {
     id: "ms-5",
-    year: "2010 – 2018",
-    title: "Mở Chuyên Ngành Thông Tin Học",
-    description: "Khoa Thư viện – Thông tin tập trung đổi mới chương trình đào tạo và mở thêm chuyên ngành Thông tin học đáp ứng nhu cầu thực tiễn.",
-    tag: "2010 – 2018"
-  },
-  {
-    id: "ms-6",
     year: "2018 – Nay",
-    title: "Đổi Mới Hiện Đại & Hội Nhập",
+    title: "Khoa Thông Tin, Thư Viện & Hội Nhập",
     description: "Khoa đổi tên thành Khoa Thông tin, Thư viện; đổi tên Ngành Thư viện thành Ngành Khoa học Thông tin thư viện và Ngành Thông tin học thành Ngành Quản lý thông tin. Đổi mới chương trình đào tạo sát thị trường lao động.",
     tag: "2018 – Nay"
   }
@@ -228,7 +221,8 @@ const DataManager = {
   },
 
   init() {
-    if (!localStorage.getItem(this.KEYS.MILESTONES)) {
+    const storedMilestones = localStorage.getItem(this.KEYS.MILESTONES);
+    if (!storedMilestones || JSON.parse(storedMilestones).length !== SEED_MILESTONES.length) {
       this.saveMilestones(SEED_MILESTONES);
     }
     if (!localStorage.getItem(this.KEYS.ACTIVITIES)) {

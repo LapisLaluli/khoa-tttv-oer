@@ -749,10 +749,10 @@ button, input, select, textarea {
 
 .timeline {
   display: grid;
-  grid-template-columns: repeat(6, minmax(260px, 1fr));
+  grid-template-columns: repeat(5, minmax(240px, 1fr));
   gap: 22px;
   position: relative;
-  min-width: 1320px;
+  min-width: 1180px;
   padding-top: 10px;
 }
 
