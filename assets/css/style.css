@@ -358,25 +358,93 @@ button, input, select, textarea {
   display: none;
   opacity: 0;
   transform: translateY(8px);
-  transition: opacity 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .hero-slide.active {
   display: block;
   opacity: 1;
   transform: translateY(0);
-  animation: heroSlideIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation: heroSlideIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 @keyframes heroSlideIn {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* SLIDE BADGE TAGS & THEMES */
+.slide-badge-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  background: rgba(230, 184, 92, 0.15);
+  border: 1px solid rgba(230, 184, 92, 0.35);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.slide-badge-tag.tag-digital {
+  color: #7dd3fc;
+  background: rgba(56, 189, 248, 0.15);
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+.slide-badge-tag.tag-heritage {
+  color: #fef08a;
+  background: rgba(254, 240, 138, 0.15);
+  border-color: rgba(254, 240, 138, 0.35);
+}
+
+/* SLIDE MOTTO ACCENTS */
+.motto-digital {
+  color: #bae6fd;
+  border-left-color: #38bdf8;
+}
+
+.motto-heritage {
+  color: #fde047;
+  border-left-color: #eab308;
+}
+
+/* SLIDE RIGHT BADGE BOX THEMES */
+.badge-box-digital {
+  background: rgba(14, 30, 54, 0.45);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 8px 32px rgba(10, 20, 36, 0.35);
+}
+
+.badge-box-digital::before {
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+.badge-box-digital h3 {
+  color: #7dd3fc;
+}
+
+.badge-box-heritage {
+  background: rgba(50, 18, 12, 0.45);
+  border: 1px solid rgba(234, 179, 8, 0.35);
+  box-shadow: 0 8px 32px rgba(32, 10, 8, 0.35);
+}
+
+.badge-box-heritage::before {
+  border-color: rgba(234, 179, 8, 0.4);
+}
+
+.badge-box-heritage h3 {
+  color: #fef08a;
 }
 
 /* HERO NAVIGATION BUTTONS */

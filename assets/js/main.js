@@ -234,6 +234,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentSlide = 0;
     let autoSlideTimer = null;
 
+    const gradients = [
+      "linear-gradient(135deg, rgba(42, 10, 16, 0.94) 0%, rgba(65, 14, 24, 0.85) 50%, rgba(28, 6, 10, 0.92) 100%)",
+      "linear-gradient(135deg, rgba(14, 28, 52, 0.95) 0%, rgba(35, 18, 44, 0.88) 50%, rgba(18, 12, 32, 0.94) 100%)",
+      "linear-gradient(135deg, rgba(52, 18, 10, 0.95) 0%, rgba(70, 16, 28, 0.88) 50%, rgba(32, 10, 14, 0.93) 100%)"
+    ];
+
     function goToSlide(index) {
       if (slides.length === 0) return;
       if (index < 0) {
@@ -255,6 +261,11 @@ document.addEventListener("DOMContentLoaded", () => {
       dots.forEach((dot, i) => {
         dot.classList.toggle("active", i === currentSlide);
       });
+
+      // Update subtle ambient background gradient
+      const bgUrl = (window.DataManager && window.DataManager.getSettings().heroBgUrl) || "assets/images/hero-bg.svg";
+      const grad = gradients[currentSlide] || gradients[0];
+      heroCarousel.style.backgroundImage = `${grad}, url('${bgUrl}')`;
     }
 
     prevBtn?.addEventListener("click", () => {
@@ -278,7 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (autoSlideTimer) clearInterval(autoSlideTimer);
       autoSlideTimer = setInterval(() => {
         goToSlide(currentSlide + 1);
-      }, 7000);
+      }, 5500);
     }
 
     function resetAutoSlide() {
