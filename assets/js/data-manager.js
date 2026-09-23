@@ -197,9 +197,9 @@ const SEED_SETTINGS = {
   // UI Custom Images
   logoUrl: "assets/images/huc-logo.svg",
   heroBgUrl: "assets/images/hero-bg.svg",
-  aboutLargeImg: "assets/images/placeholder.svg",
-  aboutStack1Img: "assets/images/placeholder.svg",
-  aboutStack2Img: "assets/images/placeholder.svg",
+  aboutLargeImg: "assets/images/truong-dai-hoc-van-hoa-ha-noi-1.jpg",
+  aboutStack1Img: "assets/images/anh-toa-nha-5.jpg",
+  aboutStack2Img: "assets/images/cac-nganh-cua-truong-dai-hoc-van-hoa-ha-noi.jpg",
   quoteBgUrl: "assets/images/hero-bg.svg",
   // Stats
   stat1Num: "60+",
@@ -243,8 +243,17 @@ const DataManager = {
     if (!localStorage.getItem(this.KEYS.SETTINGS)) {
       this.saveSettings(SEED_SETTINGS);
     } else {
-      // Merge new fields
+      // Merge new fields & upgrade placeholder images
       const current = this.getSettings();
+      if (!current.aboutLargeImg || current.aboutLargeImg.includes("placeholder.svg")) {
+        current.aboutLargeImg = SEED_SETTINGS.aboutLargeImg;
+      }
+      if (!current.aboutStack1Img || current.aboutStack1Img.includes("placeholder.svg")) {
+        current.aboutStack1Img = SEED_SETTINGS.aboutStack1Img;
+      }
+      if (!current.aboutStack2Img || current.aboutStack2Img.includes("placeholder.svg")) {
+        current.aboutStack2Img = SEED_SETTINGS.aboutStack2Img;
+      }
       this.saveSettings({ ...SEED_SETTINGS, ...current });
     }
     if (!localStorage.getItem(this.KEYS.ADMIN_PASS)) {
