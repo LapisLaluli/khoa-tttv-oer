@@ -12,16 +12,19 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    root.innerHTML = milestones.map((m) => `
+    root.innerHTML = milestones.map((m, idx) => `
       <article class="milestone" data-id="${m.id || ''}">
+        <div class="milestone-badge-top">Giai đoạn 0${idx + 1}</div>
         <div class="milestone-node">
           <div class="milestone-year">${m.year}</div>
-          <div class="milestone-dot"></div>
+          <div class="milestone-dot"><span class="dot-inner"></span></div>
         </div>
-        <div class="milestone-title">${m.title}</div>
-        <p class="milestone-desc">${m.description}</p>
+        <div class="milestone-content">
+          <h3 class="milestone-title">${m.title}</h3>
+          <p class="milestone-desc">${m.description}</p>
+        </div>
         ${m.tag ? `
-        <div class="milestone-meta" style="justify-content:center;">
+        <div class="milestone-meta">
           <span class="oer-badge">${m.tag}</span>
         </div>` : ''}
       </article>
