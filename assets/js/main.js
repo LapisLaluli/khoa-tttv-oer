@@ -308,20 +308,14 @@ document.addEventListener("DOMContentLoaded", () => {
     startAutoSlide();
   }
 
-  // Quick 5-Minute History Document Modal Handler (Card 01 on Homepage)
+  // Quick History Document Modal Handler (Card 01 on Homepage)
   const openQuickDocBtn = document.getElementById("openQuickHistoryDocBtn");
   openQuickDocBtn?.addEventListener("click", () => {
     if (window.openDocumentModal) {
       window.openDocumentModal(
-        "Tóm Tắt Dòng Chảy 60 Năm Lịch Sử (Đọc Nhanh 5 Phút)",
+        "Tóm Tắt Dòng Chảy 60 Năm Lịch Sử",
         `
-          <div style="margin-bottom:16px;">
-            <span class="oer-badge" style="background:#fee2e2; color:#991b1b;">Tài liệu đọc nhanh</span>
-            <span class="oer-badge" style="background:#fef3c7; color:#92400e; margin-left:6px;">Thời gian đọc: ~5 phút</span>
-            <span class="oer-badge" style="background:#e0e7ff; color:#3730a3; margin-left:6px;">Giấy phép mở: CC BY-NC-SA 4.0</span>
-          </div>
-          
-          <div style="font-size:15px; line-height:1.8; color:#334155;">
+          <div style="font-size:15px; line-height:1.85; color:#334155; padding-top:4px;">
             <p><strong>1. Khởi nguồn (1961 - 1976):</strong> Năm 1961, Trường Cán bộ Văn hóa mở lớp đào tạo Thư viện khóa đầu tiên, đặt nền móng lịch sử cho đào tạo cán bộ thông tin - thư viện chính quy tại Việt Nam.</p>
             
             <p><strong>2. Xây dựng & Định hình (1977 - 1990):</strong> Thành lập Bộ môn Thư viện, xây dựng khung chương trình đại học tiêu chuẩn, đào tạo hàng trăm cán bộ cho hệ thống thư viện công cộng và đại học toàn quốc.</p>
