@@ -237,7 +237,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const gradients = [
       "linear-gradient(135deg, rgba(42, 10, 16, 0.94) 0%, rgba(65, 14, 24, 0.85) 50%, rgba(28, 6, 10, 0.92) 100%)",
       "linear-gradient(135deg, rgba(14, 28, 52, 0.95) 0%, rgba(35, 18, 44, 0.88) 50%, rgba(18, 12, 32, 0.94) 100%)",
-      "linear-gradient(135deg, rgba(52, 18, 10, 0.95) 0%, rgba(70, 16, 28, 0.88) 50%, rgba(32, 10, 14, 0.93) 100%)"
+      "linear-gradient(135deg, rgba(52, 18, 10, 0.95) 0%, rgba(70, 16, 28, 0.88) 50%, rgba(32, 10, 14, 0.93) 100%)",
+      "linear-gradient(135deg, rgba(32, 12, 45, 0.95) 0%, rgba(55, 15, 50, 0.88) 50%, rgba(22, 8, 30, 0.93) 100%)"
     ];
 
     function goToSlide(index) {
@@ -306,4 +307,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
     startAutoSlide();
   }
+
+  // Quick 5-Minute History Document Modal Handler (Card 01 on Homepage)
+  const openQuickDocBtn = document.getElementById("openQuickHistoryDocBtn");
+  openQuickDocBtn?.addEventListener("click", () => {
+    if (window.openDocumentModal) {
+      window.openDocumentModal(
+        "Tóm Tắt Dòng Chảy 60 Năm Lịch Sử (Đọc Nhanh 5 Phút)",
+        `
+          <div style="margin-bottom:16px;">
+            <span class="oer-badge" style="background:#fee2e2; color:#991b1b;">Tài liệu đọc nhanh</span>
+            <span class="oer-badge" style="background:#fef3c7; color:#92400e; margin-left:6px;">Thời gian đọc: ~5 phút</span>
+            <span class="oer-badge" style="background:#e0e7ff; color:#3730a3; margin-left:6px;">Giấy phép mở: CC BY-NC-SA 4.0</span>
+          </div>
+          
+          <div style="font-size:15px; line-height:1.8; color:#334155;">
+            <p><strong>1. Khởi nguồn (1961 - 1976):</strong> Năm 1961, Trường Cán bộ Văn hóa mở lớp đào tạo Thư viện khóa đầu tiên, đặt nền móng lịch sử cho đào tạo cán bộ thông tin - thư viện chính quy tại Việt Nam.</p>
+            
+            <p><strong>2. Xây dựng & Định hình (1977 - 1990):</strong> Thành lập Bộ môn Thư viện, xây dựng khung chương trình đại học tiêu chuẩn, đào tạo hàng trăm cán bộ cho hệ thống thư viện công cộng và đại học toàn quốc.</p>
+            
+            <p><strong>3. Thành lập Khoa Thư viện (1991):</strong> Quyết định số 41/TCCB ngày 28/01/1991 chính thức nâng cấp thành <em>Khoa Thư viện</em> trực thuộc Trường Đại học Văn hóa Hà Nội.</p>
+            
+            <p><strong>4. Đổi tên & Hiện đại hóa (2007 - 2015):</strong> Đổi tên thành <em>Khoa Thông tin - Thư viện</em>, tiên phong tích hợp công nghệ thông tin, thư viện điện tử và khoa học dữ liệu.</p>
+            
+            <p><strong>5. Chuyển đổi số & Hội nhập (2016 - Nay):</strong> Đổi mới chương trình đào tạo theo chuẩn kiểm định chất lượng, xây dựng dự án Tài nguyên Giáo dục Mở (OER), ứng dụng AI và chuyển giao tri thức vì cộng đồng.</p>
+            
+            <div style="margin-top:20px; padding:12px; background:#f8fafc; border-left:4px solid var(--wine); border-radius:4px;">
+              <small style="color:var(--muted);">💡 <em>Để tra cứu từng văn bản số hóa, quyết định lịch sử và metadata kiểm chứng chi tiết, vui lòng xem <a href="history.html#timeline" style="color:var(--wine); font-weight:600;">Dòng Thời Gian Lịch Sử</a> hoặc <a href="resources.html" style="color:var(--wine); font-weight:600;">Kho Tư Liệu OER</a>.</em></small>
+            </div>
+          </div>
+        `
+      );
+    }
+  });
 });

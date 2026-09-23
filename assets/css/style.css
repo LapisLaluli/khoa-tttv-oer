@@ -447,6 +447,32 @@ button, input, select, textarea {
   color: #fef08a;
 }
 
+/* SLIDE 4: THEME RESEARCH & GLOBAL */
+.slide-badge-tag.tag-research {
+  color: #c4b5fd;
+  background: rgba(167, 139, 250, 0.15);
+  border-color: rgba(167, 139, 250, 0.35);
+}
+
+.motto-research {
+  color: #ddd6fe;
+  border-left-color: #a78bfa;
+}
+
+.badge-box-research {
+  background: rgba(30, 14, 45, 0.45);
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  box-shadow: 0 8px 32px rgba(24, 10, 36, 0.35);
+}
+
+.badge-box-research::before {
+  border-color: rgba(167, 139, 250, 0.4);
+}
+
+.badge-box-research h3 {
+  color: #ddd6fe;
+}
+
 /* HERO NAVIGATION BUTTONS */
 .hero-nav-btn {
   position: absolute;
