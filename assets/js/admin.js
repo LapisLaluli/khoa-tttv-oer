@@ -180,6 +180,64 @@ document.addEventListener("DOMContentLoaded", () => {
   setupFileInputPreview("uploadAboutStack2File", "inputAboutStack2Url", "previewAboutStack2");
   setupFileInputPreview("uploadQuoteBgFile", "inputQuoteBgUrl", "previewQuoteBg");
 
+  // Clear / Delete single image file handlers
+  function setupClearImageButton(btnId, fileInputId, textInputId, previewImgId, defaultUrl, settingKey, labelName) {
+    document.getElementById(btnId)?.addEventListener("click", () => {
+      const fileIn = document.getElementById(fileInputId);
+      const textIn = document.getElementById(textInputId);
+      const prevImg = document.getElementById(previewImgId);
+      if (fileIn) fileIn.value = "";
+      if (textIn) textIn.value = defaultUrl;
+      if (prevImg) prevImg.src = defaultUrl;
+      if (settingKey) {
+        const s = dm.getSettings();
+        s[settingKey] = defaultUrl;
+        dm.saveSettings(s);
+      }
+      showToast(`Đã xóa tệp và đặt lại ${labelName} về mặc định!`);
+    });
+  }
+
+  setupClearImageButton("clearLogoBtn", "uploadLogoFile", "inputLogoUrl", "previewLogo", "assets/images/huc-logo.svg", "logoUrl", "Logo");
+  setupClearImageButton("clearHeroBgBtn", "uploadHeroBgFile", "inputHeroBgUrl", "previewHeroBg", "assets/images/hero-bg.svg", "heroBgUrl", "Ảnh nền Hero");
+  setupClearImageButton("clearAboutLargeBtn", "uploadAboutLargeFile", "inputAboutLargeUrl", "previewAboutLarge", "assets/images/placeholder.svg", "aboutLargeImg", "Ảnh lớn Về Chúng Tôi");
+  setupClearImageButton("clearAboutStack1Btn", "uploadAboutStack1File", "inputAboutStack1Url", "previewAboutStack1", "assets/images/placeholder.svg", "aboutStack1Img", "Ảnh Thư viện");
+  setupClearImageButton("clearAboutStack2Btn", "uploadAboutStack2File", "inputAboutStack2Url", "previewAboutStack2", "assets/images/placeholder.svg", "aboutStack2Img", "Ảnh Sách & Văn hóa");
+  setupClearImageButton("clearQuoteBgBtn", "uploadQuoteBgFile", "inputQuoteBgUrl", "previewQuoteBg", "assets/images/hero-bg.svg", "quoteBgUrl", "Ảnh nền Trích dẫn");
+
+  // Modal clear file handlers
+  document.getElementById("clearMsImgBtn")?.addEventListener("click", () => {
+    const fileIn = document.getElementById("msUploadFile");
+    const textIn = document.getElementById("msImage");
+    if (fileIn) fileIn.value = "";
+    if (textIn) textIn.value = "assets/images/placeholder.svg";
+    showToast("Đã xóa tệp ảnh đính kèm mốc lịch sử!");
+  });
+
+  document.getElementById("clearActImgBtn")?.addEventListener("click", () => {
+    const fileIn = document.getElementById("actUploadFile");
+    const textIn = document.getElementById("actImage");
+    if (fileIn) fileIn.value = "";
+    if (textIn) textIn.value = "assets/images/placeholder.svg";
+    showToast("Đã xóa tệp ảnh đính kèm hoạt động!");
+  });
+
+  // Clear all custom files & cleanup memory
+  document.getElementById("clearUploadedFilesBtn")?.addEventListener("click", () => {
+    if (confirm("Thao tác này sẽ xóa toàn bộ các tệp ảnh tùy chỉnh lưu tạm và đưa tất cả ảnh giao diện về mặc định. Bạn có muốn tiếp tục?")) {
+      const s = dm.getSettings();
+      s.logoUrl = "assets/images/huc-logo.svg";
+      s.heroBgUrl = "assets/images/hero-bg.svg";
+      s.aboutLargeImg = "assets/images/placeholder.svg";
+      s.aboutStack1Img = "assets/images/placeholder.svg";
+      s.aboutStack2Img = "assets/images/placeholder.svg";
+      s.quoteBgUrl = "assets/images/hero-bg.svg";
+      dm.saveSettings(s);
+      populateUiImages();
+      showToast("Đã xóa toàn bộ tệp tùy chỉnh & giải phóng bộ nhớ!");
+    }
+  });
+
   document.getElementById("saveUiImagesBtn")?.addEventListener("click", () => {
     const current = dm.getSettings();
     const updated = {

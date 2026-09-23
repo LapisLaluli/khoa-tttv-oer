@@ -166,7 +166,10 @@
               
               <!-- Logo -->
               <div style="background:#f8fafc; border:1px solid var(--admin-border); border-radius:8px; padding:20px;">
-                <h4 style="font-size:15px; margin-bottom:6px;">1. Logo Khoa & Trường</h4>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                  <h4 style="font-size:15px; margin:0;">1. Logo Khoa & Trường</h4>
+                  <button type="button" class="btn-clear-file" id="clearLogoBtn" style="font-size:11.5px; color:#dc2626; background:#fee2e2; border:1px solid #fca5a5; border-radius:4px; padding:3px 8px; cursor:pointer;" title="Xóa tệp tùy chỉnh và đưa về logo mặc định">🗑️ Xóa tệp / Reset</button>
+                </div>
                 <p style="font-size:12px; color:var(--admin-muted); margin-bottom:12px;">Hiển thị trên thanh menu chính và chân trang footer.</p>
                 <div style="display:flex; gap:16px; align-items:center; margin-bottom:12px;">
                   <img id="previewLogo" src="assets/images/huc-logo.svg" alt="Preview Logo" style="width:70px; height:70px; object-fit:contain; border:1px solid var(--admin-border); border-radius:4px; padding:4px; background:#fff;">
@@ -175,12 +178,15 @@
                     <input type="file" id="uploadLogoFile" accept="image/*" class="form-control" style="font-size:12.5px;">
                   </div>
                 </div>
-                <input type="text" id="inputLogoUrl" class="form-control" placeholder="Đường dẫn: assets/images/logo.png">
+                <input type="text" id="inputLogoUrl" class="form-control" placeholder="Đường dẫn: assets/images/huc-logo.svg">
               </div>
 
               <!-- Hero Background -->
               <div style="background:#f8fafc; border:1px solid var(--admin-border); border-radius:8px; padding:20px;">
-                <h4 style="font-size:15px; margin-bottom:6px;">2. Ảnh Nền Banner Hero Chính</h4>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                  <h4 style="font-size:15px; margin:0;">2. Ảnh Nền Banner Hero Chính</h4>
+                  <button type="button" class="btn-clear-file" id="clearHeroBgBtn" style="font-size:11.5px; color:#dc2626; background:#fee2e2; border:1px solid #fca5a5; border-radius:4px; padding:3px 8px; cursor:pointer;" title="Xóa tệp ảnh nền và đưa về mặc định">🗑️ Xóa tệp / Reset</button>
+                </div>
                 <p style="font-size:12px; color:var(--admin-muted); margin-bottom:12px;">Ảnh nền khu vực tiêu đề đầu trang chủ.</p>
                 <div style="display:flex; gap:16px; align-items:center; margin-bottom:12px;">
                   <img id="previewHeroBg" src="assets/images/hero-bg.svg" alt="Preview Hero" style="width:110px; height:70px; object-fit:cover; border:1px solid var(--admin-border); border-radius:4px; background:#fff;">
@@ -194,7 +200,10 @@
 
               <!-- About Image 1 (Large) -->
               <div style="background:#f8fafc; border:1px solid var(--admin-border); border-radius:8px; padding:20px;">
-                <h4 style="font-size:15px; margin-bottom:6px;">3. Ảnh Khối Về Chúng Tôi (Khung lớn bên trái)</h4>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                  <h4 style="font-size:15px; margin:0;">3. Ảnh Khối Về Chúng Tôi (Khung lớn)</h4>
+                  <button type="button" class="btn-clear-file" id="clearAboutLargeBtn" style="font-size:11.5px; color:#dc2626; background:#fee2e2; border:1px solid #fca5a5; border-radius:4px; padding:3px 8px; cursor:pointer;" title="Xóa ảnh và đưa về mặc định">🗑️ Xóa tệp / Reset</button>
+                </div>
                 <p style="font-size:12px; color:var(--admin-muted); margin-bottom:12px;">Vị trí ảnh sinh viên học tập & nghiên cứu.</p>
                 <div style="display:flex; gap:16px; align-items:center; margin-bottom:12px;">
                   <img id="previewAboutLarge" src="assets/images/placeholder.svg" alt="Preview" style="width:110px; height:70px; object-fit:cover; border:1px solid var(--admin-border); border-radius:4px; background:#fff;">
@@ -208,7 +217,10 @@
 
               <!-- About Stack 1 (Top right) -->
               <div style="background:#f8fafc; border:1px solid var(--admin-border); border-radius:8px; padding:20px;">
-                <h4 style="font-size:15px; margin-bottom:6px;">4. Ảnh Khối Về Chúng Tôi (Phía trên bên phải)</h4>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                  <h4 style="font-size:15px; margin:0;">4. Ảnh Khối Về Chúng Tôi (Phía trên)</h4>
+                  <button type="button" class="btn-clear-file" id="clearAboutStack1Btn" style="font-size:11.5px; color:#dc2626; background:#fee2e2; border:1px solid #fca5a5; border-radius:4px; padding:3px 8px; cursor:pointer;" title="Xóa ảnh và đưa về mặc định">🗑️ Xóa tệp / Reset</button>
+                </div>
                 <p style="font-size:12px; color:var(--admin-muted); margin-bottom:12px;">Không gian kết nối tri thức / Thư viện.</p>
                 <div style="display:flex; gap:16px; align-items:center; margin-bottom:12px;">
                   <img id="previewAboutStack1" src="assets/images/placeholder.svg" alt="Preview" style="width:110px; height:70px; object-fit:cover; border:1px solid var(--admin-border); border-radius:4px; background:#fff;">
@@ -222,7 +234,10 @@
 
               <!-- About Stack 2 (Bottom right) -->
               <div style="background:#f8fafc; border:1px solid var(--admin-border); border-radius:8px; padding:20px;">
-                <h4 style="font-size:15px; margin-bottom:6px;">5. Ảnh Khối Về Chúng Tôi (Phía dưới bên phải)</h4>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                  <h4 style="font-size:15px; margin:0;">5. Ảnh Khối Về Chúng Tôi (Phía dưới)</h4>
+                  <button type="button" class="btn-clear-file" id="clearAboutStack2Btn" style="font-size:11.5px; color:#dc2626; background:#fee2e2; border:1px solid #fca5a5; border-radius:4px; padding:3px 8px; cursor:pointer;" title="Xóa ảnh và đưa về mặc định">🗑️ Xóa tệp / Reset</button>
+                </div>
                 <p style="font-size:12px; color:var(--admin-muted); margin-bottom:12px;">Tư liệu sách và văn hóa (People Books).</p>
                 <div style="display:flex; gap:16px; align-items:center; margin-bottom:12px;">
                   <img id="previewAboutStack2" src="assets/images/placeholder.svg" alt="Preview" style="width:110px; height:70px; object-fit:cover; border:1px solid var(--admin-border); border-radius:4px; background:#fff;">
@@ -236,7 +251,10 @@
 
               <!-- Quote Banner Bg -->
               <div style="background:#f8fafc; border:1px solid var(--admin-border); border-radius:8px; padding:20px;">
-                <h4 style="font-size:15px; margin-bottom:6px;">6. Ảnh Nền Khối Trích Dẫn</h4>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                  <h4 style="font-size:15px; margin:0;">6. Ảnh Nền Khối Trích Dẫn</h4>
+                  <button type="button" class="btn-clear-file" id="clearQuoteBgBtn" style="font-size:11.5px; color:#dc2626; background:#fee2e2; border:1px solid #fca5a5; border-radius:4px; padding:3px 8px; cursor:pointer;" title="Xóa ảnh quote và đưa về mặc định">🗑️ Xóa tệp / Reset</button>
+                </div>
                 <p style="font-size:12px; color:var(--admin-muted); margin-bottom:12px;">Ảnh nền dải băng trích dẫn danh ngôn giữa trang.</p>
                 <div style="display:flex; gap:16px; align-items:center; margin-bottom:12px;">
                   <img id="previewQuoteBg" src="assets/images/hero-bg.svg" alt="Preview" style="width:110px; height:70px; object-fit:cover; border:1px solid var(--admin-border); border-radius:4px; background:#fff;">
@@ -464,7 +482,7 @@
               Mọi thay đổi của bạn trên trang Admin được lưu tự động trong máy. Bạn có thể xuất file sao lưu hoặc khôi phục dữ liệu:
             </p>
 
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px;">
               <div style="background:#f8fafc; border:1px solid var(--admin-border); border-radius:8px; padding:24px;">
                 <h4 style="font-size:16px; margin-bottom:8px;">1. Xuất file dữ liệu JSON</h4>
                 <p style="font-size:13px; color:var(--admin-muted); margin-bottom:16px;">Tải về file JSON chứa toàn bộ hình ảnh, mốc lịch sử, hoạt động và cấu hình.</p>
@@ -475,6 +493,12 @@
                 <h4 style="font-size:16px; margin-bottom:8px;">2. Nhập file dữ liệu JSON</h4>
                 <p style="font-size:13px; color:var(--admin-muted); margin-bottom:16px;">Nạp lại dữ liệu từ file backup đã xuất trước đó.</p>
                 <input type="file" id="importBackupFile" accept=".json" style="font-size:13px;">
+              </div>
+
+              <div style="background:#f8fafc; border:1px solid var(--admin-border); border-radius:8px; padding:24px;">
+                <h4 style="font-size:16px; margin-bottom:8px;">3. Quản lý & Xóa tệp đã tải</h4>
+                <p style="font-size:13px; color:var(--admin-muted); margin-bottom:16px;">Xóa sạch các tệp ảnh tùy chỉnh và giải phóng bộ nhớ trình duyệt.</p>
+                <button class="btn-secondary" id="clearUploadedFilesBtn" style="color:#dc2626; border-color:#fca5a5; font-size:13px;">🗑️ Xóa toàn bộ tệp tùy chỉnh</button>
               </div>
             </div>
 
@@ -515,7 +539,10 @@
             <input type="text" id="msTag" class="form-control" placeholder="Ví dụ: Dấu mốc lịch sử">
           </div>
           <div class="form-group">
-            <label class="form-label">Tải ảnh từ máy tính hoặc nhập đường dẫn</label>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+              <label class="form-label" style="margin:0;">Ảnh tư liệu mốc lịch sử</label>
+              <button type="button" id="clearMsImgBtn" style="font-size:11px; color:#dc2626; background:#fee2e2; border:1px solid #fca5a5; border-radius:4px; padding:1px 6px; cursor:pointer;" title="Xóa tệp ảnh">🗑️ Xóa tệp ảnh</button>
+            </div>
             <input type="file" id="msUploadFile" accept="image/*" class="form-control" style="font-size:12px; margin-bottom:6px;">
             <input type="text" id="msImage" class="form-control" placeholder="assets/images/placeholder.svg">
           </div>
@@ -579,7 +606,10 @@
             <input type="text" id="actDate" class="form-control" placeholder="Ví dụ: Hằng năm hoặc Tháng 11">
           </div>
           <div class="form-group">
-            <label class="form-label">Tải ảnh từ máy tính hoặc nhập đường dẫn</label>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+              <label class="form-label" style="margin:0;">Ảnh hoạt động</label>
+              <button type="button" id="clearActImgBtn" style="font-size:11px; color:#dc2626; background:#fee2e2; border:1px solid #fca5a5; border-radius:4px; padding:1px 6px; cursor:pointer;" title="Xóa tệp ảnh">🗑️ Xóa tệp ảnh</button>
+            </div>
             <input type="file" id="actUploadFile" accept="image/*" class="form-control" style="font-size:12px; margin-bottom:6px;">
             <input type="text" id="actImage" class="form-control" placeholder="assets/images/placeholder.svg">
           </div>
