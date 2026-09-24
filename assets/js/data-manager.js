@@ -36,7 +36,7 @@ const SEED_MILESTONES = [
     id: "ms-5",
     year: "2018 – Nay",
     title: "Khoa Thông Tin, Thư Viện & Hội Nhập",
-    description: "Khoa đổi tên thành Khoa Thông tin, Thư viện; đổi tên Ngành Thư viện thành Ngành Khoa học Thông tin thư viện và Ngành Thông tin học thành Ngành Quản lý thông tin. Đổi mới chương trình đào tạo sát thị trường lao động.",
+    description: "Khoa đổi tên thành Khoa Thông tin, Thư viện; đổi tên Ngành Thư viện thành Ngành Khoa học Thông tin thư viện và Ngành Thông tin học thành Ngành Quản lý thông tin. Đặc biệt, từ khóa K65, Khoa đã chính thức chia tách ngành Thông tin – Thư viện thành hai chuyên ngành đào tạo chuyên sâu: Quản trị thư viện và Thư viện và Thiết bị trường học, đáp ứng nhu cầu thực tiễn của thị trường lao động và chuyển đổi số.",
     tag: "2018 – Nay"
   }
 ];
@@ -325,7 +325,7 @@ const DataManager = {
 
   init() {
     const storedMilestones = localStorage.getItem(this.KEYS.MILESTONES);
-    if (!storedMilestones || JSON.parse(storedMilestones).length !== SEED_MILESTONES.length) {
+    if (!storedMilestones || !storedMilestones.includes("K65") || JSON.parse(storedMilestones).length !== SEED_MILESTONES.length) {
       this.saveMilestones(SEED_MILESTONES);
     }
     const storedActivities = localStorage.getItem(this.KEYS.ACTIVITIES);
