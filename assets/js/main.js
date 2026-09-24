@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Document Viewer Modal function
-  window.openDocumentModal = function(title, htmlContent) {
+  window.openDocumentModal = function(title, htmlContent, label = "Tài nguyên & Hoạt động") {
     let modal = document.querySelector(".doc-modal");
     if (!modal) {
       modal = document.createElement("div");
@@ -104,8 +104,8 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.innerHTML = `
         <div class="doc-modal-content">
           <button class="close-search close-doc-btn" style="top:15px;right:15px;" aria-label="Đóng">×</button>
-          <div class="section-label" style="margin-bottom:6px;">Tài nguyên Giáo dục Mở (OER)</div>
-          <h2 id="modalDocTitle" style="font-family:var(--serif);font-size:26px;color:var(--wine-dark);margin-bottom:18px;"></h2>
+          <div class="section-label modal-doc-label" style="margin-bottom:6px;"></div>
+          <h2 id="modalDocTitle" style="font-family:var(--serif);font-size:24px;color:var(--wine-dark);margin-bottom:18px;line-height:1.35;"></h2>
           <div id="modalDocBody"></div>
         </div>
       `;
@@ -117,6 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.target === modal) modal.classList.remove("open");
       });
     }
+    const labelEl = modal.querySelector(".modal-doc-label");
+    if (labelEl) labelEl.textContent = label;
     modal.querySelector("#modalDocTitle").textContent = title;
     modal.querySelector("#modalDocBody").innerHTML = htmlContent;
     modal.classList.add("open");
@@ -139,20 +141,53 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     activityGrid.innerHTML = filtered.map(act => `
-      <article class="activity-card">
+      <article class="activity-card" data-id="${act.id}" style="cursor:pointer; display:flex; flex-direction:column;" tabindex="0" role="button" aria-label="Xem chi tiết ${act.title}">
         <div class="activity-card-img">
           <img src="${act.image || 'assets/images/placeholder.svg'}" alt="${act.title}" loading="lazy">
         </div>
-        <div class="activity-card-body">
+        <div class="activity-card-body" style="display:flex; flex-direction:column; flex:1;">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
             <div class="activity-card-tag">${act.tag || act.categoryName || 'Hoạt động'}</div>
             ${act.date ? `<small style="color:var(--muted); font-size:11.5px; font-weight:600;">📅 ${act.date}</small>` : ''}
           </div>
           <h3 class="activity-card-title">${act.title}</h3>
           <p class="activity-card-desc">${act.description}</p>
+          <div style="margin-top:auto; padding-top:12px; color:var(--wine); font-size:13px; font-weight:600; display:flex; align-items:center; gap:6px;">
+            <span>Xem chi tiết hoạt động</span> <span style="transition:transform 0.2s;">→</span>
+          </div>
         </div>
       </article>
     `).join("");
+
+    // Attach click listeners to cards
+    activityGrid.querySelectorAll(".activity-card").forEach(card => {
+      const showDetails = () => {
+        const id = card.getAttribute("data-id");
+        const act = allActivities.find(a => a.id === id);
+        if (act && window.openDocumentModal) {
+          const content = `
+            ${act.image ? `<div style="margin-bottom:16px; border-radius:8px; overflow:hidden; max-height:340px; box-shadow:0 4px 12px rgba(0,0,0,0.08);"><img src="${act.image}" alt="${act.title}" style="width:100%; height:100%; object-fit:cover; display:block;"></div>` : ''}
+            <div style="display:flex; flex-wrap:wrap; gap:12px; margin-bottom:16px; padding:12px 16px; background:var(--cream, #fdfbf7); border-radius:6px; font-size:13.5px; border:1px solid #e2e8f0;">
+              ${act.date ? `<div><strong>📅 Thời gian:</strong> ${act.date}</div>` : ''}
+              ${act.location ? `<div><strong>📍 Địa điểm:</strong> ${act.location}</div>` : ''}
+              ${act.organizer ? `<div style="width:100%;"><strong>🏛️ Đơn vị tổ chức:</strong> ${act.organizer}</div>` : ''}
+            </div>
+            <div style="font-size:15px; line-height:1.8; color:#334155;">
+              ${act.details || `<p>${act.description}</p>`}
+            </div>
+          `;
+          window.openDocumentModal(act.title, content, "Hoạt Động & Sự Kiện Nổi Bật");
+        }
+      };
+
+      card.addEventListener("click", showDetails);
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          showDetails();
+        }
+      });
+    });
   }
 
   if (activityGrid) {

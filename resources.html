@@ -146,7 +146,7 @@
               <img src="assets/images/placeholder.svg" alt="${res.title}" loading="lazy">
             </div>
             <div class="activity-card-body">
-              <div class="activity-card-tag">${res.tag || 'Tài nguyên OER'}</div>
+              <div class="activity-card-tag">${(res.tag || 'Tài nguyên OER').replace(/·?\s*5[–\-]10\s*phút/gi, '').trim()}</div>
               <h3 class="activity-card-title">${res.title}</h3>
               <p class="activity-card-desc">${res.description}</p>
               <div style="margin-top:auto; padding-top:14px;">
@@ -161,12 +161,12 @@
             const idx = btn.dataset.idx;
             const item = list[idx];
             if (item && window.openDocumentModal) {
+              const cleanTag = (item.tag || 'Tài liệu OER').replace(/·?\s*5[–\-]10\s*phút/gi, '').trim();
               window.openDocumentModal(
                 item.title,
                 `
                   <div style="margin-bottom:14px;">
-                    <span class="oer-badge">${item.tag || 'Tài liệu OER'}</span>
-                    <span class="oer-badge" style="background:#e0e7ff;color:#3730a3;margin-left:6px;">${item.license || 'CC BY 4.0'}</span>
+                    <span class="oer-badge">${cleanTag}</span>
                   </div>
                   <div style="font-size:15px;line-height:1.75;color:#334155;">
                     ${item.content || '<p>' + item.description + '</p>'}
