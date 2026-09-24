@@ -166,14 +166,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const act = allActivities.find(a => a.id === id);
         if (act && window.openDocumentModal) {
           const content = `
-            ${act.image ? `<div style="margin-bottom:16px; border-radius:8px; overflow:hidden; max-height:340px; box-shadow:0 4px 12px rgba(0,0,0,0.08);"><img src="${act.image}" alt="${act.title}" style="width:100%; height:100%; object-fit:cover; display:block;"></div>` : ''}
-            <div style="display:flex; flex-wrap:wrap; gap:12px; margin-bottom:16px; padding:12px 16px; background:var(--cream, #fdfbf7); border-radius:6px; font-size:13.5px; border:1px solid #e2e8f0;">
-              ${act.date ? `<div><strong>📅 Thời gian:</strong> ${act.date}</div>` : ''}
-              ${act.location ? `<div><strong>📍 Địa điểm:</strong> ${act.location}</div>` : ''}
-              ${act.organizer ? `<div style="width:100%;"><strong>🏛️ Đơn vị tổ chức:</strong> ${act.organizer}</div>` : ''}
-            </div>
-            <div style="font-size:15px; line-height:1.8; color:#334155;">
+            ${act.image ? `<div style="margin-bottom:20px; border-radius:8px; overflow:hidden; max-height:360px; box-shadow:0 4px 14px rgba(0,0,0,0.08);"><img src="${act.image}" alt="${act.title}" style="width:100%; height:100%; object-fit:cover; display:block;"></div>` : ''}
+            <div style="font-size:15px; line-height:1.85; color:#334155; margin-bottom:24px;">
               ${act.details || `<p>${act.description}</p>`}
+            </div>
+            <div style="display:flex; flex-wrap:wrap; gap:12px; padding:14px 18px; background:var(--cream, #fdfbf7); border-radius:6px; font-size:13.5px; border:1px solid #e2e8f0; border-left:4px solid var(--wine);">
+              ${act.date ? `<div style="flex:1 1 200px;"><strong>📅 Thời gian:</strong> ${act.date}</div>` : ''}
+              ${act.location ? `<div style="flex:1 1 250px;"><strong>📍 Địa điểm:</strong> ${act.location}</div>` : ''}
+              ${act.organizer ? `<div style="width:100%; margin-top:4px;"><strong>🏛️ Đơn vị tổ chức:</strong> ${act.organizer}</div>` : ''}
             </div>
           `;
           window.openDocumentModal(act.title, content, "Hoạt Động & Sự Kiện Nổi Bật");
