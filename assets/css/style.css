@@ -1219,16 +1219,16 @@ button, input, select, textarea {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(20, 5, 8, 0.88);
-  backdrop-filter: blur(6px);
-  z-index: 1000;
+  background: rgba(15, 5, 8, 0.88);
+  backdrop-filter: blur(8px);
+  z-index: 999999;
   padding: 40px 20px;
   align-items: center;
   justify-content: center;
 }
 
 .doc-modal.open {
-  display: flex;
+  display: flex !important;
 }
 
 .doc-modal-content {

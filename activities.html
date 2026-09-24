@@ -25,8 +25,6 @@
         <a href="index.html">Trang chủ</a>
         <a href="about.html">Giới thiệu</a>
         <a href="history.html">Lịch sử</a>
-        <a href="resources.html">Tài nguyên OER</a>
-        <a href="learning.html">Góc học tập</a>
         <a class="active" href="activities.html">Hoạt động</a>
         <a href="#contact">Liên hệ</a>
       </nav>
@@ -229,13 +227,11 @@
       </div>
 
       <div>
-        <div style="font-weight:700; color:var(--wine-dark); margin-bottom:14px; text-transform:uppercase; letter-spacing:0.05em;">Liên kết nhanh</div>
+        <div class="footer-title" style="font-weight:700; color:var(--wine-dark); margin-bottom:14px; text-transform:uppercase; letter-spacing:0.05em;">Liên kết nhanh</div>
         <div style="display:flex; flex-direction:column; gap:8px; font-size:14px;">
-          <a href="index.html">Trang chủ OER</a>
+          <a href="index.html">Trang chủ</a>
           <a href="about.html">Giới thiệu Khoa</a>
           <a href="history.html">Lịch sử 60 năm</a>
-          <a href="resources.html">Kho tài liệu số OER</a>
-          <a href="learning.html">Góc học tập & Trắc nghiệm</a>
           <a href="activities.html">Hoạt động & Sự kiện</a>
         </div>
       </div>
@@ -263,12 +259,22 @@
       <div style="display:flex; gap:16px;">
         <a href="about.html">Chính sách bảo mật</a>
         <span>|</span>
-        <a href="about.html">Điều khoản sử dụng OER</a>
+        <a href="about.html">Điều khoản sử dụng</a>
         <span>|</span>
-        <a href="resources.html">Sơ đồ trang</a>
+        <a href="about.html">Sơ đồ trang</a>
       </div>
     </div>
   </footer>
+
+    <!-- MODAL XEM TÀI LIỆU TOÀN VĂN -->
+  <div class="doc-modal" id="globalDocModal" style="display:none;">
+    <div class="doc-modal-content">
+      <button class="close-search close-doc-btn" style="top:18px;right:18px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-size:24px;border:none;background:#fbf7f0;border-radius:50%;cursor:pointer;color:#7b1d28;font-weight:bold;z-index:10;" aria-label="Đóng">×</button>
+      <div class="section-label modal-doc-label" style="margin-bottom:8px;font-size:12px;font-weight:700;color:#7b1d28;letter-spacing:0.08em;text-transform:uppercase;"></div>
+      <h2 id="modalDocTitle" style="font-family:Georgia,serif;font-size:24px;color:#4e0f17;margin-bottom:18px;line-height:1.35;padding-right:40px;"></h2>
+      <div id="modalDocBody"></div>
+    </div>
+  </div>
 
   <script src="assets/js/data-manager.js"></script>
   <script src="assets/js/main.js"></script>
@@ -282,19 +288,10 @@
       let searchKeyword = "";
 
       function openModalForAct(item) {
-        if (!item || !window.openDocumentModal) return;
-        const content = `
-          ${item.image ? `<div style="margin-bottom:20px; border-radius:8px; overflow:hidden; max-height:360px; box-shadow:0 4px 14px rgba(0,0,0,0.08);"><img src="${item.image}" alt="${item.title}" style="width:100%; height:100%; object-fit:cover; display:block;"></div>` : ''}
-          <div style="font-size:15px; line-height:1.85; color:#334155; margin-bottom:24px;">
-            ${item.details || `<p>${item.description}</p>`}
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:12px; padding:14px 18px; background:var(--cream, #fdfbf7); border-radius:6px; font-size:13.5px; border:1px solid #e2e8f0; border-left:4px solid var(--wine); margin-top:20px;">
-            ${item.date ? `<div style="flex:1 1 200px;"><strong>📅 Thời gian:</strong> ${item.date}</div>` : ''}
-            ${item.location ? `<div style="flex:1 1 250px;"><strong>📍 Địa điểm:</strong> ${item.location}</div>` : ''}
-            ${item.organizer ? `<div style="width:100%; margin-top:4px;"><strong>🏛️ Đơn vị tổ chức:</strong> ${item.organizer}</div>` : ''}
-          </div>
-        `;
-        window.openDocumentModal(item.title, content, "Hoạt Động & Sự Kiện Nổi Bật");
+        if (!item) return;
+        if (window.openActivityModalById) {
+          window.openActivityModalById(item.id);
+        }
       }
 
       function bindCardListeners(acts) {

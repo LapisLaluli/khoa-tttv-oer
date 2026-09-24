@@ -6,9 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!root) return;
 
   function renderTimeline() {
-    const milestones = window.DataManager ? window.DataManager.getMilestones() : [];
-    if (!milestones.length) {
-      root.innerHTML = `<p style="padding:20px;text-align:center;color:var(--muted);">Chưa có dữ liệu mốc lịch sử.</p>`;
+    const milestones = (window.DataManager && window.DataManager.getMilestones) 
+      ? window.DataManager.getMilestones() 
+      : (window.SEED_MILESTONES || []);
+
+    if (!milestones || !milestones.length) {
+      // Keep static HTML if already present
       return;
     }
 

@@ -25,8 +25,6 @@
         <a class="active" href="index.html">Trang chủ</a>
         <a href="about.html">Giới thiệu</a>
         <a href="history.html">Lịch sử</a>
-        <a href="resources.html">Tài nguyên OER</a>
-        <a href="learning.html">Góc học tập</a>
         <a href="activities.html">Hoạt động</a>
         <a href="#contact">Liên hệ</a>
       </nav>
@@ -77,7 +75,7 @@
             </p>
             <div style="display:flex; gap:14px; flex-wrap:wrap;">
               <a class="btn" href="#timeline">KHÁM PHÁ NGAY +</a>
-              <a class="btn btn-outline" href="resources.html">Kho Tài Nguyên Mở →</a>
+              <a class="btn btn-outline" href="#activities">Hoạt Động Nổi Bật →</a>
             </div>
           </div>
 
@@ -105,8 +103,8 @@
               Hệ thống số hóa kỷ yếu, giáo trình chuyên ngành, tài liệu nghiên cứu và công trình khoa học chất lượng cao, phục vụ bạn đọc, giảng viên và sinh viên cả nước.
             </p>
             <div style="display:flex; gap:14px; flex-wrap:wrap;">
-              <a class="btn btn-gold" href="resources.html">TRA CỨU TÀI LIỆU →</a>
-              <a class="btn btn-outline" href="learning.html">Góc Học Tập Quiz →</a>
+              <a class="btn btn-gold" href="#timeline">DÒNG LỊCH SỬ →</a>
+              <a class="btn btn-outline" href="#activities">HOẠT ĐỘNG KHOA →</a>
             </div>
           </div>
 
@@ -207,7 +205,7 @@
         </div>
         <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:20px;">
           <a class="btn" href="about.html">TÌM HIỂU CHI TIẾT →</a>
-          <a class="btn btn-outline" href="resources.html">Kho Tư Liệu OER</a>
+          <a class="btn btn-outline" href="#activities">Hoạt Động Nổi Bật</a>
         </div>
       </div>
 
@@ -239,6 +237,7 @@
         <p class="section-desc">Hơn 60 năm đồng hành cùng sự nghiệp giáo dục và văn hóa dân tộc (1961 – Nay)</p>
       </div>
 
+      <div class="timeline-wrap">
         <div class="timeline" id="timelineData">
           <article class="milestone" data-id="ms-1">
             <div class="milestone-badge-top">Giai đoạn 01</div>
@@ -315,6 +314,7 @@
             </div>
           </article>
         </div>
+      </div>
     </div>
   </section>
 
@@ -455,12 +455,6 @@
           </div>
         </article>
       </div>
-
-      <div style="text-align:center; margin-top:36px;">
-        <a class="btn" href="activities.html" style="padding:13px 30px; font-size:14.5px; font-weight:700;">
-          📰 XEM TRANG BẢN TIN BÁO CHÍ ĐẦY ĐỦ (7 SỰ KIỆN) →
-        </a>
-      </div>
     </div>
   </section>
 
@@ -488,45 +482,7 @@
     </div>
   </section>
 
-  <!-- 7. KHO TÀI NGUYÊN GIÁO DỤC MỞ (OER) -->
-  <section class="section" id="oer">
-    <div class="container">
-      <div class="section-head">
-        <div class="section-label">TÀI NGUYÊN GIÁO DỤC MỞ</div>
-        <h2 class="section-title">Khám Phá & Học Tập Cùng OER</h2>
-        <p class="section-desc">Mọi tư liệu, bài đọc và tài liệu số đều có thể xem trực tuyến hoặc chia sẻ tự do phục vụ mục đích học tập phi thương mại.</p>
-      </div>
 
-      <div class="oer-grid">
-        <!-- 01: BẢN TÓM TẮT ĐỌC NHANH TRỰC TIẾP -->
-        <article class="oer-card">
-          <div class="oer-card-num">01</div>
-          <div class="oer-meta">Tài liệu đọc tóm tắt</div>
-          <h3 class="oer-card-title">Tóm Tắt Dòng Lịch Sử 60 Năm</h3>
-          <p class="oer-card-desc">Bản tóm lược cô đọng và dễ nhớ về các mốc son từ năm 1961 đến nay. Có thể mở xem trực tiếp ngay tại trang mà không cần chuyển trang.</p>
-          <button class="btn" id="openQuickHistoryDocBtn" style="cursor:pointer; width:100%;">Đọc →</button>
-        </article>
-
-        <!-- 02: KHO TƯ LIỆU SỐ HÓA METADATA DUBLIN CORE -->
-        <article class="oer-card">
-          <div class="oer-card-num">02</div>
-          <div class="oer-meta">Tư liệu số hóa · Chuẩn Dublin Core</div>
-          <h3 class="oer-card-title">Kho Kỷ Yếu & Tư Liệu Số Hóa</h3>
-          <p class="oer-card-desc">Hệ thống văn bản số, quyết định lịch sử và kỷ yếu truyền thống được gắn metadata Dublin Core 15 yếu tố chuẩn quốc tế.</p>
-          <a class="btn" href="resources.html" style="width:100%;">Mở kho tư liệu OER →</a>
-        </article>
-
-        <!-- 03: GÓC HỌC TẬP QUIZ -->
-        <article class="oer-card">
-          <div class="oer-card-num">03</div>
-          <div class="oer-meta">Tương tác trực tuyến · Ôn tập</div>
-          <h3 class="oer-card-title">Góc Học Tập & Trắc Nghiệm</h3>
-          <p class="oer-card-desc">Hệ thống câu hỏi trắc nghiệm tương tác chấm điểm tự động kèm giải thích chi tiết, giúp củng cố kiến thức lịch sử Khoa.</p>
-          <a class="btn btn-gold" href="learning.html" style="width:100%;">Bắt đầu làm trắc nghiệm →</a>
-        </article>
-      </div>
-    </div>
-  </section>
 
   <!-- 10. MODAL TRA CỨU TÌM KIẾM -->
   <div class="search-panel">
@@ -581,10 +537,20 @@
         <span>|</span>
         <a href="about.html">Điều khoản sử dụng OER</a>
         <span>|</span>
-        <a href="resources.html">Sơ đồ trang</a>
+        <a href="about.html">Sơ đồ trang</a>
       </div>
     </div>
   </footer>
+
+    <!-- MODAL XEM TÀI LIỆU TOÀN VĂN -->
+  <div class="doc-modal" id="globalDocModal" style="display:none;">
+    <div class="doc-modal-content">
+      <button class="close-search close-doc-btn" style="top:18px;right:18px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-size:24px;border:none;background:#fbf7f0;border-radius:50%;cursor:pointer;color:#7b1d28;font-weight:bold;z-index:10;" aria-label="Đóng">×</button>
+      <div class="section-label modal-doc-label" style="margin-bottom:8px;font-size:12px;font-weight:700;color:#7b1d28;letter-spacing:0.08em;text-transform:uppercase;"></div>
+      <h2 id="modalDocTitle" style="font-family:Georgia,serif;font-size:24px;color:#4e0f17;margin-bottom:18px;line-height:1.35;padding-right:40px;"></h2>
+      <div id="modalDocBody"></div>
+    </div>
+  </div>
 
   <script src="assets/js/data-manager.js"></script>
   <script src="assets/js/main.js"></script>

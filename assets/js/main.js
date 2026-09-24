@@ -1,3 +1,142 @@
+// Document Viewer Modal Engine - Globally available immediately
+window.openDocumentModal = function(title, htmlContent, label) {
+  let modal = document.querySelector(".doc-modal");
+  if (!modal) {
+    modal = document.createElement("div");
+    modal.className = "doc-modal";
+    modal.id = "globalDocModal";
+    modal.innerHTML = `
+      <div class="doc-modal-content">
+        <button class="close-search close-doc-btn" style="top:18px;right:18px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-size:24px;border:none;background:#fbf7f0;border-radius:50%;cursor:pointer;color:#7b1d28;font-weight:bold;z-index:10;" aria-label="Đóng">×</button>
+        <div class="section-label modal-doc-label" style="margin-bottom:8px;font-size:12px;font-weight:700;color:#7b1d28;letter-spacing:0.08em;text-transform:uppercase;"></div>
+        <h2 id="modalDocTitle" style="font-family:Georgia,serif;font-size:24px;color:#4e0f17;margin-bottom:18px;line-height:1.35;padding-right:40px;"></h2>
+        <div id="modalDocBody"></div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+  }
+
+  const labelEl = modal.querySelector(".modal-doc-label");
+  if (labelEl) labelEl.textContent = label || "Hoạt Động & Sự Kiện Nổi Bật";
+  const titleEl = modal.querySelector("#modalDocTitle");
+  if (titleEl) titleEl.textContent = title || "";
+  const bodyEl = modal.querySelector("#modalDocBody");
+  if (bodyEl) bodyEl.innerHTML = htmlContent || "";
+
+  modal.classList.add("open");
+  modal.style.display = "flex";
+  document.body.style.overflow = "hidden";
+
+  const closeModal = () => {
+    modal.classList.remove("open");
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+  };
+
+  const closeBtn = modal.querySelector(".close-doc-btn");
+  if (closeBtn) closeBtn.onclick = closeModal;
+  modal.onclick = (e) => {
+    if (e.target === modal) closeModal();
+  };
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && (modal.classList.contains("open") || modal.style.display === "flex")) {
+      closeModal();
+    }
+  });
+};
+
+window.openActivityModalById = function(id) {
+  const allActs = (window.DataManager && window.DataManager.getActivities)
+    ? window.DataManager.getActivities()
+    : (window.SEED_ACTIVITIES || []);
+  let act = allActs.find(a => a.id === id);
+  if (!act) {
+    act = (window.SEED_ACTIVITIES || []).find(a => a.id === id);
+  }
+  if (!act) return;
+  const content = `
+    ${act.image ? `<div style="margin-bottom:20px; border-radius:8px; overflow:hidden; max-height:420px; box-shadow:0 4px 14px rgba(0,0,0,0.08);"><img src="${act.image}" alt="${act.title}" style="width:100%; height:100%; object-fit:cover; display:block;"></div>` : ''}
+    <div style="font-size:15.5px; line-height:1.85; color:#334155; margin-bottom:24px;">
+      ${act.details || `<p>${act.description}</p>`}
+    </div>
+    <div class="modal-event-meta" style="margin-top:32px; padding-top:20px; border-top:1px dashed #cbd5e1; display:flex; flex-direction:column; gap:12px; font-size:14.5px; color:#334155; line-height:1.6;">
+      ${act.date ? `
+      <div style="display:flex; align-items:flex-start; gap:10px;">
+        <span style="font-weight:700; color:#7b1d28; min-width:140px; display:inline-flex; align-items:center; gap:6px;">
+          <span>📅</span> Thời gian:
+        </span>
+        <span style="flex:1; color:#1e293b;">${act.date}</span>
+      </div>` : ''}
+      ${act.location ? `
+      <div style="display:flex; align-items:flex-start; gap:10px;">
+        <span style="font-weight:700; color:#7b1d28; min-width:140px; display:inline-flex; align-items:center; gap:6px;">
+          <span>📍</span> Địa điểm:
+        </span>
+        <span style="flex:1; color:#1e293b;">${act.location}</span>
+      </div>` : ''}
+      ${act.organizer ? `
+      <div style="display:flex; align-items:flex-start; gap:10px;">
+        <span style="font-weight:700; color:#7b1d28; min-width:140px; display:inline-flex; align-items:center; gap:6px;">
+          <span>🏛️</span> Đơn vị tổ chức:
+        </span>
+        <span style="flex:1; color:#1e293b; font-weight:500;">${act.organizer}</span>
+      </div>` : ''}
+    </div>
+  `;
+  window.openDocumentModal(act.title, content, "Hoạt Động & Sự Kiện Nổi Bật");
+};
+
+// Global click event listener active immediately
+document.addEventListener("click", (e) => {
+  const card = e.target.closest(".activity-card");
+  if (card) {
+    e.preventDefault();
+    const id = card.getAttribute("data-id");
+    if (id && window.openActivityModalById) {
+      window.openActivityModalById(id);
+      return;
+    }
+    const titleEl = card.querySelector(".activity-card-title");
+    const title = titleEl ? titleEl.textContent.trim() : "";
+    const allActs = (window.DataManager && window.DataManager.getActivities)
+      ? window.DataManager.getActivities()
+      : (window.SEED_ACTIVITIES || []);
+    const found = allActs.find(a => a.title && (a.title.includes(title) || title.includes(a.title)));
+    if (found && window.openActivityModalById) {
+      window.openActivityModalById(found.id);
+    }
+    return;
+  }
+
+  const milestone = e.target.closest(".milestone");
+  if (milestone) {
+    e.preventDefault();
+    const id = milestone.getAttribute("data-id");
+    const allMilestones = (window.DataManager && window.DataManager.getMilestones)
+      ? window.DataManager.getMilestones()
+      : (window.SEED_MILESTONES || []);
+    const m = allMilestones.find(item => item.id === id) || {
+      title: milestone.querySelector(".milestone-title")?.textContent || "Giai đoạn lịch sử",
+      year: milestone.querySelector(".milestone-year")?.textContent || "",
+      description: milestone.querySelector(".milestone-desc")?.textContent || ""
+    };
+    if (m && window.openDocumentModal) {
+      const content = `
+        <div style="font-size:16px; line-height:1.9; color:#334155; padding:10px 0 20px;">
+          <div style="display:inline-block; padding:4px 14px; background:rgba(123,29,40,0.08); color:#7b1d28; border-radius:4px; font-weight:700; margin-bottom:14px; font-size:14.5px;">
+            Giai đoạn: ${m.year}
+          </div>
+          <p style="font-size:16px; line-height:1.85; margin-bottom:18px;">${m.description}</p>
+          <div style="background:#f8fafc; border-left:4px solid #b45309; padding:16px 20px; border-radius:0 6px 6px 0; font-size:14px; color:#475569; line-height:1.75;">
+            Trích nguồn: Văn khố và Kỷ yếu Truyền thống hơn 60 năm Khoa Thông tin Thư viện – Trường Đại học Văn hóa Hà Nội (1961 – Nay).
+          </div>
+        </div>
+      `;
+      window.openDocumentModal(m.title, content, `Dòng Thời Gian Lịch Sử · ${m.year}`);
+    }
+  }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   // Mobile Nav Toggle
   const menuBtn = document.querySelector(".menu-btn");
@@ -95,48 +234,45 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Document Viewer Modal function
-  window.openDocumentModal = function(title, htmlContent, label = "Tài nguyên & Hoạt động") {
-    let modal = document.querySelector(".doc-modal");
-    if (!modal) {
-      modal = document.createElement("div");
-      modal.className = "doc-modal";
-      modal.innerHTML = `
-        <div class="doc-modal-content">
-          <button class="close-search close-doc-btn" style="top:15px;right:15px;" aria-label="Đóng">×</button>
-          <div class="section-label modal-doc-label" style="margin-bottom:6px;"></div>
-          <h2 id="modalDocTitle" style="font-family:var(--serif);font-size:24px;color:var(--wine-dark);margin-bottom:18px;line-height:1.35;"></h2>
-          <div id="modalDocBody"></div>
-        </div>
-      `;
-      document.body.appendChild(modal);
-      modal.querySelector(".close-doc-btn").addEventListener("click", () => {
-        modal.classList.remove("open");
-      });
-      modal.addEventListener("click", (e) => {
-        if (e.target === modal) modal.classList.remove("open");
-      });
-    }
-    const labelEl = modal.querySelector(".modal-doc-label");
-    if (labelEl) labelEl.textContent = label;
-    modal.querySelector("#modalDocTitle").textContent = title;
-    modal.querySelector("#modalDocBody").innerHTML = htmlContent;
-    modal.classList.add("open");
-  };
-
   // Activity Tabs Filter with DataManager
   const filterBtns = document.querySelectorAll(".filter-btn");
   const activityGrid = document.querySelector("#activityGrid");
 
+  function bindActivityCards(container, acts) {
+    if (!container) return;
+    container.querySelectorAll(".activity-card").forEach(card => {
+      const showDetails = (e) => {
+        if (e) e.preventDefault();
+        const id = card.getAttribute("data-id");
+        if (id && window.openActivityModalById) {
+          window.openActivityModalById(id);
+        }
+      };
+
+      card.style.cursor = "pointer";
+      card.onclick = showDetails;
+      card.onkeydown = (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          showDetails(e);
+        }
+      };
+    });
+  }
+
   function renderActivities(category = "all") {
     if (!activityGrid) return;
-    const allActivities = window.DataManager ? window.DataManager.getActivities() : [];
+    const allActivities = (window.DataManager && window.DataManager.getActivities)
+      ? window.DataManager.getActivities()
+      : (window.SEED_ACTIVITIES || []);
+
     const filtered = category === "all" 
       ? allActivities 
       : allActivities.filter(a => a.category === category);
 
     if (!filtered.length) {
-      activityGrid.innerHTML = `<p style="grid-column:1/-1;text-align:center;padding:30px;color:var(--muted);">Chưa có hoạt động nào trong danh mục này.</p>`;
+      if (allActivities.length > 0) {
+        activityGrid.innerHTML = `<p style="grid-column:1/-1;text-align:center;padding:30px;color:var(--muted);">Chưa có hoạt động nào trong danh mục này.</p>`;
+      }
       return;
     }
 
@@ -159,38 +295,15 @@ document.addEventListener("DOMContentLoaded", () => {
       </article>
     `).join("");
 
-    // Attach click listeners to cards
-    activityGrid.querySelectorAll(".activity-card").forEach(card => {
-      const showDetails = () => {
-        const id = card.getAttribute("data-id");
-        const act = allActivities.find(a => a.id === id);
-        if (act && window.openDocumentModal) {
-          const content = `
-            ${act.image ? `<div style="margin-bottom:20px; border-radius:8px; overflow:hidden; max-height:360px; box-shadow:0 4px 14px rgba(0,0,0,0.08);"><img src="${act.image}" alt="${act.title}" style="width:100%; height:100%; object-fit:cover; display:block;"></div>` : ''}
-            <div style="font-size:15px; line-height:1.85; color:#334155; margin-bottom:24px;">
-              ${act.details || `<p>${act.description}</p>`}
-            </div>
-            <div style="display:flex; flex-wrap:wrap; gap:12px; padding:14px 18px; background:var(--cream, #fdfbf7); border-radius:6px; font-size:13.5px; border:1px solid #e2e8f0; border-left:4px solid var(--wine);">
-              ${act.date ? `<div style="flex:1 1 200px;"><strong>📅 Thời gian:</strong> ${act.date}</div>` : ''}
-              ${act.location ? `<div style="flex:1 1 250px;"><strong>📍 Địa điểm:</strong> ${act.location}</div>` : ''}
-              ${act.organizer ? `<div style="width:100%; margin-top:4px;"><strong>🏛️ Đơn vị tổ chức:</strong> ${act.organizer}</div>` : ''}
-            </div>
-          `;
-          window.openDocumentModal(act.title, content, "Hoạt Động & Sự Kiện Nổi Bật");
-        }
-      };
-
-      card.addEventListener("click", showDetails);
-      card.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          showDetails();
-        }
-      });
-    });
+    bindActivityCards(activityGrid, allActivities);
   }
 
   if (activityGrid) {
+    const allActs = (window.DataManager && window.DataManager.getActivities)
+      ? window.DataManager.getActivities()
+      : (window.SEED_ACTIVITIES || []);
+    bindActivityCards(activityGrid, allActs);
+
     let currentCat = "all";
     renderActivities(currentCat);
     filterBtns.forEach(btn => {
@@ -345,27 +458,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     startAutoSlide();
   }
-
-  // Quick History Document Modal Handler (Card 01 on Homepage)
-  const openQuickDocBtn = document.getElementById("openQuickHistoryDocBtn");
-  openQuickDocBtn?.addEventListener("click", () => {
-    if (window.openDocumentModal) {
-      window.openDocumentModal(
-        "Tóm Tắt Dòng Chảy 60 Năm Lịch Sử",
-        `
-          <div style="font-size:15px; line-height:1.85; color:#334155; padding-top:4px;">
-            <p><strong>1. Giai đoạn 1 (1961 – 1976):</strong> Khoa Thông tin, Thư viện được thành lập năm 1961 theo Quyết định của Ủy ban Kế hoạch Nhà nước và Phủ thủ tướng. Là đơn vị đầu tiên của Trường Đại học Văn hóa Hà Nội và cũng là cơ sở đầu tiên của cả nước đào tạo cán bộ thư viện hệ đại học và trung học.</p>
-            
-            <p><strong>2. Giai đoạn 2 (1976 – 1992):</strong> Tập trung đào tạo cán bộ thư viện bậc đại học chính quy, cung cấp nguồn nhân lực thư viện phục vụ sự nghiệp xây dựng và phát triển đất nước.</p>
-            
-            <p><strong>3. Giai đoạn 3 (1992 – 2004):</strong> Khoa Thư viện đổi tên thành Khoa Thông tin – Thư viện. Mục tiêu: Đào tạo cán bộ Thông tin – Thư viện ở bậc đại học có trình độ lý luận và nghiệp vụ về tổ chức các hoạt động trong các thư viện hoặc cơ quan thông tin tư liệu.</p>
-            
-            <p><strong>4. Giai đoạn 4 (2004 – 2018):</strong> Khoa đổi tên thành Khoa Thư viện – Thông tin, mở hệ đào tạo cử nhân cao đẳng, liên thông cao đẳng – đại học và mở thêm chuyên ngành Thông tin học, đáp ứng nhu cầu nhân lực trong thời kỳ đổi mới.</p>
-            
-            <p><strong>5. Giai đoạn 5 (2018 đến nay):</strong> Khoa đổi tên thành Khoa Thông tin, Thư viện; đổi tên Ngành Thư viện thành Ngành Khoa học Thông tin thư viện và Ngành Thông tin học thành Ngành Quản lý thông tin. Tập trung đổi mới chương trình đào tạo sát thực tiễn xã hội.</p>
-          </div>
-        `
-      );
-    }
-  });
 });
