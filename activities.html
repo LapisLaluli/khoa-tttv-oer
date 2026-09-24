@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tin Tức & Hoạt Động Nổi Bật | Khoa Thông tin Thư viện – HUC</title>
+  <meta name="description" content="Chuyên trang tin tức, sự kiện học thuật, tọa đàm khoa học và hoạt động sinh viên Khoa Thông tin Thư viện - Trường Đại học Văn hóa Hà Nội.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- HEADER / TOPBAR -->
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img class="dyn-logo" src="assets/images/flis-logo.jpg" alt="Logo Khoa Thông tin Thư viện" width="54" height="54">
+        <div class="brand-text">
+          <span class="brand-kicker">Trường Đại học Văn hóa Hà Nội</span>
+          <span class="brand-name">KHOA THÔNG TIN THƯ VIỆN</span>
+          <span class="brand-slogan dyn-slogan">Tri thức – Kết nối – Phát triển</span>
+        </div>
+      </a>
+      
+      <nav class="navlinks">
+        <a href="index.html">Trang chủ</a>
+        <a href="about.html">Giới thiệu</a>
+        <a href="history.html">Lịch sử</a>
+        <a href="resources.html">Tài nguyên OER</a>
+        <a href="learning.html">Góc học tập</a>
+        <a class="active" href="activities.html">Hoạt động</a>
+        <a href="#contact">Liên hệ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="admin-nav-btn" href="admin.html" title="Đăng nhập quản trị">
+          <span>Đăng nhập</span>
+        </a>
+        <button class="search-btn" aria-label="Tìm kiếm tư liệu">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEARCH OVERLAY -->
+  <div class="search-panel" id="searchPanel">
+    <div class="search-box">
+      <button class="close-search close-search-btn" aria-label="Đóng tìm kiếm">×</button>
+      <div class="section-label" style="margin-bottom:8px;">Tra Cứu Hoạt Động & Sự Kiện</div>
+      <input type="text" id="globalSearchInput" placeholder="Nhập từ khóa tìm kiếm sự kiện, tọa đàm, ngày tháng..." autofocus>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <div class="page-head" style="background: linear-gradient(135deg, #4e0f17 0%, #7b1d28 100%); color:#ffffff; padding: 50px 0 40px; border-bottom: 3px solid var(--gold);">
+    <div class="container">
+      <div style="font-size:12.5px; text-transform:uppercase; letter-spacing:0.12em; color:var(--gold-light); margin-bottom:8px; font-weight:700;">
+        CHUYÊN TRANG BẢN TIN HỌC THUẬT & SỰ KIỆN
+      </div>
+      <h1 style="font-family:var(--serif); font-size:36px; font-weight:700; margin-bottom:12px; line-height:1.25;">
+        Hoạt Động & Sự Kiện Nổi Bật
+      </h1>
+      <p style="font-size:16px; color:#f1f5f9; max-width:760px; line-height:1.7;">
+        Tường thuật toàn văn các hoạt động đào tạo, hội thảo khoa học, tọa đàm chuyên đề, triển lãm di sản thư tịch và công tác xã hội vì cộng đồng của Khoa Thông tin Thư viện.
+      </p>
+    </div>
+  </div>
+
+  <!-- MAIN NEWS CONTENT SECTION -->
+  <main class="section" style="background:#fcfbf9; padding: 45px 0 70px;">
+    <div class="container">
+      
+      <!-- TOOLBAR: FILTER & SEARCH -->
+      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:16px; margin-bottom:36px; padding-bottom:20px; border-bottom:1px solid var(--line);">
+        <div class="filters" style="margin-bottom:0;">
+          <button class="filter-btn active" data-category="all">Tất cả bài viết</button>
+          <button class="filter-btn" data-category="daotao">Đào tạo & Đọc sách</button>
+          <button class="filter-btn" data-category="nghiencuu">Nghiên cứu & Học thuật</button>
+          <button class="filter-btn" data-category="sinhvien">Hoạt động sinh viên</button>
+          <button class="filter-btn" data-category="hoptac">Hợp tác & Tọa đàm</button>
+        </div>
+
+        <div style="min-width:280px; flex:1; max-width:360px;">
+          <input type="text" id="newsKeywordInput" placeholder="🔍 Lọc nhanh theo từ khóa..." style="width:100%; padding:10px 14px; border:1px solid var(--line); border-radius:6px; font-size:13.5px; outline:none; background:#ffffff;">
+        </div>
+      </div>
+
+      <!-- EDITORIAL NEWS FEED CONTAINER -->
+      <div class="news-feed-grid" id="newsFeedContainer">
+        <!-- Javascript dynamic & fallback rendered articles -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="footer-brand" style="text-decoration:none; color:inherit;" title="Trang chủ Khoa Thông tin Thư viện">
+          <img class="dyn-logo" src="assets/images/flis-logo.jpg" alt="Logo Khoa" width="60" height="60" style="border-radius:8px;">
+          <div>
+            <div class="brand-kicker">Trường Đại học Văn hóa Hà Nội</div>
+            <div class="footer-title">KHOA THÔNG TIN THƯ VIỆN</div>
+            <small style="color:var(--gold); font-weight:600;">Tri thức – Kết nối – Phát triển</small>
+          </div>
+        </a>
+        <p style="color:var(--muted); font-size:13.5px; line-height:1.6; max-width:440px;">
+          Chuyên trang Tài nguyên Giáo dục Mở (OER) tuyên truyền lịch sử hình thành, nghiên cứu và hoạt động của Khoa Thông tin Thư viện.
+        </p>
+      </div>
+
+      <div>
+        <div style="font-weight:700; color:var(--wine-dark); margin-bottom:14px; text-transform:uppercase; letter-spacing:0.05em;">Liên kết nhanh</div>
+        <div style="display:flex; flex-direction:column; gap:8px; font-size:14px;">
+          <a href="index.html">Trang chủ OER</a>
+          <a href="about.html">Giới thiệu Khoa</a>
+          <a href="history.html">Lịch sử 60 năm</a>
+          <a href="resources.html">Kho tài liệu số OER</a>
+          <a href="learning.html">Góc học tập & Trắc nghiệm</a>
+          <a href="activities.html">Hoạt động & Sự kiện</a>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-weight:700; color:var(--wine-dark); margin-bottom:14px; text-transform:uppercase; letter-spacing:0.05em;">Thông tin liên hệ</div>
+        <div class="footer-contact-item dyn-address">Số 418 Đường La Thành, Ô Chợ Dừa, Đống Đa, Hà Nội</div>
+        <div class="footer-contact-item dyn-email">flis@huc.edu.vn</div>
+        <div class="footer-contact-item dyn-website">https://flis.huc.edu.vn</div>
+      </div>
+
+      <div>
+        <div style="font-weight:700; color:var(--wine-dark); margin-bottom:14px; text-transform:uppercase; letter-spacing:0.05em;">Tôn chỉ học thuật</div>
+        <div class="footer-slogan dyn-footer-slogan">“Vì một xã hội tri thức và nhân văn hơn”</div>
+        <div class="social-links">
+          <a class="social-link" href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+          <a class="social-link" href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">yt</a>
+          <a class="social-link" href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok">tt</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>© 2026 Khoa Thông tin Thư viện – Trường Đại học Văn hóa Hà Nội. Giấy phép mở CC BY-NC-SA 4.0.</div>
+      <div style="display:flex; gap:16px;">
+        <a href="about.html">Chính sách bảo mật</a>
+        <span>|</span>
+        <a href="about.html">Điều khoản sử dụng OER</a>
+        <span>|</span>
+        <a href="resources.html">Sơ đồ trang</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data-manager.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.getElementById("newsFeedContainer");
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const keywordInput = document.getElementById("newsKeywordInput");
+
+      let currentCategory = "all";
+      let searchKeyword = "";
+
+      function renderNewsArticles() {
+        if (!container) return;
+        const allActs = window.DataManager ? window.DataManager.getActivities() : [];
+        
+        let list = currentCategory === "all" 
+          ? allActs 
+          : allActs.filter(a => a.category === currentCategory);
+
+        if (searchKeyword) {
+          const q = searchKeyword.toLowerCase();
+          list = list.filter(a => 
+            (a.title + " " + a.description + " " + (a.details || "") + " " + (a.location || "") + " " + (a.organizer || "")).toLowerCase().includes(q)
+          );
+        }
+
+        if (!list.length) {
+          container.innerHTML = `
+            <div style="text-align:center; padding:50px 20px; background:#fff; border:1px dashed var(--line); border-radius:8px;">
+              <p style="font-size:16px; color:var(--muted); margin-bottom:10px;">Không tìm thấy bài viết nào phù hợp.</p>
+              <button class="btn btn-outline" style="font-size:13px;" onclick="document.getElementById('newsKeywordInput').value=''; document.querySelector('.filter-btn[data-category=all]').click();">Xem tất cả bài viết</button>
+            </div>
+          `;
+          return;
+        }
+
+        container.innerHTML = list.map((item, idx) => `
+          <article class="news-article-card" id="${item.id}">
+            <div class="news-article-media">
+              <img src="${item.image || 'assets/images/placeholder.svg'}" alt="${item.title}" loading="lazy">
+            </div>
+            <div class="news-article-content">
+              <div class="news-header-meta">
+                <span class="news-badge">${item.tag || item.categoryName || 'Sự kiện'}</span>
+                ${item.date ? `<span class="news-date">📅 ${item.date}</span>` : ''}
+              </div>
+
+              <h2 class="news-article-title">${item.title}</h2>
+
+              <div class="news-article-body">
+                ${item.details || `<p>${item.description}</p>`}
+              </div>
+
+              <div class="news-meta-bottom">
+                ${item.date ? `<span><strong>📅 Thời gian:</strong> ${item.date}</span>` : ''}
+                ${item.location ? `<span><strong>📍 Địa điểm:</strong> ${item.location}</span>` : ''}
+                ${item.organizer ? `<span style="width:100%;"><strong>🏛️ Đơn vị tổ chức:</strong> ${item.organizer}</span>` : ''}
+              </div>
+            </div>
+          </article>
+        `).join("");
+      }
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          filterBtns.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          currentCategory = btn.getAttribute("data-category");
+          renderNewsArticles();
+        });
+      });
+
+      keywordInput?.addEventListener("input", (e) => {
+        searchKeyword = e.target.value.trim();
+        renderNewsArticles();
+      });
+
+      renderNewsArticles();
+      window.addEventListener("storage", renderNewsArticles);
+    });
+  </script>
+</body>
+</html>
