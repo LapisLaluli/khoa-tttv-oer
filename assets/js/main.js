@@ -144,7 +144,10 @@ document.addEventListener("DOMContentLoaded", () => {
           <img src="${act.image || 'assets/images/placeholder.svg'}" alt="${act.title}" loading="lazy">
         </div>
         <div class="activity-card-body">
-          <div class="activity-card-tag">${act.tag || act.categoryName || 'Hoạt động'}</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+            <div class="activity-card-tag">${act.tag || act.categoryName || 'Hoạt động'}</div>
+            ${act.date ? `<small style="color:var(--muted); font-size:11.5px; font-weight:600;">📅 ${act.date}</small>` : ''}
+          </div>
           <h3 class="activity-card-title">${act.title}</h3>
           <p class="activity-card-desc">${act.description}</p>
         </div>

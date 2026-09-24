@@ -1,42 +1,72 @@
 [
   {
     "id": "act-1",
-    "category": "nghiencuu",
-    "categoryName": "Nghiên cứu",
-    "title": "Hội thảo khoa học",
-    "description": "Tổ chức các hội thảo chuyên ngành, chia sẻ kết quả nghiên cứu và phương pháp ứng dụng công nghệ thông tin trong thư viện hiện đại.",
-    "image": "assets/images/placeholder.svg",
-    "date": "Hằng năm",
-    "tag": "Khoa học"
-  },
-  {
-    "id": "act-2",
-    "category": "sinhvien",
-    "categoryName": "Hoạt động sinh viên",
-    "title": "Hoạt động tình nguyện",
-    "description": "Đoàn kết, xung kích trong các chiến dịch mùa hè xanh, mang sách và tri thức đến với các điểm trường, thư viện vùng sâu vùng xa.",
-    "image": "assets/images/placeholder.svg",
-    "date": "Thường niên",
-    "tag": "Cộng đồng"
-  },
-  {
-    "id": "act-3",
     "category": "daotao",
     "categoryName": "Đào tạo",
-    "title": "Triển lãm sách",
-    "description": "Giới thiệu các ấn phẩm quý, tài liệu chuyên khảo và kết quả nghiên cứu học thuật của giảng viên và sinh viên Khoa.",
-    "image": "assets/images/placeholder.svg",
-    "date": "Ngày Sách VN",
+    "title": "Chương Trình “Tiệc Trà & Sách” Nhân Ngày Sách Việt Nam",
+    "description": "Hưởng ứng Ngày Sách và Văn hóa đọc Việt Nam, Trung tâm Thông tin - Thư viện tổ chức chương trình nhằm tôn vinh giá trị của sách, tri thức và lan tỏa thói quen đọc trong đời sống học đường.",
+    "image": "assets/images/event_tiec_tra_sach.png",
+    "date": "21/04/2025",
     "tag": "Văn hóa đọc"
   },
   {
-    "id": "act-4",
+    "id": "act-2",
     "category": "hoptac",
     "categoryName": "Hợp tác",
-    "title": "Tham quan thực tế",
-    "description": "Chương trình thực tập, kiến tập tại Thư viện Quốc gia Việt Nam, các trung tâm thông tin lớn và thư viện đại học hàng đầu.",
-    "image": "assets/images/placeholder.svg",
-    "date": "Từng học kỳ",
-    "tag": "Thực tế nghề nghiệp"
+    "title": "Tọa Đàm: Định Hướng Nghề Nghiệp Trong Lĩnh Vực Văn Hóa",
+    "description": "Tọa đàm chuyên đề quy tụ các chuyên gia, nhà quản lý, nghệ sĩ và doanh nhân trao đổi xu hướng thị trường lao động và định hướng kỹ năng số trong lĩnh vực văn hóa - thông tin cho sinh viên.",
+    "image": "assets/images/event_dinh_huong_nghe_nghiep.png",
+    "date": "15/05/2025",
+    "tag": "Hướng nghiệp"
+  },
+  {
+    "id": "act-3",
+    "category": "sinhvien",
+    "categoryName": "Hoạt động sinh viên",
+    "title": "Chương Trình Tình Nguyện “Đông Ấm Vùng Cao 2024”",
+    "description": "Chi đoàn và sinh viên tổ chức chương trình tình nguyện tại Trường Tiểu học Tả Phìn (Sa Pa, Lào Cai), trao tặng những phần quà ấm áp, sách vở và học liệu cho các em nhỏ vùng cao.",
+    "image": "assets/images/event_dong_am_vung_cao.png",
+    "date": "20/01/2024",
+    "tag": "Tình nguyện"
+  },
+  {
+    "id": "act-4",
+    "category": "nghiencuu",
+    "categoryName": "Nghiên cứu",
+    "title": "Triển Lãm Sách & Chuyên Đề “Văn Hóa Nghệ Thuật & Thị Trường”",
+    "description": "Trung tâm Thông tin Thư viện phối hợp tổ chức triển lãm sách tư liệu quý và buổi nói chuyện học thuật của Nhà nghiên cứu Phan Cẩm Thượng về bảo tồn và phát triển giá trị văn hóa.",
+    "image": "assets/images/event_trien_lam_sach_nghe_thuat.png",
+    "date": "19/04/2021",
+    "tag": "Triển lãm & Học thuật"
+  },
+  {
+    "id": "act-5",
+    "category": "nghiencuu",
+    "categoryName": "Nghiên cứu",
+    "title": "Tọa Đàm: Khai Thác Nguồn Tư Liệu Cổ Về Văn Hóa Dân Tộc Thiểu Số",
+    "description": "Tọa đàm khoa học do PGS.TS. Trần Bình chia sẻ phương pháp khai thác, tra cứu và sử dụng các nguồn tư liệu cổ quý hiếm phục vụ hiệu quả công tác giảng dạy, học tập và nghiên cứu.",
+    "image": "assets/images/event_tu_lieu_dan_toc_thieu_so.png",
+    "date": "08/03/2023",
+    "tag": "Tư liệu cổ"
+  },
+  {
+    "id": "act-6",
+    "category": "hoptac",
+    "categoryName": "Hợp tác",
+    "title": "Tọa Đàm Khoa Học: “Văn Hóa Tộc Người Từ Góc Nhìn Về Nhà Ở”",
+    "description": "Hội thảo liên ngành phối hợp cùng NXB Khoa học Xã hội, Hội Dân tộc học và MaiHaBooks thảo luận giải pháp phát huy giá trị kiến trúc nhà ở cổ truyền các dân tộc trong xã hội đương đại.",
+    "image": "assets/images/event_van_hoa_toc_nguoi_nha_o.png",
+    "date": "05/04/2023",
+    "tag": "Tọa đàm khoa học"
+  },
+  {
+    "id": "act-7",
+    "category": "daotao",
+    "categoryName": "Đào tạo",
+    "title": "Hoạt Động Trưng Bày & Giới Thiệu Sách Chuyên Đề Định Kỳ",
+    "description": "Hoạt động định kỳ trưng bày sách chuyên ngành, giáo trình số và tài liệu nghiên cứu mới nhất, hỗ trợ tối ưu nhu cầu tra cứu và nghiên cứu học thuật của cán bộ, giảng viên và sinh viên.",
+    "image": "assets/images/event_trung_bay_sach_dinh_ky.png",
+    "date": "Thường niên",
+    "tag": "Học liệu chuyên ngành"
   }
 ]
