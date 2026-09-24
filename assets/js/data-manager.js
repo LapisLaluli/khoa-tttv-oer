@@ -44,132 +44,7 @@ const SEED_MILESTONES = [
 window.SEED_MILESTONES = SEED_MILESTONES;
 
 const SEED_ACTIVITIES = [
-  {
-    "id": "act-1",
-    "category": "daotao",
-    "categoryName": "Đào tạo",
-    "title": "Chương Trình “Tiệc Trà & Sách” Nhân Ngày Sách Và Văn Hóa Đọc Việt Nam",
-    "description": "Hưởng ứng Ngày Sách và Văn hóa đọc Việt Nam năm 2025, sáng ngày 21/4/2025, tại Sảnh Trung tâm Thông tin - Thư viện đã diễn ra chương trình “Tiệc trà & Sách”. Đây là dịp đặc biệt để tôn vinh giá trị của sách, tri thức ...",
-    "image": "assets/images/event_tiec_tra_sach.png",
-    "date": "21/04/2025",
-    "tag": "Văn hóa đọc",
-    "location": "Sảnh Trung tâm Thông tin - Thư viện, Trường Đại học Văn hóa Hà Nội",
-    "organizer": "Trung tâm Thông tin Thư viện - Trường Đại học Văn hóa Hà Nội",
-    "pdfSource": "Chương trình _Tiệc trà & Sách_ nhân Ngày sách và Văn hóa đọc Việt Nam.pdf",
-    "details": `<p style="margin-bottom: 14px; line-height: 1.85;">Hưởng ứng Ngày Sách và Văn hóa đọc Việt Nam năm 2025, sáng ngày 21/4/2025, tại Sảnh Trung tâm Thông tin - Thư viện đã diễn ra chương trình “Tiệc trà & Sách”. Đây là dịp đặc biệt để tôn vinh giá trị của sách, tri thức và văn hóa đọc trong đời sống học đường.</p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Chương trình là một trong những chuỗi hoạt động của Trung tâm Thông tin Thư viện trong tháng hành động phát triển văn hoá đọc, nhằm hưởng ứng lời kêu gọi của Bộ Văn hóa, Thể thao và Du lịch tới các tổ chức, doanh nghiệp và bạn đọc cả nước “cùng nhau lan toả tình yêu sách, để mỗi người dân là một đại sứ văn hoá đọc, mỗi gia đình, cộng đồng là một không gian văn hoá đọc, để cùng sách bước vào kỷ nguyên mới, kỷ nguyên vươn mình của dân tộc”; và cùng vui niềm vui chung của sự kiện 50 năm thống nhất đất nước.</p>
-<p style="font-size: 13.5px; font-style: italic; color: var(--muted); margin: 8px 0 16px; text-align: center;">📷 <em>Không gian trưng bày sách tại Trung tâm khoa học Thông tin - Thư viện Sự kiện cũng là dịp để chúng ta đến gần hơn với sách, với trà: những hoạt động tĩnh lặng và an lành giúp người đọc dễ dàng hòa mình vào thực tại, cảm nhận được sâu sắc nhất những tinh hoa mà trà mang lại, những thông điệp ý nghĩa mà sách muốn truyền tải; để gắn kết hơn nữa tình cảm chân thành, nồng hậu giữa các cơ quan, đơn vị trong và ngoài trường.</em></p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Các tiết mục văn nghệ đặc sắc đến từ sinh viên Khoa Quản lý Văn hoá nghệ thuật Chương trình "Tiệc trà & Sách" đã nhận được sự góp mặt quý báu của các Quý vị đại biểu khách mời ngoài trường: TS.</p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Nguyễn Huy Chương - Chủ tịch NaLa, Viện trưởng IDK; ThS. Nguyễn Việt Tiến - Giám đốc Thư viện Học viện Tài Chính; TS.</p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Nguyễn Thanh Thủy - Phó Giám đốc Thư viện Trường Đại học Giao thông Vận tải; ThS. Nguyễn Thị Thu Điệp - Giám đốc Thư viện Trường Đại học Thương mại; Cô Mai Thị Trang - Thư viện Trường Đại học Kinh tế - Kỹ thuật Công nghiệp; Ông Hoàng Dũng - Tổng Giám đốc Công ty D&L, Phó Viện trưởng IDK...</p>
-<p style="margin-bottom: 14px; line-height: 1.85;"><strong>Đại biểu tham dự:</strong> Về phía Trường Đại học Văn hóa Hà Nội, có sự tham gia của PGS.TS. Đinh Công Tuấn - Phó Hiệu trưởng Nhà trường; PGS.TS. Trương Đại Lượng - Trưởng phòng Quản lý Đào tạo, ThS. Phùng Quốc Hiếu - Trưởng phòng Công tác Chính trị và Quản lý Sinh viên; ThS. Hoàng Trung Thanh - Trưởng phòng Khảo thí và ĐBCL; TS. Lê Tuấn Anh - Trưởng Khoa QTDL&NNQT; TS. Nguyễn Văn Thiên - Trưởng khoa Thông tin Thư viện; TS. Nguyễn Khánh Ngọc - Phó Trưởng Khoa phụ trách khoa QLVHNT; TS. Trần Đức Nguyên - Trưởng khoa Di sản văn hóa; TS. Đỗ Trần Phương - Phó Trưởng khoa Du lịch; ThS. Phạm Văn Phê - Phó Trưởng khoa XB, PH; TS. Nguyễn Thị Huệ - Phó Trưởng khoa Kiến thức cơ bản cùng đông đảo các thầy cô giáo các khoa, phòng và các bạn sinh viên trong Nhà trường...</p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Khách mời thưởng thức không gian trà đạo Đặc biệt, Chương trình cũng đã nhận được sự góp mặt quý báu, chân tình của Nghệ nhân Nguyễn Tuấn Linh - Đông Lai Trà, TS. Phạm Lê Trung - Khoa Du lịch – Trường Đại học Văn hóa Hà Nội cùng những vị khách mời đã mang lại những tách trà đặc sắc, thơm ngon cho mọi người tham dự sự kiện. Sự góp mặt quý báu và những tình cảm chân thành của mọi người dành cho Trung tâm tại sự kiện đã là nguồn động viên, chia sẻ và khích lệ lớn lao đối với những người làm công tác thư viện chúng tôi trên hành trình lưu trữ, kết nối, đổi mới và sáng tạo phát triển văn hóa đọc trong cộng đồng.</p>
-<p style="padding-left: 8px; margin-bottom: 10px;"><strong>•</strong> PGS.TS Đinh Công Tuấn - Phó Hiệu trưởng Nhà trường cùng LĐ các đơn vị thưởng thức trà đạo trong không gian chương trình Tại chương trình, nhiều hoạt động sôi nổi được diễn ra như cùng nhau thư giãn, thưởng trà, đọc sách, chiêm ngưỡng không gian trưng bày và chia sẻ cảm hứng đọc.</p>
-<p style="font-size: 13.5px; font-style: italic; color: var(--muted); margin: 8px 0 16px; text-align: center;">📷 <em>Không gian trưng bày sách về 50 năm Ngày giải phóng miền Nam, thống Nhất đất nước Với hành trình tri thức với hoạt động tham quan không gian trưng bày sách với những đầu sách đặc sắc được lựa chọn cho dịp đặc biệt này. Trong đó, điểm nhấn ý nghĩa nhất là khu vực trưng bày sách chủ đề 30/4, kỷ niệm 50 năm Ngày Giải phóng miền Nam, thống nhất đất nước. Nơi lưu giữ những trang sử hào hùng qua sách và hình ảnh tư liệu quý giá.</em></p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Tập thể cán bộ Trung tâm khoa học Thông tin - Thư viện chụp ảnh lưu niệm</p>`
-  },
-  {
-    "id": "act-2",
-    "category": "hoptac",
-    "categoryName": "Hợp tác",
-    "title": "Tọa Đàm Chuyên Đề: “Định Hướng Nghề Nghiệp Trong Lĩnh Vực Quản Lý Văn Hóa Trước Bối Cảnh Mới”",
-    "description": "Sáng ngày 15/5/2025, tại Trường Đại học Văn hóa Hà Nội đã diễn ra buổi tọa đàm chuyên đề “Định hướng nghề nghiệp trong lĩnh vực Quản lý văn hóa trước bối cảnh mới” với sự tham gia của các chuyên gia, nhà quản lý, nghệ...",
-    "image": "assets/images/event_dinh_huong_nghe_nghiep.png",
-    "date": "15/05/2025",
-    "tag": "Hướng nghiệp & Đổi mới",
-    "location": "Trường Đại học Văn hóa Hà Nội",
-    "organizer": "Khoa Quản lý Văn hóa, Nghệ thuật & Các đơn vị đối tác",
-    "pdfSource": "Toạ đàm chuyên đề_ _Định hướng nghề nghiệp trong lĩnh vực Quản lý văn hóa trước bối cảnh mới_.pdf",
-    "details": `<p style="margin-bottom: 14px; line-height: 1.85;">Sáng ngày 15/5/2025, tại Trường Đại học Văn hóa Hà Nội đã diễn ra buổi tọa đàm chuyên đề “Định hướng nghề nghiệp trong lĩnh vực Quản lý văn hóa trước bối cảnh mới” với sự tham gia của các chuyên gia, nhà quản lý, nghệ sĩ và doanh nhân trong lĩnh vực văn hóa, nghệ thuật.</p>
-<p style="margin-bottom: 14px; line-height: 1.85;"><strong>Đại biểu khách mời:</strong> Tham dự tọa đàm về phía khách mời có Ông Nguyễn Anh Tuấn – Trưởng khoa Thiết kế tạo dáng công nghiệp – Trường Đại học Mỹ thuật công nghiệp; Ông Chu Anh Hùng – Phó giám đốc Nhà hát lớn Hà Nội; Nhà sản xuất phim Nguyễn Thanh Tùng; Nhà thiết kế Nguyễn Đức Lộc - Giám đốc Công ty cổ phần Ỷ Vân Hiên; Ông Trần Anh Tú - Giám đốc Không gian sáng tạo ứng tác liên ngành; Ông Trần Hoàng Long – chuyên gia sưu tập và kinh doanh tranh.</p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Về phía Trường Đại học Văn hóa Hà Nội có TS. Nguyễn Thị Ngọc Lâm - Phó trưởng phòng Quản lý đào tạo; TS. Nguyễn Khánh Ngọc - Phó trưởng khoa phụ trách khoa Quản lý Văn hóa, Nghệ thuật; TS. Trần Thị Thu Nhung - Phó trưởng khoa Quản lý văn hóa nghệ thuật; PGS.TS. Nguyễn Thị Anh Quyên - Trưởng bộ môn Phát triển công nghiệp văn hóa; TS. Nguyễn Thanh Xuân - Trưởng bộ môn Tổ chức sự kiện văn hoá cùng đông đảo sinh viên, giảng viên và những người quan tâm đến ngành Quản lý văn hóa trong thời đại chuyển đổi số và toàn cầu hóa.</p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Mở đầu tọa đàm, các diễn giả đã chỉ ra những chuyển biến sâu sắc trong bối cảnh phát triển văn hóa hiện nay: từ xu hướng số hóa và ứng dụng công nghệ trong sản xuất, truyền thông văn hóa đến sự nổi lên của các mô hình kinh tế sáng tạo, không gian văn hóa mở và nghệ thuật tương tác. Trong khi đó, những biến động về xã hội, thị trường và thị hiếu công chúng cũng đang đặt ra yêu cầu cấp thiết cho sự thay đổi trong tư duy và năng lực của người làm công tác quản lý văn hóa.</p>
-<p style="padding-left: 8px; margin-bottom: 10px;"><strong>•</strong> TS. Trần Thị Thu Nhung - Phó trưởng khoa Quản lý văn hóa nghệ thuật phát biểu tại Toạ đàm Tại toạ đàm, các diễn giả như ông Trần Hoàng Long (chuyên gia sưu tập và kinh doanh tranh) và Nhà thiết kế Nguyễn Đức Lộc (Giám đốc Ỷ Vân Hiên) đã chia sẻ những câu chuyện nghề nghiệp gắn với thị trường nghệ thuật đương đại, nơi mà người làm quản lý văn hóa không chỉ cần am hiểu nghệ thuật mà còn phải giỏi tổ chức, truyền thông, và có tư duy kinh doanh.</p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Nhà thiết kế Nguyễn Đức Lộc (Giám đốc Ỷ Vân Hiên) chia sẻ tại Toạ đàm Đặc biệt, nhà sản xuất phim Nguyễn Thanh Tùng nhấn mạnh cơ hội nghề nghiệp trong các lĩnh vực sản xuất nội dung, phát triển dự án văn hóa, tổ chức sự kiện, truyền thông nghệ thuật, cũng như vai trò ngày càng lớn của các nhà quản lý trong việc kết nối nghệ sĩ - công chúng - thị trường.</p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Các khách mời đều nhất trí rằng sinh viên ngành Quản lý văn hóa cần được trang bị một cách toàn diện: từ kiến thức chuyên môn về văn hóa – nghệ thuật, kỹ năng tổ chức, quản trị dự án, đến khả năng sáng tạo, thích ứng công nghệ và ngoại ngữ.</p>
-<p style="padding-left: 8px; margin-bottom: 10px;"><strong>•</strong> Ông Trần Anh Tú – Giám đốc Không gian sáng tạo Ứng tác liên ngành – nhấn mạnh: “Sinh viên cần chủ động va chạm thực tế, dám nghĩ dám làm, và hình thành cho mình tư duy liên ngành – điều đặc biệt quan trọng trong môi trường sáng tạo ngày nay.”</p>
-<p style="padding-left: 8px; margin-bottom: 10px;"><strong>•</strong> PGS.TS. Nguyễn Thị Anh Quyên - Trưởng bộ môn Phát triển công nghiệp văn hóa chia sẻ tại Toạ đàm Buổi tọa đàm không chỉ mang đến kiến thức và kinh nghiệm thực tiễn mà còn truyền cảm hứng mạnh mẽ cho sinh viên về vai trò của người làm công tác quản lý văn hóa trong việc kiến tạo giá trị và lan tỏa bản sắc trong kỷ nguyên mới.</p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Với tinh thần kết nối giữa đào tạo và thực tiễn, Khoa Quản lý Văn hóa, nghệ thuật - Trường Đại học Văn hóa Hà Nội tiếp tục khẳng định vai trò tiên phong trong việc định hướng, dẫn dắt thế hệ sinh viên ngành Quản lý văn hóa trở thành những hạt nhân năng động, sáng tạo, sẵn sàng chinh phục những thách thức mới của thời đại.</p>
-<p style="font-size: 13.5px; font-style: italic; color: var(--muted); margin: 8px 0 16px; text-align: center;">📷 <em>Ảnh lưu niệm tại Toạ đàm</em></p>`
-  },
-  {
-    "id": "act-3",
-    "category": "sinhvien",
-    "categoryName": "Hoạt động sinh viên",
-    "title": "Chương Trình Tình Nguyện “Đông Ấm Vùng Cao 2024”",
-    "description": "Ngày 20/01/2024, chương trình tình nguyện \"Đông ấm vùng cao 2024\" tại Trường Tiểu học xã Tả Phìn, xã Tả Phìn, Thị xã Sa Pa, Tỉnh Lào Cai đã diễn ra thành công tốt đẹp, trao gửi những phần quà ấm áp và ý nghĩa đến các ...",
-    "image": "assets/images/event_dong_am_vung_cao.png",
-    "date": "20/01/2024",
-    "tag": "Tình nguyện vì cộng đồng",
-    "location": "Trường Tiểu học xã Tả Phìn, Thị xã Sa Pa, Tỉnh Lào Cai",
-    "organizer": "Đoàn Thanh niên - Hội Sinh viên Trường ĐH Văn hóa Hà Nội & Liên chi đoàn",
-    "pdfSource": "CHƯƠNG TRÌNH TÌNH NGUYỆN ĐÔNG ẤM VÙNG 2024.pdf",
-    "details": `<p style="margin-bottom: 14px; line-height: 1.85;">Ngày 20/01/2024, chương trình tình nguyện "Đông ấm vùng cao 2024" tại Trường Tiểu học xã Tả Phìn, xã Tả Phìn, Thị xã Sa Pa, Tỉnh Lào Cai đã diễn ra thành công tốt đẹp, trao gửi những phần quà ấm áp và ý nghĩa đến các em nhỏ.</p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Chương trình tình nguyện "Đông ấm vùng cao 2024" diễn ra tại Trường Tiểu học xã Tả Phìn, xã Tả Phìn, Thị xã Sa Pa, Tỉnh Lào Cai Vừa qua, Đoàn Thanh niên - Hội Sinh viên Việt Nam Trường Đại học Văn hoá Hà Nội kết hợp cùng liên chi đoàn - liên chi hội khoa quản trị dịch vụ và ngôn ngữ quốc tế tích cực khởi động chương trình tình nguyện "Đông ấm vùng cao 2024" tại Trường Tiểu học xã Tả Phìn, xã Tả Phìn, Thị xã Sa Pa, Tỉnh Lào Cai.</p>
-<p style="font-size: 13.5px; font-style: italic; color: var(--muted); margin: 8px 0 16px; text-align: center;">📷 <em>Khởi động Chương trình tình nguyện "Đông ấm vùng cao 2024"</em></p>
-<p style="margin: 14px 0; font-style: italic; color: #475569; line-height: 1.85;">"Đông ấm vùng cao 2024" là chương trình tình nguyện giàu tính nhân văn, được Đoàn viên, Hội viên và sinh viên Trường Đại học Văn hoá Hà Nội định hình tổ chức, hưởng ứng tham gia, khởi nguồn cho một năm mới tràn đầy tình thương với những trái tim nhân ái hướng tới cộng đồng.</p>
-<p style="font-size: 13.5px; font-style: italic; color: var(--muted); margin: 8px 0 16px; text-align: center;">📷 <em>Đoàn viên, Hội viên trao tặng học bổng đến các em học sinh Trường Tiểu học xã Tả Phìn, xã Tả Phìn, Thị xã Sa Pa, Tỉnh Lào Cai Đoàn viên, Hội viên tham gia vẽ tranh tường tại Trường Tiểu học xã Tả Phìn, xã Tả Phìn, Thị xã Sa Pa, Tỉnh Lào Cai Trong chuyến đi, các Đoàn viên, Hội viên đã gửi đến các em nhỏ nơi miền núi những phần quà ý nghĩa bao gồm vở viết, sách giáo khoa, đồ dùng học tập, học bổng khuyến học, chăn, quần áo mới, bánh kẹo và các thực phẩm thiết yếu cùng hoạt động vẽ tranh tường, góp phần xoa dịu cái lạnh nơi Tây Bắc. Những món quà mang gia trị vật chất không quá lớn nhưng sưởi ấm tâm hồn những em bé trong khó khăn về cả vật chất lẫn tinh thần, từ đó hình thành ý chí quyết tâm, nỗ lực học tập vì tương lai tươi sáng.</em></p>
-<p style="font-size: 13.5px; font-style: italic; color: var(--muted); margin: 8px 0 16px; text-align: center;">📷 <em>Đoàn viên, Hội viên tham gia giao lưu cùng các em học sinh Trường Tiểu học xã Tả Phìn, xã Tả Phìn, Thị xã Sa Pa, Tỉnh Lào Cai Chương trình tạo cơ hội giao lưu, học hỏi và phát huy tinh thần tương thân tương ái đối với mỗi cá nhân tham gia. Đây là động lực giúp Đoàn Thanh niên - Hội Sinh viên đẩy mạnh các phong trào mang giá trọ hữu ích cho cộng đồng, phát huy tinh thần trách nhiệm vì một xã hội giàu mạnh văn minh.</em></p>`
-  },
-  {
-    "id": "act-4",
-    "category": "nghiencuu",
-    "categoryName": "Nghiên cứu",
-    "title": "Triển Lãm Sách Văn Hóa Nghệ Thuật & Nói Chuyện Chuyên Đề: “Văn Hóa Nghệ Thuật Và Thị Trường”",
-    "description": "ĐHVHHN - Sáng ngày 19/4/2021, Trung tâm Thông tin Thư viện phối hợp cùng Khoa Quản lý Văn hoá Nghệ thuật đã tổ chức buổi . Buổi triển lãm và nói chuyện của Nhà nghiên cứu Phan Cẩm Thượng & Nhà sưu tầm tác phẩm nghệ th...",
-    "image": "assets/images/event_trien_lam_sach_nghe_thuat.png",
-    "date": "19/04/2021",
-    "tag": "Triển lãm & Học thuật",
-    "location": "Trung tâm Thông tin - Thư viện, Trường Đại học Văn hóa Hà Nội",
-    "organizer": "Trung tâm Thông tin Thư viện & Khoa Quản lý Văn hoá Nghệ thuật",
-    "pdfSource": "Triển lãm sách Văn hoá Nghệ thuật & Nói chuyện chuyên đề_ Văn hoá nghệ thuật và Thị trường.pdf",
-    "details": `<p style="margin-bottom: 14px; line-height: 1.85;">ĐHVHHN - Sáng ngày 19/4/2021, Trung tâm Thông tin Thư viện phối hợp cùng Khoa Quản lý Văn hoá Nghệ thuật đã tổ chức buổi . Buổi triển lãm và nói chuyện của Nhà nghiên cứu Phan Cẩm Thượng & Nhà sưu tầm tác phẩm nghệ thuật Đinh Vân Vi đã thu hút được đông đảo sự quan tâm từ cán bộ, giảng viên và sinh viên Nhà trường – những người yêu sách và đam mê về sách.</p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Đây là hoạt động có ý nghĩa, là món quà vô giá mà cán bộ, giảng viên cùng sinh viên Nhà trường dành tặng nhân ngày Ngày Sách Việt Nam 21/4; Ngày Sách và Bản quyền Thế giới 23/4. Tham dự sự kiện ngoài hai vị diễn giả còn có các cán bộ, giảng viên các Phòng, Khoa và Trung tâm cùng đông đảo các bạn sinh viên Trường Đại học Văn hóa Hà Nội - đặc biệt là sinh viên Khoa Quản lý Văn hoá Nghệ thuật.</p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Sự kiện thu hút đông đảo tập thể cán bộ, giảng viên, sinh viên Trường Đại học Văn hoá Hà Nội tham dự Trong buổi nói chuyện chuyên đề, Nhà nghiên cứu Phan Cẩm Thượng và nhà sưu tầm tác phẩm nghệ thuật Đinh Vân Vi đã cung cấp thông tin khái quát cho sinh viên về nền văn hoá nghệ thuật Việt Nam trước đây khi đang được Nhà nước bao cấp hoàn toàn và gần như ít có lợi ích với nền kinh tế. Khi nền kinh tế chuyển sang cơ chế thị trường, Nhà nước không bao cấp một số lĩnh vực văn hoá nữa dẫn đến nhiều khó khăn trong hoạt động phát triển văn hóa nghệ thuật. Từ đó hai diễn giả đã chia sẻ những vấn đề xoay quanh nội dung văn hoá nghệ thuật trong nền kinh tế thị trường.</p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Hai diễn giả: Nhà nghiên cứu Phan Cẩm Thượng & Nhà sưu tầm tác phẩm nghệ thuật Đinh Vân Vi trong buổi nói chuyện chuyên đề Buổi triển lãm không chỉ trưng bày những ấn phẩm sách văn hoá nghệ thuật hấp dẫn mà còn đem đến cho các các thầy cô cùng các bạn sinh viên trải nghiệm đọc sách, tìm hiểu về sách. Hai diễn giả đã có buổi trao đổi cởi mở khi thảo luận, nghiên cứu về thị trường văn hoá nghệ thuật hiện nay, nhiều kiến thức và thông tin do các khách mời cung cấp được thầy cô và các bạn sinh viên hào hứng tiếp nhận và trao đổi. Có thể thấy đây không chỉ là một buổi nói chuyện chuyên đề mà còn là giờ học ngoại khoá lý thú, bổ ích dành cho các bạn sinh viên.</p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Sự kiện thu hút đông đảo tập thể cán bộ, giảng viên, sinh viên Trường Đại học Văn hoá Hà Nội tham dự Một số hình ảnh của buổi Triển lãm Sách Văn hoá Nghệ thuật Một số hình ảnh của buổi Triển lãm Sách Văn hoá Nghệ thuật Sau hơn 2 giờ đồng hồ chia sẻ và trao đổi vô cùng tích cực, sự kiện “” đã diễn ra thành công, góp phần nâng cao nhận thức, hiểu biết của sinh viên về tầm quan trọng của sách và văn hoá nghệ thuật trong thị trường. Đây là một trong những hoạt động rất thiết thực hưởng ứng Ngày Sách Việt Nam & Ngày Sách và Bản quyền Thế giới, đồng thời góp phần nâng cao kiến thức về sách cũng như thị trường văn hoá nghệ thuật của thầy và trò Trường Đại học Văn hoá Hà Nội.</p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Một số hình ảnh lưu niệm giữa các diễn giả khách mời và cán bộ, giảng viên, sinh viên Truờng Đại học Văn hoá Hà Nội Một số hình ảnh lưu niệm giữa các diễn giả khách mời và cán bộ, giảng viên, sinh viên Truờng Đại học Văn hoá Hà Nội Bài: Đặng Liên, Kiều Đức Mạnh Ảnh: Trần Phụng</p>`
-  },
-  {
-    "id": "act-5",
-    "category": "nghiencuu",
-    "categoryName": "Nghiên cứu",
-    "title": "Tọa Đàm Khoa Học: “Khai Thác Nguồn Tư Liệu Về Văn Hóa Dân Tộc Thiểu Số Trong Các Tài Liệu Cổ”",
-    "description": "Sáng ngày 8.3.2023, Khoa văn hóa dân tộc thiểu số đã tổ chức tọa đàm khoa học “Khai thác nguồn tư liệu về văn hóa dân tộc trong các tư liệu cổ phục vụ giảng dạy, học tập của giảng viên và sinh viên”. Buổi tọa đàm đã t...",
-    "image": "assets/images/event_tu_lieu_dan_toc_thieu_so.png",
-    "date": "08/03/2023",
-    "tag": "Di sản & Tư liệu cổ",
-    "location": "Khoa Văn hóa Dân tộc Thiểu số, Trường Đại học Văn hóa Hà Nội",
-    "organizer": "Khoa Văn hóa Dân tộc Thiểu số - Trường Đại học Văn hóa Hà Nội",
-    "pdfSource": "Tọa đàm khoa học _khai thác nguồn tư liệu về văn hóa dân tộc thiểu số trong các tài liệu cổ để phục vụ giảng dạy, học tập của giảng viên và sinh viên_.pdf",
-    "details": `<p style="margin-bottom: 14px; line-height: 1.85;">Sáng ngày 8.3.2023, Khoa văn hóa dân tộc thiểu số đã tổ chức tọa đàm khoa học “Khai thác nguồn tư liệu về văn hóa dân tộc trong các tư liệu cổ phục vụ giảng dạy, học tập của giảng viên và sinh viên”. Buổi tọa đàm đã thu hút nhiều giảng viên và sinh viên trong khoa cùng tham gia.</p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Tại buổi tọa đàm PGS.TS. Trần Bình đã giới thiệu và phân tích một số tư liệu cổ. Đây là những tư liệu rất cần thiết đối với những người tìm hiểu về văn hóa dân tộc. PGS.TS. Trần Bình cũng giới thiệu về nguồn lưu trữ tư liệu để giảng viên và sinh viên có thể tra cứu và tham khảo.</p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Tọa đàm khoa học “khai thác nguồn tư liệu về văn hóa dân tộc thiểu số trong các tài liệu cổ để phục vụ giảng dạy, học tập của giả… Tọa đàm khoa học “khai thác nguồn tư liệu về văn hóa dân tộc thiểu số trong các tài liệu cổ để phục vụ giảng dạy, học tập của giả… Tọa đàm khoa học “khai thác nguồn tư liệu về văn hóa dân tộc thiểu số trong các tài liệu cổ để phục vụ giảng dạy, học tập của giả… Tọa đàm khoa học “khai thác nguồn tư liệu về văn hóa dân tộc thiểu số trong các tài liệu cổ để phục vụ giảng dạy, học tập của giả…</p>`
-  },
-  {
-    "id": "act-6",
-    "category": "hoptac",
-    "categoryName": "Hợp tác",
-    "title": "Tọa Đàm Khoa Học: “Văn Hóa Tộc Người Từ Góc Nhìn Về Nhà Ở”",
-    "description": "Sáng ngày 05/4/2023, Trường Đại học Văn hóa Hà Nội phối hợp với Công ty TNHH Quốc tế Mai Hà (MaiHaBooks) cùng với sự đồng hành của Nhà xuất bản Khoa học và xã hội; Hội Dân tộc học và Nhân học Việt Nam tổ chức",
-    "image": "assets/images/event_van_hoa_toc_nguoi_nha_o.png",
-    "date": "05/04/2023",
-    "tag": "Tọa đàm khoa học liên ngành",
-    "location": "Phòng Hội thảo Quốc tế, Trường Đại học Văn hóa Hà Nội",
-    "organizer": "Trường Đại học Văn hóa Hà Nội, MaiHaBooks, NXB Khoa học Xã hội & Hội Dân tộc học và Nhân học Việt Nam",
-    "pdfSource": "Tọa đàm khoa học_ _Văn hóa tộc người từ góc nhìn về nhà ở__.pdf",
-    "details": `<p style="margin-bottom: 14px; line-height: 1.85;">Sáng ngày 05/4/2023, Trường Đại học Văn hóa Hà Nội phối hợp với Công ty TNHH Quốc tế Mai Hà (MaiHaBooks) cùng với sự đồng hành của Nhà xuất bản Khoa học và xã hội; Hội Dân tộc học và Nhân học Việt Nam tổ chức</p>
-<p style="margin-bottom: 14px; line-height: 1.85;"><strong>Đại biểu tham dự:</strong> Tham dự tọa đàm, về phía các nhà khoa học có GS.TS.KTS. Doãn Minh Khôi – Viện trưởng Viện Quy hoạch và Kiến trúc đô thị (Trường Đại học Xây dựng Hà Nội); PGS.TS. Vương Xuân Tình – Nguyên Viện trưởng Viện Dân tộc học Việt Nam; PGS.TS. Lâm Bá Nam – Chủ tịch Hội Dân tộc học và Nhân học Việt Nam.</p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Về phía khách mời ngoài trường có: PGS.TS Phạm Minh Phúc - Quyền Giám đốc, Tổng Biên tập NXB Khoa học xã hội; TS.</p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Phan Tân - Phó Giám đốc NXB Khoa học xã hội; PGS.TS Bùi Xuân Đính - Viện dân tộc học; PGS.TS Phạm Văn Lợi - Viện Việt Nam học và Khoa học phát triển Việt Nam; TS. Nguyễn Thanh Sơn - Vụ Pháp chế, Bộ VHTTDL; TS. Nguyễn Công Thảo - Viện Dân tộc học.</p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Về phía các đơn vị đối tác, có sự tham gia của bà Hà Thị Hương Mai - GĐ Công ty TNHH Quốc tế Mai Hà (MaiHaBooks); Bà Nguyễn Thị Hương - Trưởng Ban Biên tập Công ty CP sách Omega Việt Nam (Omega+); Ông Đặng Hồng Quân - Trưởng phòng Hợp tác Công ty CP sách Omega Việt Nam (Omega+).</p>
-<p style="margin-bottom: 14px; line-height: 1.85;"><strong>Đại biểu tham dự:</strong> Về phía trường Đại học Văn hóa Hà Nội có sự tham gia của PGS.TS Đặng Hoài Thu - Phó Hiệu trưởng Nhà trường; PGS.TS Trương Đại Lượng - Trưởng phòng Đào tạo, QLKH&HTQT; TS. Nguyễn Anh Cường - Trưởng khoa Văn hóa dân tộc thiểu số; TS. Đỗ Thị Thu Thủy - Trưởng khoa Viết văn, Báo chí; TS. Nguyễn Tiến Dũng - Phó Viện trưởng Viện Văn hóa cùng tập thể cán bộ, giảng viên và sinh viên Nhà trường tham dự.</p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Phát biểu khai mạc tọa đàm, PGS.TS. Đặng Hoài Thu - Phó Hiệu trưởng Nhà trường khẳng định ý nghĩa, tầm quan trọng của văn hóa tộc người từ góc nhìn về nhà ở và bày tỏ kỳ vọng các đại biểu tham dự sẽ có nhiều đóng góp, thảo luận góp phần xây dựng hoàn thiện hơn trong tọa đàm.</p>
-<p style="padding-left: 8px; margin-bottom: 10px;"><strong>•</strong> PGS.TS. Đặng Hoài Thu - Phó Hiệu trưởng Nhà trường phát biểu khai mạc tọa đàm Tại tọa đàm khoa học này, nhiều báo cáo tham luận chuyên sâu như: “Nhà Dân tộc học Nguyễn Khắc Tụng - Người mở hướng nghiên cứu về nhà ở cổ truyền của các dân tộc Việt Nam” của PGS.TS Vương Xuân Tình; “Kiến trúc hiện đại - bản địa và Nhà Dân tộc học Nguyễn Khắc Tụng” của PGS.TS.KTS Doãn Minh Khôi đã khai thác được những nguồn tư liệu mới, đặc biệt là sự tiếp cận dưới góc nhìn đa chiều và liên ngành... Tất cả đều nhằm mục tiêu tiếp tục làm sáng tỏ giá trị truyền thống của nhà ở, thực trạng sự biến đổi của nhà ở trong quá trình đô thị hóa và giao lưu văn hóa. Từ đó đưa ra được những giải pháp nhằm giữ gìn và phát huy giá trị của nhà ở cổ truyền trong xã hội đương đại hiện nay.</p>
-<p style="margin-bottom: 14px; line-height: 1.85;">Các Nhà khoa học trình bày chia sẻ của mình tại tọa đàm Như vậy, tọa đàm lần này đã mang đến nhiều ý kiến, nội dung mới nhằm trao đổi học thuật của những chuyên gia đầu ngành về dân tộc học, nhân học, văn hóa các dân tộc thiểu số nói chung, nhà cổ truyền của các dân tộc thiểu số nói riêng, chỉ ra những giá trị về văn hóa, kiến trúc,… của nhà ở cổ truyền, qua đó bàn luận về giải pháp phát huy giá trị nhà cổ truyền các dân tộc trong văn hóa, xã hội đương đại.</p>
-<p style="font-size: 13.5px; font-style: italic; color: var(--muted); margin: 8px 0 16px; text-align: center;">📷 <em>Các nhà khoa học, đại biểu tham dự và lãnh đạo, cán bộ, giảng viên Nhà trường chụp ảnh lưu niệm tọa đàm</em></p>`
-  },
-  {
+      {
     "id": "act-7",
     "category": "daotao",
     "categoryName": "Đào tạo",
@@ -186,9 +61,106 @@ const SEED_ACTIVITIES = [
 <p style="margin-bottom: 14px; line-height: 1.85;">Năm học mới đã bắt đầu, để hỗ trợ cho việc tìm tài liệu phục vụ môn học của các em Sinh viên trong Nhà trường nói chung cũng như sinh viên Khoa Du lịch nói riêng, Trung tâm Thông tin, Thư viện tổ chức trưng bày và giới thiệu những tài liệu chuyên ngành Du lịch, những tài liệu tham khảo liên quan đến các môn học về văn hóa du lịch.</p>
 <p style="margin-bottom: 14px; line-height: 1.85;">Địa điểm: Phòng đọc 2, Trung tâm Thông tin, Thư viện.</p>
 <p style="margin-bottom: 14px; line-height: 1.85;">Thời gian từ ngày 19/09/2022 – 25/09/2022 Xin trân trọng kính mời Quý Bạn đọc đến tham quan và tham khảo tài liệu.</p>`
+  },
+  {
+    "id": "act-8",
+    "category": "sinhvien",
+    "categoryName": "Sinh viên & NCKH",
+    "title": "Hội Thảo Sinh Viên Nghiên Cứu Khoa Học Năm 2024",
+    "description": "Ngày 29/11/2024, Khoa Thông tin, Thư viện đã tổ chức thành công “Hội thảo Sinh viên nghiên cứu Khoa học” nhằm khuyến khích phong trào học thuật, sáng tạo và tạo diễn đàn chia sẻ ý tưởng nghiên cứu của sinh viên trong khoa.",
+    "image": "assets/images/event_sv_nckh_2024_0_0.png",
+    "date": "29/11/2024",
+    "tag": "Nghiên cứu sinh viên",
+    "location": "Trường Đại học Văn hóa Hà Nội",
+    "organizer": "Khoa Thông tin, Thư viện – Trường Đại học Văn hóa Hà Nội",
+    "pdfSource": "HỘI THẢO SINH VIÊN NGHIÊN CỨU KHOA HỌC NĂM 2024.pdf",
+    "details": `<p style="margin-bottom: 14px; line-height: 1.85;">Phát biểu tại Hội thảo, TS. Nguyễn Văn Thiên đã đánh giá cao những nỗ lực, sáng tạo của các nhóm nghiên cứu, đồng thời khẳng định vai trò quan trọng của nghiên cứu khoa học trong việc phát triển kỹ năng, tư duy của sinh viên, giúp các em tự tin hơn trong hành trình học tập và làm việc sau này. HỘI THẢO SINH VIÊN NGHIÊN CỨU KHOA HỌC NĂM 2024</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">Hội thảo Sinh viên nghiên cứu khoa học năm 2024 không chỉ là cơ hội để sinh viên thể hiện bản thân, mà còn là động lực thúc đẩy phong trào học thuật trong toàn Khoa. Thành công của Hội thảo là minh chứng cho tinh thần học tập, sáng tạo và khát khao chinh phục tri thức của các bạn sinh viên. Một số hình ảnh của chương trình: HỘI THẢO SINH VIÊN NGHIÊN CỨU KHOA HỌC NĂM 2024</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">Sinh viên Nguyễn Thế Quân trình bày đề tài nghiên cứu Sinh viên Bùi Đình Trọng đại diện nhóm tác giả trình bày đề tài nghiên cứu HỘI THẢO SINH VIÊN NGHIÊN CỨU KHOA HỌC NĂM 2024</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">Sinh viên Phạm Hoàng Kim Chi trình bày đề tài nghiên cứu Sinh viên Phạm Thị Ngát đại diện nhóm tác giả trình bày đề tài nghiên cứu HỘI THẢO SINH VIÊN NGHIÊN CỨU KHOA HỌC NĂM 2024</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">Ảnh: CLB Truyền thông số, CLB Công nghệ số Bài: N.T.Yên HỘI THẢO SINH VIÊN NGHIÊN CỨU KHOA HỌC NĂM 2024</p>`
+  },
+  {
+    "id": "act-9",
+    "category": "daotao",
+    "categoryName": "Đào tạo",
+    "title": "Hội Thảo “Xây Dựng Chuẩn Đầu Ra, Chương Trình Đào Tạo Ngành Thông Tin Thư Viện Và Ngành Quản Lý Thông Tin”",
+    "description": "Khoa Thông tin, Thư viện tổ chức hội thảo lấy ý kiến các chuyên gia đầu ngành, nhà tuyển dụng lao động và các nhà khoa học nhằm rà soát, cập nhật chuẩn đầu ra và khung chương trình đào tạo đáp ứng nhu cầu thực tiễn.",
+    "image": "assets/images/event_chuan_dau_ra_ctdt_1_0.png",
+    "date": "07/08/2024",
+    "tag": "Chuẩn đầu ra & Đào tạo",
+    "location": "Phòng Hội thảo Quốc tế, Trường Đại học Văn hóa Hà Nội",
+    "organizer": "Khoa Thông tin, Thư viện – Trường Đại học Văn hóa Hà Nội",
+    "pdfSource": "Hội thảo _Xây dựng chuẩn đầu ra, chương trình đào tạo ngành Thông tin thư viện và ngành Quản lý thông tin_.pdf",
+    "details": `<p style="margin-bottom: 14px; line-height: 1.85;">TS Lê Thị Thành Huế- Giám đốc Trung tâm TTTV- Đại học Hà Nội phát biểu Đại diện Hội Thư viện Việt Nam, Th.S Nguyễn Hữu Giới nhân xét: trong nội dung mô tả chuẩn đầu ra ngành Thông tin Thư viện, Khoa cần bổ sung thêm nội dung: cử nhân sẽ nắm được kiến thức cơ bản về quản lý nhà nước trong thư viện, đồng thời mô tả về vị trí việc làm sau tốt nghiệp, cần thêm chức danh: chuyên viên quản lý nhà nước về thông tin và thư viện. Hội thảo “Xây dựng chuẩn đầu ra, chương trình đào tạo ngành Thông tin thư viện và ngành Quản lý thông tin”</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">Th.s Nguyễn Hữu Giới- Hội Thư viện Việt Nam phát biểu PGS.TS Đoàn Phan Tân - Nguyên Phó Hiệu trưởng Trường ĐHVHHN là nhà giáo rất tâm huyết với hoạt động đào tạo của Khoa Thông tin Thư viện. Phó giáo sư góp ý chuẩn đầu ra cần nhấn mạnh mục tiêu chung là nắm được các kiến thức chuyên sâu về chuyên ngành, đồng thời góp ý trong chương trình đào tạo ngành Thông tin thư viện cần nhấn mạnh tới nội dung chuyển đổi số trong hoạt động thông tin thư viện. Hội thảo “Xây dựng chuẩn đầu ra, chương trình đào tạo ngành Thông tin thư viện và ngành Quản lý thông tin”</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">PGS.TS Đoàn Phan Tân - Nguyên Phó Hiệu trưởng Trường ĐHVHHN phát biểu TS. Vũ Dương Thúy Ngà - Nguyên Vụ Trưởng Vụ Thư viện Bộ VHTTDL đánh giá sự ra đời của chuyên ngành Thư viện và thiết bị trường học thể hiện sự nhanh nhạy của Khoa trong quá trình đào tạo, bắt kịp xu thế và nhu cầu của xã hội hiện nay. Tiến sĩ cũng đề xuất môn học Thiết kế website nên tăng thời lượng giảng dạy và thực hành. Hội thảo “Xây dựng chuẩn đầu ra, chương trình đào tạo ngành Thông tin thư viện và ngành Quản lý thông tin”</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">TS. Vũ Dương Thúy Ngà - Nguyên Vụ Trưởng Vụ Thư viện Bộ VHTTDL phát biểu Đại diện khối doanh nghiệp sử dụng lao động, Ông Bùi Tiên Phong - PGĐ Công ty Cổ phần tích hợp công nghệ D&L khẳng định hiện nay kỹ năng tìm tin là rất quan trọng với tất cả mọi người trong bối cảnh bùng nổ thông tin, do đó Khoa cần bổ sung, cập nhật nội dung trong các môn học liên quan tới công nghệ, ưu tiên giới thiệu các giải pháp và công nghệ mới. Ông cũng nhấn mạnh hiện nay không chỉ thư viện mà tất cả các tổ chức, doanh nghiệp đều cần quản lý thông tin, do đó các vị trí việc làm của sinh viên sau khi tốt nghiệp ngành này rất nhiều và rộng. Ông đề xuất cần tăng thêm thời lượng cho môn học Dịch vụ thư viện trường học. Đại diện Nhà tuyển dụng khối thư viện trường học, Bà Nguyễn Thị Thái Hòa - Phụ trách Thư viện Trường Phổ thông liên cấp Olympia, Hà Nội đề cập tới tình trạng các trường phổ thông đang thiếu nhiều nhân viên thư viện, đồng thời nhận định để đảm nhận chức vụ quản lý thư viện trường học, người làm việc cần kiêm nhiệm nhiều công việc, đồng thời có các kỹ năng về ứng xử và giảng dạy đối với thanh thiếu niên. Bà đề xuất trong chuyên ngành Thư viện và thiết bị trường học cần có thêm môn học về nghiệp vụ sư phạm và kỹ năng mềm với người học trong các trường phổ thông và tiểu học. Hội thảo “Xây dựng chuẩn đầu ra, chương trình đào tạo ngành Thông tin thư viện và ngành Quản lý thông tin”</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">Th.s Nguyễn Xuân Dũng- Giám đốc Thư viện Quốc gia Việt Nam phát biểu Hội thảo còn nhận được những ý kiến nhận xét, đóng góp của các chuyên gia : PGS.TS. Trần Thị Quý- Nguyên Trưởng Khoa TTTV Đại học KHXHNV – ĐHQG HN - Ủy viên Hội đồng KH Viện Nghiên cứu và phát triển tri thức số, TS. Nguyễn Thu Thảo - Cục Thông tin Khoa học và Công nghệ Quốc gia, ThS. Hoàng Văn Dưỡng - PGĐ Trung tâm Thư viện và Tri thức số ĐHQG HN,Th.s Nguyễn Xuân Dũng- Giám đốc Thư viện Quốc gia Việt Nam, PGS.TS. Đặng Hoài Thu - Phó Hiệu trưởng Trường ĐHVHHN, PGS.TS. Nguyễn Thị Lan Thanh - Nguyên Phó Hiệu trưởng Trường ĐHVHHN. Các chuyên gia đều khẳng định tầm quan trong của việc rà soát, cập nhật chuẩn đầu ra và chương trình đào tạo, nội dung chương trình cần gắn kết với thực tiễn yêu cầu hiện nay của từng lĩnh vực. Các chuyên gia cũng có những góp ý về mặt chuyên môn trong việc xây dựng chương trình đào tạo cũng như những vấn đề cần khắc phục để chương trình được hoàn thiện, đáp ứng được yêu cầu của xã hội hiện đại. Đây đều là những nhận xét, góp Hội thảo “Xây dựng chuẩn đầu ra, chương trình đào tạo ngành Thông tin thư viện và ngành Quản lý thông tin”</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">ý tâm huyết của những chuyên gia có nhiều năm trực tiếp tham gia công tác quản lý cũng như sử dụng lao động trong ngành Thông tin Thư viện và Quản lý Thông tin. Đặc biệt các đơn vị đều nhấn mạnh cần tăng cường kỹ năng thực hành nghiệp vụ cho sinh viên để có được tay nghề vững khi ra trường, tránh bị bỡ ngỡ trong quá trình làm việc. Đại biểu tham dự hội thảo “Xây dựng chuẩn đầu ra, chương trình đào tạo ngành Thông tin thư viện và ngành Quản lý thông tin” Sau hơn 3 tiếng trao đổi, thảo luận sôi nổi, Hội thảo kết thúc với rất nhiều những góp ý, tư vấn mang tính thực tiễn và định hướng cho việc cập nhật và điều chỉnh chươn trình đào tạo cho hai ngành học của Khoa Thông tin Thư viện. Kết thúc hội thảo, TS. Nguyễn Văn Thiên tổng hợp những ý kiến đóng góp của các vị đại biểu, đồng thời khẳng định Khoa sẽ cân nhắc để có sự sửa đổi, hoàn thiện chương trình cho ngành Thông tin Thư viện và Quản lý Thông tin. Về phía Nhà trường, PGS, TS Trương Đại Lượng – trưởng phòng Đào tạo, Quản lý khoa học và Hợp tác quốc tế gửi lời cảm ơn đến các đại biểu đã nhiệt tình tham gia tọa đàm và có những tham vấn rất ý nghĩa cho Nhà trường và cho Khoa Thông tin Thư viện. Tin và bài: Khoa TT, TV Photo: CLB Truyền thông số Hội thảo “Xây dựng chuẩn đầu ra, chương trình đào tạo ngành Thông tin thư viện và ngành Quản lý thông tin”</p>`
+  },
+  {
+    "id": "act-10",
+    "category": "daotao",
+    "categoryName": "Đào tạo",
+    "title": "Khoa Thông Tin, Thư Viện: Đổi Mới Chương Trình Đào Tạo – Khẳng Định Vị Thế Trong Kỷ Nguyên Số",
+    "description": "Hội thảo rà soát, đánh giá và cập nhật chương trình đào tạo trình độ đại học ngành Thông tin - Thư viện và Quản lý thông tin, tăng cường kỹ năng thực hành, năng lực số và ứng dụng trí tuệ nhân tạo.",
+    "image": "assets/images/event_doi_moi_ky_nguyen_so_1_0.png",
+    "date": "11/05/2026",
+    "tag": "Đổi mới đào tạo & Kỷ nguyên số",
+    "location": "Phòng Hội đồng, Tầng 1 Nhà A, Trường Đại học Văn hóa Hà Nội",
+    "organizer": "Khoa Thông tin, Thư viện – Trường Đại học Văn hóa Hà Nội",
+    "pdfSource": "KHOA THÔNG TIN, THƯ VIỆN_ ĐỔI MỚI CHƯƠNG TRÌNH ĐÀO TẠO - KHẲNG ĐỊNH VỊ THẾ TRONG KỶ NGUYÊN SỐ.pdf",
+    "details": `<p style="margin-bottom: 14px; line-height: 1.85;">PGS. TS. Trần Thị Minh Nguyệt, Nguyên Trưởng khoa Sau Đại học – Trường ĐH Văn hóa Hà Nội phát biểu tại Hội thảo PGS. TS. Nguyễn Thị Lan Thanh, Nguyên Phó Hiệu trưởng Trường ĐH Văn hóa Hà Nội góp ý cho chương trình đào tạo của Khoa KHOA THÔNG TIN, THƯ VIỆN: ĐỔI MỚI CHƯƠNG TRÌNH ĐÀO TẠO – KHẲNG ĐỊNH VỊ THẾ TRONG KỶ NGUYÊN SỐ</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">PGS. TS. Trần Thị Quý, Nguyên Trưởng khoa Thông tin - Thư viện, Trường ĐH KHXH&NV, ĐHQGHN góp ý cho chương trình đào tạo TS. Nguyễn Thu Thảo, Cục Thông tin, Thống kê, Bộ KH&CN góp ý cho chương trình đào tạo của Khoa KHOA THÔNG TIN, THƯ VIỆN: ĐỔI MỚI CHƯƠNG TRÌNH ĐÀO TẠO – KHẲNG ĐỊNH VỊ THẾ TRONG KỶ NGUYÊN SỐ</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">TS. Vũ Dương Thúy Ngà, Nguyên Vụ trưởng Vụ Thư viện, Bộ VHTT&DL góp ý cho chương trình đào tạo ThS. Nguyễn Thị Thu Hiền, Phó Cục trưởng Cục Văn hóa cơ sở, Gia đình và Thư viện, Bộ VHTT&DL phát biểu tại Hội thảo KHOA THÔNG TIN, THƯ VIỆN: ĐỔI MỚI CHƯƠNG TRÌNH ĐÀO TẠO – KHẲNG ĐỊNH VỊ THẾ TRONG KỶ NGUYÊN SỐ</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">ThS. Nguyễn Hữu Giới, Chủ tịch Hội Thư viện Việt Nam trao đổi trong Hội thảo Ý kiến từ ThS. Nguyễn Xuân Dũng, Giám đốc Thư viện Quốc gia Việt Nam KHOA THÔNG TIN, THƯ VIỆN: ĐỔI MỚI CHƯƠNG TRÌNH ĐÀO TẠO – KHẲNG ĐỊNH VỊ THẾ TRONG KỶ NGUYÊN SỐ</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">ThS. Hoàng Văn Dưỡng, Phó Giám đốc Trung tâm Thư viện - Tri thức số, ĐHQGHN trao đổi trong Hội thảo Ông Hoàng Dũng, Giám đốc Công ty Cổ phần Tư vấn & Tích hợp công nghệ D&L KHOA THÔNG TIN, THƯ VIỆN: ĐỔI MỚI CHƯƠNG TRÌNH ĐÀO TẠO – KHẲNG ĐỊNH VỊ THẾ TRONG KỶ NGUYÊN SỐ</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">Bài: N.T.Yên Ảnh: Nhóm truyền thông KHOA THÔNG TIN, THƯ VIỆN: ĐỔI MỚI CHƯƠNG TRÌNH ĐÀO TẠO – KHẲNG ĐỊNH VỊ THẾ TRONG KỶ NGUYÊN SỐ</p>`
+  },
+  {
+    "id": "act-11",
+    "category": "daotao",
+    "categoryName": "Đào tạo",
+    "title": "Nghiệm Thu Chương Trình Đào Tạo Ngành Quản Lý Thông Tin Và Ngành Khoa Học Thông Tin, Thư Viện",
+    "description": "Trường ĐH Văn hóa Hà Nội tổ chức hội đồng thẩm định, nghiệm thu cấp trường chương trình đào tạo hai ngành trọng điểm của Khoa Thông tin, Thư viện với sự đánh giá cao về tính khoa học và thực tiễn.",
+    "image": "assets/images/event_nghiem_thu_ctdt_0_0.png",
+    "date": "24/09/2024",
+    "tag": "Nghiệm thu đào tạo",
+    "location": "Phòng Truyền thống, Trường Đại học Văn hóa Hà Nội",
+    "organizer": "Hội đồng Thẩm định Trường ĐHVHHN & Khoa Thông tin, Thư viện",
+    "pdfSource": "Nghiệm thu chương trình đào tạo ngành Quản lý Thông tin và ngành khoa học Thông tin, Thư viện.pdf",
+    "details": `<p style="margin-bottom: 14px; line-height: 1.85;">PGS.TS. Phạm Thị Thu Hương - Chủ tịch Hội đồng chủ trì buổi thẩm định, nghiệm thu TS. Nguyễn Văn Thiên - Trưởng Khoa TTTV, thay mặt Ban biên soạn báo cáo tóm tắt nội dung chương trình đào tạo. Nghiệm thu chương trình đào tạo ngành Quản lý Thông tin và ngành khoa học Thông tin, Thư viện</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">Hội đồng tiến hành thảo luận và đóng góp ý kiến Nghiệm thu chương trình đào tạo ngành Quản lý Thông tin và ngành khoa học Thông tin, Thư viện</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">Hội đồng thẩm định, nghiệm thu chụp ảnh lưu niệm cùng Ban biên soạn Nghiệm thu chương trình đào tạo ngành Quản lý Thông tin và ngành khoa học Thông tin, Thư viện</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">Hội đồng thẩm định, nghiệm thu chụp ảnh lưu niệm cùng lãnh đạo, giảng viên Khoa TTTV Tin và ảnh: Khoa TT, TV Nghiệm thu chương trình đào tạo ngành Quản lý Thông tin và ngành khoa học Thông tin, Thư viện</p>`
+  },
+  {
+    "id": "act-12",
+    "category": "hoptac",
+    "categoryName": "Hợp tác & Hội thảo",
+    "title": "Thành Công Rực Rỡ Của Workshop: “Sử Dụng AI - Dẫn Lối Tương Lai”",
+    "description": "Workshop thu hút hơn 400 sinh viên cùng các chuyên gia hàng đầu từ ĐH Bách Khoa Hà Nội và Khoa Thông tin, Thư viện, trang bị kiến thức và kỹ năng thực tiễn về ứng dụng AI trong học tập và nghiên cứu.",
+    "image": "assets/images/event_workshop_ai_tuong_lai_0_0.png",
+    "date": "13/11/2024",
+    "tag": "Trí tuệ nhân tạo & Kỹ năng số",
+    "location": "Hội trường Nhà Văn hóa, Trường Đại học Văn hóa Hà Nội",
+    "organizer": "Khoa Thông tin, Thư viện – Trường Đại học Văn hóa Hà Nội",
+    "pdfSource": "THÀNH CÔNG RỰC RỠ CỦA WORKSHOP _SỬ DỤNG AI - DẪN LỐI TƯƠNG LAI_.pdf",
+    "details": `<p style="margin-bottom: 14px; line-height: 1.85;">THÀNH CÔNG RỰC RỠ CỦA WORKSHOP “SỬ DỤNG AI - DẪN LỐI TƯƠNG LAI” Ngày 13/11/2024, tại Hội trường Nhà Văn hóa, Trường Đại học Văn hóa Hà Nội, workshop với chủ đề "Sử dụng AI - Dẫn Lối Tương Lai" đã diễn ra thành công với sự tham gia của hơn 400 sinh viên cùng nhiều khách mời là các chuyên gia, giảng viên và đại diện lãnh đạo đến từ các khoa trong trường. Buổi workshop không chỉ mang đến kiến thức về trí tuệ nhân tạo (AI) mà còn giúp các bạn sinh viên tìm thấy hướng đi đúng đắn trong việc ứng dụng AI vào học tập và nghiên cứu, cũng như nhận diện những cơ hội và thách thức mà công nghệ này mang lại trong tương lai. THÀNH CÔNG RỰC RỠ CỦA WORKSHOP “SỬ DỤNG AI - DẪN LỐI TƯƠNG LAI”</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">Buổi workshop vinh dự được đón tiếp các diễn giả uy tín trong lĩnh vực công nghệ và giáo dục: TS. Vũ Đình Minh - Giảng viên trường Đại học Bách Khoa Hà Nội, chia sẻ về các xu hướng AI trong thời đại số. TS. Lê Thị Cẩm Bình - Trưởng bộ môn CNTT, Khoa Thông tin, Thư viện - Trường Đại học Văn hóa Hà Nội, tập trung vào những cơ hội và thách thức khi áp dụng AI trong các lĩnh vực. Ths. Ngô Văn Tháp - Giảng viên Khoa Thông tin, Thư viện, Trường Đại học Văn hóa Hà Nội, mang đến cái nhìn thực tiễn về AI trong nghiên cứu và học thuật.</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">Sự kiện còn nhận được sự quan tâm đặc biệt từ các thầy cô là lãnh đạo các đơn vị trong trường, các thầy giáo, cô giáo và đặc biệt có sự tham gia của hơn 400 sinh viên trường ĐH Văn Hóa Hà Nội .</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">Chương trình workshop xoay quanh các nội dung hấp dẫn như: Ứng dụng AI hiệu quả trong học tập và nghiên cứu: Các diễn giả chia sẻ cách sinh viên có thể tận dụng công nghệ AI để tăng hiệu quả và chất lượng học tập. Thời cơ và thách thức của AI trong các lĩnh vực: AI mở ra cơ hội mới nhưng cũng mang đến không ít thách thức trong bối cảnh toàn cầu hóa. Góc nhìn thực tiễn khi áp dụng AI vào việc học tập, nghiên cứu. Giúp sinh viên khám phá sức mạnh của AI và vận dụng AI trong học tập, nghiên cứu cũng như trong cuộc sống một cách hiệu quả. Đồng thời giúp sinh viên nhận thức rõ hơn về cơ hội nghề nghiệp trong lĩnh vực AI, những thách thức mà AI mang lại cho thị trường lao động và cách thức để thích nghi với sự thay đổi này.</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">TS. Vũ Đình Minh là một chuyên gia về lĩnh vực công nghệ thông tin. Với bề dày kinh nghiệm và kiến thức chuyên sâu về lĩnh vực công nghệ thông tin, đặc biệt là trí tuệ nhân tạo, thầy đã chia sẻ với sinh viên về các xu hướng AI trong thời đại số. THÀNH CÔNG RỰC RỠ CỦA WORKSHOP “SỬ DỤNG AI - DẪN LỐI TƯƠNG LAI”</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">THÀNH CÔNG RỰC RỠ CỦA WORKSHOP “SỬ DỤNG AI - DẪN LỐI TƯƠNG LAI”</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">TS Vũ Đình Minh đến từ Đại học Bách Khoa Hà Nội THÀNH CÔNG RỰC RỠ CỦA WORKSHOP “SỬ DỤNG AI - DẪN LỐI TƯƠNG LAI”</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">TS. Lê Thị Cẩm Bình chia sẻ về những cơ hội và thách thức khi áp dụng AI trong các lĩnh vực. Ths. Ngô Văn Tháp mang đến cái nhìn thực tiễn về AI trong nghiên cứu và học thuật. Thầy chia sẻ với sinh viên làm sao để sử dụng AI có hiệu quả và trách nhiệm. Ngoài ra, chương trình còn có sự chia sẻ từ góc nhìn của sinh viên khi sử dụng AI. THÀNH CÔNG RỰC RỠ CỦA WORKSHOP “SỬ DỤNG AI - DẪN LỐI TƯƠNG LAI”</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">Sinh viên Thành Thị Thúy Hiền, lớp QLTT11, khoa Thông tin, Thư viện đã trình bày những góc nhìn thực tiễn khi áp dụng AI vào việc học tập và nghiên cứu đối với sinh viên. Buổi workshop nhận được sự hưởng ứng nồng nhiệt từ các bạn sinh viên với những câu hỏi thú vị và ý tưởng sáng tạo trong phần thảo luận. Đây thực sự là sân chơi bổ ích, giúp sinh viên hiểu rõ hơn về AI, từ đó chuẩn bị tốt hơn cho sự nghiệp trong tương lai. THÀNH CÔNG RỰC RỠ CỦA WORKSHOP “SỬ DỤNG AI - DẪN LỐI TƯƠNG LAI”</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">Khoa Thông tin, Thư viện xin gửi lời cảm ơn chân thành đến các diễn giả, đại biểu, giảng viên, và đặc biệt là các bạn sinh viên đã tham gia, tạo nên một sự kiện thành công tốt đẹp. THÀNH CÔNG RỰC RỠ CỦA WORKSHOP “SỬ DỤNG AI - DẪN LỐI TƯƠNG LAI”</p>
+<p style="margin-bottom: 14px; line-height: 1.85;">THÀNH CÔNG RỰC RỠ CỦA WORKSHOP “SỬ DỤNG AI - DẪN LỐI TƯƠNG LAI”</p>
+<p style="font-size: 13.5px; font-style: italic; color: #64748b; margin: 16px 0; text-align: right;"><em>Photo: CLB Truyền thông số N.T.Yên THÀNH CÔNG RỰC RỠ CỦA WORKSHOP “SỬ DỤNG AI - DẪN LỐI TƯƠNG LAI”</em></p>`
   }
 ];
-
 window.SEED_ACTIVITIES = SEED_ACTIVITIES;
 
 const SEED_RESOURCES = [

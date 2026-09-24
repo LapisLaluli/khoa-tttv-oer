@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const filtered = category === "all" 
       ? allActivities 
-      : allActivities.filter(a => a.category === category);
+      : allActivities.filter(a => a.category === category || (category === "nghiencuu" && (a.category === "sinhvien" || a.id === "act-8")) || (category === "sinhvien" && a.id === "act-8"));
 
     if (!filtered.length) {
       if (allActivities.length > 0) {
