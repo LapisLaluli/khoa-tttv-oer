@@ -239,7 +239,7 @@ const SEED_SETTINGS = {
   email: "flis@huc.edu.vn",
   websiteUrl: "https://flis.huc.edu.vn",
   // UI Custom Images
-  logoUrl: "assets/images/huc-logo.svg",
+  logoUrl: "assets/images/flis-logo.jpg",
   heroBgUrl: "assets/images/hero-bg.svg",
   aboutLargeImg: "assets/images/truong-dai-hoc-van-hoa-ha-noi-1.jpg",
   aboutStack1Img: "assets/images/anh-toa-nha-5.jpg",
@@ -292,6 +292,9 @@ const DataManager = {
     } else {
       // Merge new fields & upgrade placeholder images
       const current = this.getSettings();
+      if (!current.logoUrl || current.logoUrl.includes("placeholder") || current.logoUrl.includes("huc-logo.svg") || current.logoUrl.includes("Logo-Truong")) {
+        current.logoUrl = SEED_SETTINGS.logoUrl;
+      }
       if (!current.aboutLargeImg || current.aboutLargeImg.includes("placeholder.svg")) {
         current.aboutLargeImg = SEED_SETTINGS.aboutLargeImg;
       }

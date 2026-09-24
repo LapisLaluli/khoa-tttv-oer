@@ -86,7 +86,9 @@ button, input, select, textarea {
 .brand img {
   width: 54px;
   height: 54px;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
 .brand-text {

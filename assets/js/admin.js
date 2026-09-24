@@ -143,8 +143,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const s = dm.getSettings();
     const logoInput = document.getElementById("inputLogoUrl");
     const logoPreview = document.getElementById("previewLogo");
-    if (logoInput) logoInput.value = s.logoUrl || "assets/images/huc-logo.svg";
-    if (logoPreview) logoPreview.src = s.logoUrl || "assets/images/huc-logo.svg";
+    if (logoInput) logoInput.value = s.logoUrl || "assets/images/flis-logo.jpg";
+    if (logoPreview) logoPreview.src = s.logoUrl || "assets/images/flis-logo.jpg";
 
     const heroBgInput = document.getElementById("inputHeroBgUrl");
     const heroBgPreview = document.getElementById("previewHeroBg");
@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  setupClearImageButton("clearLogoBtn", "uploadLogoFile", "inputLogoUrl", "previewLogo", "assets/images/huc-logo.svg", "logoUrl", "Logo");
+  setupClearImageButton("clearLogoBtn", "uploadLogoFile", "inputLogoUrl", "previewLogo", "assets/images/flis-logo.jpg", "logoUrl", "Logo");
   setupClearImageButton("clearHeroBgBtn", "uploadHeroBgFile", "inputHeroBgUrl", "previewHeroBg", "assets/images/hero-bg.svg", "heroBgUrl", "Ảnh nền Hero");
   setupClearImageButton("clearAboutLargeBtn", "uploadAboutLargeFile", "inputAboutLargeUrl", "previewAboutLarge", "assets/images/placeholder.svg", "aboutLargeImg", "Ảnh lớn Về Chúng Tôi");
   setupClearImageButton("clearAboutStack1Btn", "uploadAboutStack1File", "inputAboutStack1Url", "previewAboutStack1", "assets/images/placeholder.svg", "aboutStack1Img", "Ảnh Thư viện");
@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("clearUploadedFilesBtn")?.addEventListener("click", () => {
     if (confirm("Thao tác này sẽ xóa toàn bộ các tệp ảnh tùy chỉnh lưu tạm và đưa tất cả ảnh giao diện về mặc định. Bạn có muốn tiếp tục?")) {
       const s = dm.getSettings();
-      s.logoUrl = "assets/images/huc-logo.svg";
+      s.logoUrl = "assets/images/flis-logo.jpg";
       s.heroBgUrl = "assets/images/hero-bg.svg";
       s.aboutLargeImg = "assets/images/placeholder.svg";
       s.aboutStack1Img = "assets/images/placeholder.svg";
@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const current = dm.getSettings();
     const updated = {
       ...current,
-      logoUrl: document.getElementById("inputLogoUrl").value.trim() || "assets/images/huc-logo.svg",
+      logoUrl: document.getElementById("inputLogoUrl").value.trim() || "assets/images/flis-logo.jpg",
       heroBgUrl: document.getElementById("inputHeroBgUrl").value.trim() || "assets/images/hero-bg.svg",
       aboutLargeImg: document.getElementById("inputAboutLargeUrl").value.trim() || "assets/images/placeholder.svg",
       aboutStack1Img: document.getElementById("inputAboutStack1Url").value.trim() || "assets/images/placeholder.svg",
