@@ -194,7 +194,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const base = [
       { title: "Lịch sử Khoa Thông tin Thư viện", url: "history.html", text: "Quá trình hơn 60 năm xây dựng, các mốc 1961, 1990, 1991 đến nay." },
       { title: "Cơ Cấu Tổ Chức & Ban Chủ Nhiệm Khoa", url: "organization.html", text: "Sơ đồ tổ chức khoa, TS. Nguyễn Văn Thiên (Trưởng khoa), TS. Nguyễn Thị Ngọc Mai (Phó trưởng khoa), TS. Lê Thị Cẩm Bình, TS. Đinh Thúy Quỳnh, ThS. Nguyễn Thị Phương Liên, ThS. Nguyễn Hồng Hạnh, ThS. Lê Thị Thúy Hiền (Công đoàn), ThS. Nguyễn Thị Yên (Đoàn thanh niên), các bộ môn." },
-      { title: "Về Chúng Tôi (Nhóm Ngũ Vị Hương)", url: "about-us.html", text: "Nhóm phát triển dự án OER Ngũ Vị Hương, phân công nhiệm vụ thành viên: Kim Chi, Thế Quân, Ngọc Khánh, Vũ Nhung, Công Minh." },
       { title: "Tài nguyên Giáo dục Mở (OER)", url: "resources.html", text: "Kho tài liệu số hóa, kỷ yếu truyền thống, giáo trình mở, bài giảng mở." },
       { title: "Góc học tập & Trắc nghiệm lịch sử", url: "learning.html", text: "Trắc nghiệm ôn tập kiến thức lịch sử hình thành và phát triển của Khoa." },
       { title: "Về dự án Tài nguyên Mở OER", url: "about.html", text: "Tiêu chuẩn Dublin Core, bản quyền mở Creative Commons CC-BY, trích dẫn học thuật." },
