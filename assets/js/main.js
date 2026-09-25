@@ -82,6 +82,14 @@ window.openActivityModalById = function(id) {
         <span style="flex:1; color:#1e293b; font-weight:500;">${act.organizer}</span>
       </div>` : ''}
     </div>
+
+    <div style="margin-top:24px; padding-top:14px; border-top:1px dashed #e2e8f0; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:12px; color:#64748b;">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <img src="assets/images/cc-by-88x31.png" alt="CC BY 4.0" width="70" height="24" style="border-radius:2px; vertical-align:middle;">
+        <span>Phát hành theo Giấy phép Mở <a href="https://creativecommons.org/licenses/by/4.0/deed.vi" target="_blank" rel="noopener license" style="color:#7b1d28; font-weight:600; text-decoration:underline;">CC BY 4.0 Quốc tế</a></span>
+      </div>
+      <span>Khoa Thông tin, Thư viện – Trường ĐH Văn hóa Hà Nội</span>
+    </div>
   `;
   window.openDocumentModal(act.title, content, "Hoạt Động & Sự Kiện Nổi Bật");
 };

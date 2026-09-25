@@ -1,3 +1,47 @@
+const SEED_TEAM = [
+  {
+    "stt": 1,
+    "name": "Phạm Hoàng Kim Chi",
+    "role": "Trưởng nhóm / Điều phối",
+    "tasks": "Phân công công việc, hỗ trợ và tư vấn, viết báo cáo",
+    "avatar": "KC",
+    "color": "#7b1d28"
+  },
+  {
+    "stt": 2,
+    "name": "Nguyễn Thế Quân",
+    "role": "Nghiên cứu & Biên tập",
+    "tasks": "Tìm kiếm thông tin, chỉnh sửa báo cáo",
+    "avatar": "TQ",
+    "color": "#1e3a8a"
+  },
+  {
+    "stt": 3,
+    "name": "Nguyễn Ngọc Khánh",
+    "role": "Thuyết trình & Biên tập",
+    "tasks": "Thuyết trình, chỉnh sửa báo cáo, tìm kiếm thông tin",
+    "avatar": "NK",
+    "color": "#047857"
+  },
+  {
+    "stt": 4,
+    "name": "Vũ Thị Nhung",
+    "role": "Thu thập & Sự kiện",
+    "tasks": "Thu thập thông tin, sự kiện khoa",
+    "avatar": "VN",
+    "color": "#b45309"
+  },
+  {
+    "stt": 5,
+    "name": "Nguyễn Công Minh",
+    "role": "Kỹ thuật & Website",
+    "tasks": "Thiết kế và tạo website, đưa ra định hướng và hoàn thành sản phẩm",
+    "avatar": "CM",
+    "color": "#6b21a8"
+  }
+];
+window.SEED_TEAM = SEED_TEAM;
+
 /**
  * DataManager - Centralized State & Storage Engine for Khoa Thông Tin Thư Viện OER
  * Supports LocalStorage caching, Real-time sync, JSON Export/Import, Image Uploads, and Admin Auth.
@@ -453,6 +497,11 @@ const DataManager = {
     let list = this.getActivities();
     list = list.filter(a => a.id !== id);
     this.saveActivities(list);
+  },
+
+  // Team Methods
+  getTeam() {
+    return SEED_TEAM;
   },
 
   // Resources CRUD
